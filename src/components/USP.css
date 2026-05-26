@@ -1,0 +1,72 @@
+.usp {
+  background-color: #FFFFFF;
+}
+
+.usp-intro {
+  max-width: 600px;
+  margin: 20px auto 0;
+  color: #555;
+  font-size: 1.1rem;
+}
+
+.usp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.usp-card {
+  background-color: var(--color-white);
+  padding: 40px 30px;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: var(--transition);
+  border-top: 3px solid transparent;
+}
+
+.usp-card:hover {
+  transform: translateY(-10px);
+  border-top-color: var(--color-primary);
+  box-shadow: 0 15px 40px rgba(227, 24, 24, 0.1);
+}
+
+.usp-icon-wrapper {
+  margin-bottom: 20px;
+}
+
+.usp-number {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: rgba(227, 24, 24, 0.2);
+  display: inline-block;
+  transition: var(--transition);
+}
+
+.usp-card:hover .usp-number {
+  color: var(--color-primary);
+}
+
+.usp-title {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: var(--color-dark);
+}
+
+.usp-desc {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+  .usp-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .usp-grid {
+    grid-template-columns: 1fr;
+  }
+}
