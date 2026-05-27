@@ -1,21 +1,5 @@
 .about {
   background-color: #FFFFFF;
-  padding: clamp(3rem, 6vw, 5.1rem) 0 clamp(3.1rem, 5.5vw, 5rem);
-}
-
-/* Heading */
-.about-heading {
-  text-align: center;
-  margin-bottom: clamp(30px, 5vw, 60px);
-}
-
-.about-title {
-  font-family: var(--font-heading);
-  font-size: clamp(1.6rem, 3.2vw, 2.4rem);
-  font-weight: 600;
-  letter-spacing: 0.125em;
-  color: var(--color-primary);
-  text-transform: uppercase;
 }
 
 /* Top Row: text left, stats right */
