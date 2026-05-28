@@ -1,0 +1,46 @@
+.marquee-section {
+  width: 100%;
+  background-color: #ffffff;
+  padding: clamp(3.1rem, 5.5vw, 5rem) 0 clamp(3.1rem, 5.5vw, 5rem);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-content {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scrollText 40s linear infinite;
+}
+
+.marquee-content span {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #F31B1B;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding-right: 15px;
+  /* Adjust if spacing around dot needs fine-tuning */
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause animation on hover if desired */
+.marquee-container:hover .marquee-content {
+  animation-play-state: paused;
+}

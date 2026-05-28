@@ -1,29 +1,20 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import Hero from './components/Hero';
-import About from './components/About';
-import Products from './components/Products';
-import Quality from './components/Quality';
-import Process from './components/Process';
-import Industry from './components/Industry';
-import USP from './components/USP';
-import CTA from './components/CTA';
 import Footer from './components/Footer';
+import Home from './pages/Home';
+import AboutPage from './pages/AboutPage';
 
 function App() {
   return (
-    <>
+    <Router>
       <Header />
-      <Hero />
-      <About />
-      <Products />
-      <Quality />
-      <Process />
-      <Industry />
-      <USP />
-      <CTA />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<AboutPage />} />
+      </Routes>
       <Footer />
-    </>
+    </Router>
   );
 }
 

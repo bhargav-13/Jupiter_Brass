@@ -1,0 +1,139 @@
+/* =============================================
+   ISO CERTIFICATION SECTION
+   ============================================= */
+.certification {
+  background-color: #ffffff;
+}
+
+.certification-wrapper {
+  display: flex;
+  align-items: stretch;
+  gap: clamp(2.5rem, 5vw, 5rem);
+}
+
+/* ---------- Left Content ---------- */
+.certification-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.certification-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 2.8vw, 2.2rem);
+  font-weight: 400;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  line-height: 1.35;
+  margin-bottom: clamp(1.2rem, 2.5vw, 2rem);
+}
+
+.certification-description {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  line-height: 2.2;
+  margin-bottom: clamp(1.8rem, 3vw, 2.8rem);
+}
+
+/* ---------- Scope Subtitle ---------- */
+.certification-scope-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 2.8vw, 2.2rem);
+  font-weight: 500;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  line-height: 1.35;
+  margin-bottom: clamp(1.2rem, 2vw, 1.8rem);
+}
+
+/* ---------- Scope Tags ---------- */
+.certification-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(8px, 1vw, 14px);
+}
+
+.certification-tag {
+  font-family: var(--font-heading);
+  font-size: clamp(0.45rem, 0.62vw, 0.56rem);
+  font-weight: 500;
+  color: #343434;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  border: 1px solid #F31B1B;
+  padding: clamp(8px, 1vw, 12px) clamp(14px, 1.8vw, 24px);
+  background: #FFF2F2;
+  transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+  cursor: default;
+  white-space: nowrap;
+}
+
+.certification-tag:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background-color: rgba(243, 27, 27, 0.04);
+}
+
+/* ---------- Right Certificate Image ---------- */
+.certification-image-box {
+  flex: 0 0 clamp(280px, 38%, 480px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.certification-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.certification-image:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 50px rgba(0, 0, 0, 0.12);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .certification-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .certification-image-box {
+    flex: none;
+    width: 80%;
+    max-width: 400px;
+    order: -1;
+    margin-bottom: 1.5rem;
+  }
+
+  .certification-content {
+    text-align: center;
+  }
+
+  .certification-tags {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .certification-image-box {
+    width: 95%;
+  }
+
+  .certification-tag {
+    font-size: 0.5rem;
+    padding: 8px 12px;
+  }
+}

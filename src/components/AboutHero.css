@@ -1,0 +1,185 @@
+/* =============================================
+   ABOUT HERO SECTION
+   ============================================= */
+.about-hero {
+  position: relative;
+  z-index: 1;
+  padding: clamp(5rem, 8vw, 8rem) 0 clamp(3.1rem, 5.5vw, 5rem);
+  background-color: #FFFFFF;
+}
+
+.about-hero-title {
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  text-transform: uppercase;
+  color: #343434;
+  margin: 0 auto 60px;
+  line-height: 2;
+  letter-spacing: 0.1em;
+}
+
+/* ---------- Banner & Grid Background ---------- */
+.about-hero-banner {
+  position: relative;
+  background-color: #FFEFEF;
+  border-radius: 30px;
+  width: 100%;
+  height: 490px;
+  margin-bottom: clamp(40px, 8vw, 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  /* To allow image to spill out top/bottom */
+}
+
+.about-hero-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 30px;
+  /* Grid pattern */
+  background-image:
+    linear-gradient(to right, rgba(243, 27, 27, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(243, 27, 27, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center;
+  /* Fade out edges more aggressively */
+  mask-image: linear-gradient(to right, transparent 20%, black 40%, black 60%, transparent 80%);
+  -webkit-mask-image: linear-gradient(to right, transparent 20%, black 40%, black 60%, transparent 80%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ---------- Year Typography ---------- */
+.about-hero-year {
+  position: relative;
+  font-family: var(--font-heading);
+  font-size: clamp(8rem, 20vw, 12rem);
+  font-weight: 700;
+  color: #F31B1B;
+  /* Outline effect like reference */
+  line-height: 1;
+  letter-spacing: 15px;
+  z-index: 1;
+  transform: translateY(-20px);
+}
+
+.about-hero-since {
+  position: absolute;
+  top: -15px;
+  left: -20px;
+  font-size: 1.2rem;
+  letter-spacing: 4px;
+  color: var(--color-primary);
+  -webkit-text-stroke: 0px;
+  /* Reset stroke for small text */
+  text-transform: uppercase;
+}
+
+/* ---------- Person Image ---------- */
+.about-hero-image-wrapper {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  height: 480px;
+  /* Taller than the banner (350px) to spill out top */
+  pointer-events: none;
+}
+
+.about-hero-image {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+  object-position: bottom;
+}
+
+/* ---------- Bottom Content ---------- */
+.about-hero-content {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 70px;
+  align-items: start;
+  margin: 0 auto;
+}
+
+.about-hero-text {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  line-height: 2;
+  font-weight: 500;
+  color: #343434;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.about-hero-divider {
+  width: 1px;
+  height: 100%;
+  min-height: 150px;
+  background-color: var(--color-dark, #222);
+  /* Dark divider like in image */
+}
+
+.about-hero-signature {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  color: var(--color-primary);
+  margin-top: 30px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.about-hero-tilde {
+  font-size: 2.5em;
+  font-weight: 400;
+  line-height: 0.5;
+  transform: translateY(4px);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .about-hero-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about-hero-divider {
+    width: 100%;
+    height: 1px;
+    min-height: 1px;
+  }
+
+  .about-hero-year {
+    font-size: clamp(6rem, 15vw, 10rem);
+    -webkit-text-stroke: 2px var(--color-primary);
+    transform: translateY(0);
+  }
+
+  .about-hero-since {
+    top: -20px;
+  }
+
+  .about-hero-image-wrapper {
+    height: 400px;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-hero-banner {
+    height: 250px;
+    margin-bottom: 40px;
+  }
+
+  .about-hero-image-wrapper {
+    height: 300px;
+  }
+}

@@ -1,0 +1,170 @@
+/* =============================================
+   OUR COMMITMENT SECTION
+   ============================================= */
+.commitment {
+  background-color: #ffffff;
+  position: relative;
+  z-index: 2;
+}
+
+.commitment-wrapper {
+  display: flex;
+  align-items: center;
+  gap: clamp(2rem, 5vw, 5rem);
+}
+
+/* ---------- Left Content ---------- */
+.commitment-content {
+  flex: 1.1;
+  min-width: 0;
+}
+
+.commitment-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 2.8vw, 2.2rem);
+  font-weight: 400;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  line-height: 1.35;
+  margin-bottom: clamp(1.2rem, 2.5vw, 2rem);
+}
+
+.commitment-desc {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  line-height: 2.2;
+  margin-bottom: clamp(1.8rem, 3vw, 2.8rem);
+}
+
+/* ---------- Bottom Row ---------- */
+.commitment-bottom-layout {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.5rem, 3vw, 3rem);
+}
+
+.commitment-items {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 1.2vw, 15px);
+  flex: 1;
+}
+
+.commitment-item {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 1.2vw, 18px);
+  border: 1px solid #F31B1B;
+  background-color: #FFF2F2;
+  padding: clamp(10px, 1.1vw, 15px) clamp(16px, 1.5vw, 24px);
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.commitment-item:hover {
+  background-color: rgba(243, 27, 27, 0.08);
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(243, 27, 27, 0.05);
+}
+
+.commitment-item-icon {
+  width: clamp(16px, 1.8vw, 22px);
+  height: clamp(16px, 1.8vw, 22px);
+  object-fit: contain;
+}
+
+.commitment-item-text {
+  font-family: var(--font-heading);
+  font-size: clamp(0.5rem, 0.7vw, 0.65rem);
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: var(--color-dark);
+}
+
+/* ---------- Round Type Logo ---------- */
+.commitment-badge-box {
+  flex: 0 0 clamp(110px, 15vw, 180px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.commitment-badge {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+/* ---------- Right Side Image ---------- */
+.commitment-image-box {
+  flex: 0.9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.commitment-profile-img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.commitment-profile-img:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 992px) {
+  .commitment-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .commitment-image-box {
+    width: 80%;
+    max-width: 450px;
+    order: -1;
+  }
+
+  .commitment-content {
+    text-align: center;
+  }
+
+  .commitment-bottom-layout {
+    justify-content: center;
+  }
+
+  .commitment-item {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .commitment-image-box {
+    width: 100%;
+  }
+
+  .commitment-bottom-layout {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .commitment-badge-box {
+    flex: none;
+    width: 120px;
+  }
+
+  .commitment-items {
+    width: 100%;
+  }
+}
