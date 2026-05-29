@@ -1,0 +1,51 @@
+.product-page {
+  background-color: var(--color-white);
+  min-height: 100vh;
+}
+
+.product-quality-section {
+  text-align: center;
+}
+
+.quality-header {
+  margin-bottom: 80px;
+}
+
+.quality-header h1.section-title {
+  margin-bottom: clamp(15px, 3vw, 30px);
+}
+
+.quality-subtitle {
+  font-family: var(--font-heading);
+  color: #000;
+  font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  line-height: 1.8;
+  max-width: 600px;
+  font-weight: 600;
+  margin: 0 auto;
+}
+
+.precision-parts-header {
+  margin-bottom: 50px;
+}
+
+
+.products-grid-3 {
+  grid-template-columns: repeat(3, 1fr) !important;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .products-grid-3 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .products-grid-3 {
+    grid-template-columns: 1fr !important;
+  }
+}

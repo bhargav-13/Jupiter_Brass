@@ -86,13 +86,14 @@
 .certification-image-box {
   flex: 0 0 clamp(280px, 38%, 480px);
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
   justify-content: center;
 }
 
 .certification-image {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
