@@ -31,42 +31,82 @@
   align-items: center;
   justify-content: center;
   overflow: visible;
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+  --grid-offset-x: 0px;
+  --grid-offset-y: 0px;
+  --spotlight-size: clamp(140px, 18vw, 220px);
   /* To allow image to spill out top/bottom */
 }
 
-.about-hero-banner::before {
-  content: '';
+.about-hero-grid {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   border-radius: 30px;
-  /* Grid pattern */
+  z-index: 0;
+  pointer-events: none;
+  background-size: 40px 40px;
+}
+
+/* Static grid behind the image (visible when cursor is outside the card) */
+.about-hero-grid--base {
+  opacity: 1;
+  transition: opacity 0.25s ease;
   background-image:
     linear-gradient(to right, rgba(243, 27, 27, 0.1) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(243, 27, 27, 0.1) 1px, transparent 1px);
-  background-size: 40px 40px;
   background-position: center;
-  /* Fade out edges more aggressively */
   mask-image: linear-gradient(to right, transparent 20%, black 40%, black 60%, transparent 80%);
   -webkit-mask-image: linear-gradient(to right, transparent 20%, black 40%, black 60%, transparent 80%);
-  z-index: 0;
-  pointer-events: none;
+}
+
+.about-hero-banner.is-grid-active .about-hero-grid--base {
+  opacity: 0;
+}
+
+/* Brighter grid that follows the cursor */
+.about-hero-grid--spotlight {
+  opacity: 0;
+  background-image:
+    linear-gradient(to right, rgba(243, 27, 27, 0.42) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(243, 27, 27, 0.42) 1px, transparent 1px);
+  background-position: calc(50% + var(--grid-offset-x)) calc(50% + var(--grid-offset-y));
+  mask-image: radial-gradient(
+    circle var(--spotlight-size) at var(--mouse-x) var(--mouse-y),
+    black 0%,
+    rgba(0, 0, 0, 0.75) 42%,
+    transparent 72%
+  );
+  -webkit-mask-image: radial-gradient(
+    circle var(--spotlight-size) at var(--mouse-x) var(--mouse-y),
+    black 0%,
+    rgba(0, 0, 0, 0.75) 42%,
+    transparent 72%
+  );
+  transition: opacity 0.2s ease;
+  will-change: mask-image, -webkit-mask-image, background-position;
+}
+
+.about-hero-banner.is-grid-active .about-hero-grid--spotlight {
+  opacity: 1;
 }
 
 /* ---------- Year Typography ---------- */
 .about-hero-year {
   position: relative;
   font-family: var(--font-heading);
-  font-size: clamp(8rem, 20vw, 12rem);
   font-weight: 700;
   color: #F31B1B;
-  /* Outline effect like reference */
   line-height: 1;
-  letter-spacing: 15px;
   z-index: 1;
   transform: translateY(-20px);
+  display: inline-block;
+}
+
+.about-hero-year-value {
+  display: block;
+  font-size: clamp(8rem, 20vw, 12rem);
+  letter-spacing: 15px;
 }
 
 .about-hero-since {
@@ -76,9 +116,8 @@
   font-size: 1.2rem;
   letter-spacing: 4px;
   color: var(--color-primary);
-  -webkit-text-stroke: 0px;
-  /* Reset stroke for small text */
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 /* ---------- Person Image ---------- */
@@ -98,6 +137,8 @@
   width: auto;
   object-fit: cover;
   object-position: bottom;
+  transform-origin: center bottom;
+  will-change: transform;
 }
 
 /* ---------- Bottom Content ---------- */
@@ -159,9 +200,12 @@
   }
 
   .about-hero-year {
+    transform: translateY(0);
+  }
+
+  .about-hero-year-value {
     font-size: clamp(6rem, 15vw, 10rem);
     -webkit-text-stroke: 2px var(--color-primary);
-    transform: translateY(0);
   }
 
   .about-hero-since {
@@ -173,13 +217,65 @@
   }
 }
 
+@media (hover: none) {
+  .about-hero-grid--spotlight {
+    display: none;
+  }
+
+  .about-hero-banner.is-grid-active .about-hero-grid--base,
+  .about-hero-grid--base {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-hero-grid--base,
+  .about-hero-grid--spotlight {
+    transition: none;
+  }
+
+  .about-hero-grid--spotlight {
+    opacity: 0 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero-text {
+    font-size: 0.62rem;
+    line-height: 1.9;
+  }
+
+  .about-hero-signature {
+    justify-content: flex-start;
+    margin-top: 20px;
+  }
+}
+
 @media (max-width: 600px) {
   .about-hero-banner {
-    height: 250px;
-    margin-bottom: 40px;
+    height: min(42vh, 280px);
+    margin-bottom: 32px;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .about-hero-grid,
+  .about-hero-grid--base,
+  .about-hero-grid--spotlight {
+    border-radius: 20px;
+  }
+
+  .about-hero-year-value {
+    font-size: clamp(4.5rem, 22vw, 6.5rem);
+    letter-spacing: 8px;
+  }
+
+  .about-hero-since {
+    font-size: 0.85rem;
+    left: -8px;
   }
 
   .about-hero-image-wrapper {
-    height: 300px;
+    height: min(48vh, 320px);
   }
 }

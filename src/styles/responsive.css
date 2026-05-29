@@ -1,0 +1,140 @@
+/* =============================================
+   GLOBAL MOBILE — equal spacing & section titles
+   ============================================= */
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body.nav-open {
+  overflow: hidden;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --space-section-y: 3rem;
+    --space-heading-bottom: 1.5rem;
+    --size-section-title: 1rem;
+    --size-page-title: 1.125rem;
+    --tracking-section-title: 0.05em;
+  }
+
+  /* Equal padding between every section */
+  .section,
+  .hero,
+  .about-hero,
+  .articles-section,
+  .marquee-section,
+  .section.commitment,
+  .contact-hero-section,
+  .contact-form-section,
+  .contact-map-section,
+  .product-inner-section,
+  .product-quality-section,
+  .blog-section {
+    padding-top: var(--space-section-y);
+    padding-bottom: var(--space-section-y);
+  }
+
+  /* First block on page: room under sticky header */
+  .page-shell > .hero,
+  .page-shell > .about-hero,
+  .page-shell .contact-page > .section:first-child,
+  .page-shell .blog-page > .section:first-child,
+  .page-shell .product-page > .section:first-child,
+  .page-shell .product-inner-page > .section:first-child {
+    padding-top: calc(var(--space-section-y) + 3.5rem);
+  }
+
+  /* Footer always on top of parallax / article layers */
+  .footer {
+    position: relative;
+    z-index: 100;
+    flex-shrink: 0;
+  }
+
+  .articles-section,
+  .commitment {
+    z-index: 0;
+    isolation: auto;
+  }
+
+  .page-shell {
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-heading {
+    margin-bottom: var(--space-heading-bottom);
+  }
+
+  /* All red section headers — same size on mobile */
+  .section-title,
+  .articles-heading,
+  .product-inner-section-title,
+  .quality-title,
+  .commitment-title,
+  .parallax-content h2,
+  .certification-title,
+  .certification-scope-title,
+  .choose-finish-title,
+  .machinery .section-title,
+  .blog-inner-title,
+  .product-detail-title {
+    font-size: var(--size-section-title);
+    letter-spacing: var(--tracking-section-title);
+    line-height: 1.45;
+    font-weight: 400;
+  }
+
+  .articles-heading {
+    margin-bottom: var(--space-heading-bottom);
+  }
+
+  .product-inner-section-title {
+    margin-bottom: var(--space-heading-bottom);
+  }
+
+  /* Page-level h1 titles (contact, blog, about hero) */
+  h1.section-title,
+  .about-hero-title {
+    font-size: var(--size-page-title);
+    letter-spacing: var(--tracking-section-title);
+    line-height: 1.5;
+  }
+
+  .about-hero-title {
+    margin-bottom: var(--space-heading-bottom);
+  }
+
+  .btn,
+  .btn-quality-contact,
+  .parallax-btn,
+  .contact-submit-btn {
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --space-section-y: 2.75rem;
+    --space-heading-bottom: 1.25rem;
+    --size-section-title: 0.9375rem;
+    --size-page-title: 1.0625rem;
+  }
+
+  .container,
+  .nav-shell {
+    padding-inline: 1rem;
+  }
+}

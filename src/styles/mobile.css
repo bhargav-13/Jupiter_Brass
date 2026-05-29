@@ -1,0 +1,408 @@
+/* =============================================
+   MOBILE ONLY (max-width: 768px) — desktop unchanged
+   Uses body prefix so these win over component CSS load order.
+   ============================================= */
+
+@media (max-width: 768px) {
+  /* ── Section titles (red headers) — override component clamp/fixed sizes ── */
+  body .section-title,
+  body h2.section-title,
+  body .section-heading .section-title,
+  body .quality-header .section-title,
+  body .articles-heading,
+  body .product-inner-section-title,
+  body .quality-title,
+  body .commitment-title,
+  body .parallax-content h2,
+  body .certification-title,
+  body .certification-scope-title,
+  body .choose-finish-title,
+  body .machinery .section-title,
+  body .precision-parts-header .section-title {
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    line-height: 1.45;
+    font-weight: 400;
+    word-break: break-word;
+    hyphens: auto;
+  }
+
+  body h1.section-title,
+  body .blog-inner-title,
+  body .product-detail-title,
+  body .about-hero-title {
+    font-size: 1.125rem;
+    letter-spacing: 0.05em;
+    line-height: 1.45;
+    font-weight: 400;
+    word-break: break-word;
+    hyphens: auto;
+  }
+
+  body .about-hero-title {
+    margin-bottom: 1.25rem;
+  }
+
+  /* ── Hero ── */
+  body .hero {
+    min-height: auto;
+    overflow: hidden;
+  }
+
+  body .hero-top-section {
+    margin-bottom: 1.25rem;
+  }
+
+  body .hero-description {
+    float: none;
+    margin: 0 0 1rem;
+    margin-right: 0;
+    text-align: center;
+    max-width: 100%;
+    font-size: 0.58rem;
+    line-height: 1.7;
+    letter-spacing: 0.1em;
+  }
+
+  body .hero-title {
+    text-align: center;
+    font-size: 1.05rem;
+    line-height: 1.45;
+    letter-spacing: 0.05em;
+  }
+
+  body .hero-bottom-section {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1.25rem;
+    gap: 1.25rem;
+  }
+
+  body .hero-premium-area {
+    width: 100%;
+    align-items: center;
+    margin-bottom: 0;
+  }
+
+  body .hero-premium {
+    align-items: center;
+  }
+
+  body .premium-text {
+    font-size: clamp(1.65rem, 8.5vw, 2.1rem);
+    letter-spacing: 0.08em;
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  body .hero-tagline {
+    text-align: center;
+    margin-top: 0.75rem;
+    max-width: 100%;
+    font-size: 0.58rem;
+    line-height: 1.7;
+    letter-spacing: 0.1em;
+  }
+
+  body .hero-image-area {
+    width: 100%;
+    justify-content: center;
+    max-height: none;
+  }
+
+  body .hero-bg-logo {
+    top: -1.5rem;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    max-width: 130px;
+  }
+
+  body .hero-product {
+    width: min(70vw, 260px);
+    max-height: 280px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  /* ── Product cards ── */
+  body .products-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  body .product-card {
+    height: auto;
+    min-height: 0;
+    padding: 16px 14px;
+    border-radius: 6px;
+  }
+
+  body .product-image-wrapper {
+    flex-grow: 0;
+    max-height: 200px;
+    min-height: 160px;
+    padding: 8px 0 12px;
+  }
+
+  body .product-image,
+  body .product-card:hover .product-image {
+    width: auto;
+    max-width: 78%;
+    max-height: 185px;
+    min-height: unset;
+    transform: scale(1.08);
+    margin: 0 auto;
+    display: block;
+  }
+
+  body .product-image.scale-img-lg,
+  body .product-card:hover .product-image.scale-img-lg {
+    transform: scale(1.12);
+  }
+
+  body .product-number {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+
+  body .product-name {
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    line-height: 1.45;
+    text-align: center;
+  }
+
+  /* ── About ── */
+  body .about-top-row {
+    gap: 28px;
+  }
+
+  body .about-text p {
+    font-size: 0.58rem;
+    line-height: 1.85;
+    letter-spacing: 0.1em;
+  }
+
+  body .about-stats {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  body .about-image {
+    height: 240px;
+  }
+
+  /* ── Industry ── */
+  body .industry-subtitle,
+  body .usp-subtitle {
+    font-size: 0.58rem;
+    line-height: 1.75;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+  }
+
+  body .industry-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  body .industry-card {
+    height: auto;
+    min-height: 96px;
+  }
+
+  body .industry-name {
+    font-size: 0.58rem;
+    line-height: 1.4;
+    padding: 10px 12px 10px 0;
+  }
+
+  /* ── USP ── */
+  body .usp-grid {
+    gap: 14px;
+  }
+
+  body .usp-card {
+    padding: 28px 22px;
+    min-height: 0;
+    border-radius: 28px 28px 0 28px;
+  }
+
+  body .usp-icon {
+    margin-bottom: 20px;
+  }
+
+  body .usp-svg-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  body .usp-title {
+    font-size: 0.72rem;
+  }
+
+  body .usp-desc {
+    font-size: 0.55rem;
+    line-height: 1.75;
+  }
+
+  /* ── Process ── */
+  body .process-image-container {
+    height: 240px;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  body .process-card {
+    padding: 18px 14px;
+  }
+
+  body .process-number {
+    font-size: 2rem;
+  }
+
+  /* ── Quality ── */
+  body .quality-highlight p,
+  body .q-point p {
+    font-size: 0.5rem;
+    letter-spacing: 0.12em;
+    line-height: 1.65;
+  }
+
+  body .q-point h5 {
+    font-size: 0.55rem;
+  }
+
+  /* ── Articles ── */
+  body .article-card {
+    border-radius: 6px;
+  }
+
+  body .article-title {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+  }
+
+  /* ── Product inner ── */
+  body .product-detail-image {
+    height: auto;
+    max-height: min(45vh, 300px);
+    max-width: min(85vw, 320px);
+    margin: 0 auto;
+    display: block;
+  }
+
+  body .product-detail-description {
+    font-size: 0.58rem;
+    line-height: 1.8;
+    letter-spacing: 0.1em;
+  }
+
+  /* ── Parallax ── */
+  body .parallax-section {
+    position: relative;
+    top: auto;
+    height: min(68vh, 480px);
+    min-height: 360px;
+  }
+
+  body .parallax-content h2 {
+    line-height: 1.45;
+    margin-bottom: 1.5rem;
+  }
+
+  body .parallax-btn {
+    font-size: 0.62rem;
+    padding: 12px 20px;
+    letter-spacing: 0.08em;
+  }
+
+  /* ── About hero (about page) ── */
+  body .about-hero-banner {
+    height: min(42vh, 280px);
+    margin-bottom: 1.5rem;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  body .about-hero-year-value {
+    font-size: clamp(4rem, 20vw, 5.5rem);
+    letter-spacing: 6px;
+  }
+
+  body .about-hero-image-wrapper {
+    height: min(44vh, 300px);
+  }
+
+  body .about-hero-text {
+    font-size: 0.58rem;
+    line-height: 1.85;
+  }
+
+  /* ── Footer — stay above articles/commitment, readable layout ── */
+  body .footer {
+    z-index: 100;
+    background: #ffffff;
+  }
+
+  body .articles-section,
+  body .commitment {
+    z-index: 0;
+    isolation: auto;
+  }
+
+  body .footer-bottom-inner {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  body .section-title,
+  body h2.section-title,
+  body .section-heading .section-title,
+  body .quality-header .section-title,
+  body .articles-heading,
+  body .product-inner-section-title,
+  body .quality-title,
+  body .commitment-title,
+  body .parallax-content h2,
+  body .certification-title,
+  body .certification-scope-title,
+  body .choose-finish-title,
+  body .machinery .section-title,
+  body .precision-parts-header .section-title {
+    font-size: 0.9375rem;
+    letter-spacing: 0.04em;
+  }
+
+  body h1.section-title,
+  body .blog-inner-title,
+  body .product-detail-title,
+  body .about-hero-title {
+    font-size: 1.0625rem;
+    letter-spacing: 0.04em;
+  }
+
+  body .products-grid {
+    max-width: 100%;
+  }
+
+  body .hero-title {
+    font-size: 1rem;
+  }
+
+  body .hero-product {
+    width: min(68vw, 220px);
+    max-height: 240px;
+  }
+
+  body .premium-text {
+    font-size: 1.5rem;
+  }
+}

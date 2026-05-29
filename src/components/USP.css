@@ -158,18 +158,43 @@
 }
 
 @media (max-width: 768px) {
+  .usp-subtitle {
+    font-size: clamp(0.75rem, 3vw, 0.9rem);
+    line-height: 1.8;
+    margin-bottom: 36px;
+    padding: 0 4px;
+  }
+
   .usp-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .usp-card {
+    min-height: auto;
+    padding: 36px 28px;
+    border-radius: 32px 32px 0 32px;
+  }
+
+  .usp-icon {
+    margin-bottom: 24px;
   }
 
   .usp-stats-content {
     flex-direction: column;
     justify-content: center;
-    gap: 15px;
+    gap: 24px;
+    padding: 8px 16px;
   }
 
   .usp-stats-bar {
     height: auto;
-    padding: 40px 0;
+    padding: 40px 20px;
+    border-radius: 0 24px 24px 24px;
+  }
+
+  .usp-stat-value {
+    font-size: 0.95rem;
   }
 }

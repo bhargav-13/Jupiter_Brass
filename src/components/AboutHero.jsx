@@ -1,24 +1,119 @@
-import React from 'react';
+import React, { useRef, useCallback, useState, useEffect } from 'react';
+import { gsap } from '../lib/gsap';
+import { prefersReducedMotion } from '../lib/gsap';
 import './AboutHero.css';
 
 const AboutHero = () => {
+  const bannerRef = useRef(null);
+  const portraitRef = useRef(null);
+  const gridPosRef = useRef({ x: 0, y: 0, ox: 0, oy: 0 });
+  const [gridActive, setGridActive] = useState(false);
+
+  const applyGridPosition = useCallback(() => {
+    const banner = bannerRef.current;
+    if (!banner) return;
+    const { x, y, ox, oy } = gridPosRef.current;
+    banner.style.setProperty('--mouse-x', `${x}px`);
+    banner.style.setProperty('--mouse-y', `${y}px`);
+    banner.style.setProperty('--grid-offset-x', `${ox}px`);
+    banner.style.setProperty('--grid-offset-y', `${oy}px`);
+  }, []);
+
+  const updateGridPosition = useCallback(
+    (clientX, clientY) => {
+      const banner = bannerRef.current;
+      if (!banner) return;
+
+      const rect = banner.getBoundingClientRect();
+      const x = clientX - rect.left;
+      const y = clientY - rect.top;
+      const ox = (x / rect.width - 0.5) * 28;
+      const oy = (y / rect.height - 0.5) * 28;
+
+      if (prefersReducedMotion()) {
+        gridPosRef.current = { x, y, ox, oy };
+        applyGridPosition();
+        return;
+      }
+
+      gsap.to(gridPosRef.current, {
+        x,
+        y,
+        ox,
+        oy,
+        duration: 0.65,
+        ease: 'power3.out',
+        overwrite: true,
+        onUpdate: applyGridPosition,
+      });
+    },
+    [applyGridPosition]
+  );
+
+  const handleMouseMove = useCallback(
+    (event) => {
+      updateGridPosition(event.clientX, event.clientY);
+    },
+    [updateGridPosition]
+  );
+
+  const handleMouseEnter = useCallback(
+    (event) => {
+      setGridActive(true);
+      updateGridPosition(event.clientX, event.clientY);
+      if (portraitRef.current && !prefersReducedMotion()) {
+        gsap.to(portraitRef.current, { scale: 1.02, duration: 0.8, ease: 'power3.out' });
+      }
+    },
+    [updateGridPosition]
+  );
+
+  const handleMouseLeave = useCallback(() => {
+    setGridActive(false);
+    if (portraitRef.current) {
+      gsap.to(portraitRef.current, { scale: 1, duration: 0.6, ease: 'power3.out' });
+    }
+  }, []);
+
+  useEffect(() => {
+    const banner = bannerRef.current;
+    if (!banner) return;
+    const rect = banner.getBoundingClientRect();
+    gridPosRef.current = {
+      x: rect.width / 2,
+      y: rect.height / 2,
+      ox: 0,
+      oy: 0,
+    };
+    applyGridPosition();
+  }, [applyGridPosition]);
+
   return (
     <section className="about-hero">
       <div className="container">
         <h1 className="about-hero-title">
           Premium Quality Brass Components Built<br />For Industrial Strength And Performance
         </h1>
-        
-        <div className="about-hero-banner">
+
+        <div
+          ref={bannerRef}
+          className={`about-hero-banner${gridActive ? ' is-grid-active' : ''}`}
+          onMouseMove={handleMouseMove}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          <div className="about-hero-grid about-hero-grid--base" aria-hidden="true" />
+          <div className="about-hero-grid about-hero-grid--spotlight" aria-hidden="true" />
           <div className="about-hero-year">
             <span className="about-hero-since">Since</span>
-            2020
+            <span className="about-hero-year-value">2020</span>
           </div>
           <div className="about-hero-image-wrapper">
-            <img 
-              src="/images/jay_vasoya.png" 
-              alt="Mr. Jay Vasoya" 
-              className="about-hero-image" 
+            <img
+              ref={portraitRef}
+              src="/images/jay_vasoya.png"
+              alt="Mr. Jay Vasoya"
+              className="about-hero-image"
             />
           </div>
         </div>

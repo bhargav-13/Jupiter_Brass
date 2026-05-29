@@ -44,3 +44,10 @@
 .marquee-container:hover .marquee-content {
   animation-play-state: paused;
 }
+
+@media (max-width: 768px) {
+  .marquee-content span {
+    font-size: clamp(0.9rem, 3.8vw, 1.1rem);
+    letter-spacing: 0.1em;
+  }
+}

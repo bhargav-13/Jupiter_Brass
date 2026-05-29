@@ -8,7 +8,7 @@
 }
 
 .quality-header {
-  margin-bottom: 80px;
+  margin-bottom: clamp(30px, 5vw, 60px);
 }
 
 .quality-header h1.section-title {
@@ -41,6 +41,17 @@
 @media (max-width: 900px) {
   .products-grid-3 {
     grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .quality-header {
+    margin-bottom: var(--space-heading-bottom, 1.5rem);
+  }
+
+  .quality-subtitle {
+    padding: 0 4px;
+    line-height: 1.85;
   }
 }
 

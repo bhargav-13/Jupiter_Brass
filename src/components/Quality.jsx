@@ -36,32 +36,34 @@ const Quality = () => {
           <h2 className="section-title quality-title">QUALITY COMMITMENT</h2>
         </div>
 
-        <div className="quality-grid">
-          <div className="quality-highlight">
-            <h4>PRECISION QUALITY,<br />TRUSTED PERFORMANCE</h4>
-            <p>
-              We are committed to delivering premium-quality brass components manufactured
-              with precision, consistency, and strict quality standards. Every product
-              undergoes rigorous inspection and testing to ensure superior durability,
-              dimensional accuracy, and flawless performance for industrial applications
-              worldwide.
-            </p>
-            <button className="btn btn-quality-contact mt-20">CONTACT NOW</button>
-          </div>
+        <div className="quality-grid-wrap">
+          <div className="quality-grid">
+            <div className="quality-highlight">
+              <h4>PRECISION QUALITY,<br />TRUSTED PERFORMANCE</h4>
+              <p>
+                We are committed to delivering premium-quality brass components manufactured
+                with precision, consistency, and strict quality standards. Every product
+                undergoes rigorous inspection and testing to ensure superior durability,
+                dimensional accuracy, and flawless performance for industrial applications
+                worldwide.
+              </p>
+              <button className="btn btn-quality-contact mt-20">CONTACT NOW</button>
+            </div>
 
-          <div className="quality-circle"></div>
-
-          <div className="quality-points">
-            {qualityPoints.map((point, index) => (
-              <div className="q-point" key={index}>
-                <div className="q-icon-circle">
-                  <img src="/images/quality_icon.svg" alt="Quality Icon" />
+            <div className="quality-points">
+              {qualityPoints.map((point, index) => (
+                <div className="q-point" key={index}>
+                  <div className="q-icon-circle">
+                    <img src="/images/quality_icon.svg" alt="Quality Icon" />
+                  </div>
+                  <h5>{point.title}</h5>
+                  <p>{point.desc}</p>
                 </div>
-                <h5>{point.title}</h5>
-                <p>{point.desc}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
+
+          <div className="quality-circle" aria-hidden="true"></div>
         </div>
       </div>
     </section>

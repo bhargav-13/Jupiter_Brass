@@ -75,8 +75,29 @@
   }
 }
 
+@media (max-width: 768px) {
+  .industry-subtitle {
+    font-size: clamp(0.75rem, 3vw, 0.85rem);
+    line-height: 1.85;
+    margin-bottom: 36px;
+    padding: 0 4px;
+  }
+
+  .industry-card {
+    height: auto;
+    min-height: 100px;
+    flex-direction: row;
+  }
+
+  .industry-name {
+    font-size: 0.62rem;
+    padding: 8px 12px 8px 0;
+  }
+}
+
 @media (max-width: 576px) {
   .industry-grid {
     grid-template-columns: 1fr;
+    gap: 14px;
   }
 }

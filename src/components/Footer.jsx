@@ -40,13 +40,13 @@ const Footer = () => {
                 <li><Link to="/">Home</Link></li>
                 <li><a href="/#products">Product</a></li>
                 <li><Link to="/about">About</Link></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="/#contact">Contact</a></li>
+                <li><Link to="/blog">Blog</Link></li>
+                <li><Link to="/contact">Contact</Link></li>
               </ul>
             </div>
 
             <div className="footer-links">
-              <h4 className="footer-heading">Pages</h4>
+              <h4 className="footer-heading">Products</h4>
               <ul>
                 <li><a href="#">Precision Parts</a></li>
                 <li><a href="#">Electrical Component</a></li>
@@ -56,11 +56,18 @@ const Footer = () => {
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Bottom Bar */}
-        <div className="footer-bottom">
-          <p className="footer-copyright">&copy; {new Date().getFullYear()} Jupiter Meta Mech - All Rights Reserved</p>
-          <p className="footer-credit">Made with <span className="heart">❤️</span> by <a href="https://codelixitsolutions.com/" target="_blank" rel="noopener noreferrer" className="codelix-link">Codelix</a></p>
+      {/* Bottom Bar — outside container for full-width strip on mobile */}
+      <div className="footer-bottom">
+        <div className="container footer-bottom-inner">
+          <p className="footer-copyright">&copy; {new Date().getFullYear()} Jupiter Meta Mech — All Rights Reserved</p>
+          <p className="footer-credit">
+            Made with <span className="heart" aria-hidden="true">❤️</span> by{' '}
+            <a href="https://codelixitsolutions.com/" target="_blank" rel="noopener noreferrer" className="codelix-link">
+              Codelix
+            </a>
+          </p>
         </div>
       </div>
     </footer>

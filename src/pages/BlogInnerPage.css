@@ -1,0 +1,142 @@
+.blog-inner-page {
+  background-color: var(--color-white);
+}
+
+.blog-inner-section {
+  background-color: var(--color-white);
+}
+
+/* ---------- Header ---------- */
+.blog-inner-header {
+  margin-bottom: clamp(30px, 4vw, 50px);
+}
+
+.blog-inner-read-meta {
+  font-family: var(--font-heading);
+  font-size: clamp(0.55rem, 0.8vw, 0.65rem);
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #0F172A;
+  margin: 0 0 clamp(14px, 2vw, 20px);
+}
+
+.blog-inner-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+  font-weight: 600;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 1.35;
+  margin: 0 0 clamp(18px, 2.5vw, 28px);
+}
+
+.blog-inner-author-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: clamp(24px, 3.5vw, 40px);
+}
+
+.blog-inner-author-logo {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.blog-inner-author-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.blog-inner-author-name {
+  font-family: var(--font-heading);
+  font-size: clamp(0.55rem, 0.8vw, 0.65rem);
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color:#0F172A;
+  ;
+}
+
+/* ---------- Featured Image ---------- */
+.blog-inner-featured {
+  margin-bottom: 0;
+}
+
+.blog-inner-featured-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ---------- Body Content ---------- */
+.blog-inner-body {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(22px, 3vw, 32px);
+}
+
+.blog-inner-body p {
+  font-family: var(--font-heading);
+  font-size: clamp(0.65rem, 0.9vw, 0.75rem);
+  font-weight: 500;
+  color: #6D6E76;
+  line-height: 2;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.blog-inner-subtitle {
+  font-family: var(--font-heading);
+  font-size: clamp(0.85rem, 1.4vw, 1rem);
+  font-weight: 600;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ---------- Bullet List ---------- */
+.blog-inner-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(14px, 2vw, 20px);
+}
+
+.blog-inner-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(10px, 1.5vw, 14px);
+  font-family: var(--font-heading);
+  font-size: clamp(0.65rem, 0.9vw, 0.75rem);
+  font-weight: 500;
+  color: #343434;
+  line-height: 2;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.blog-inner-list li::before {
+  content: '';
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  margin-top: 0.65em;
+  background-color: var(--color-primary);
+}
+
+/* ---------- Related Articles Section ---------- */
+.blog-inner-page .articles-section {
+  padding-top: clamp(2rem, 4vw, 3rem);
+}

@@ -1,17 +1,22 @@
 import React from 'react';
 import './About.css';
 
+const stats = [
+  { value: 2, label: 'Years of Experience' },
+  { value: 75, label: 'Happy Clients' },
+  { value: 150, label: 'Products Developed' },
+  { value: 5, label: 'Countries Reached' },
+];
+
 const About = () => {
   return (
     <section id="about" className="section about">
       <div className="container">
 
-        {/* Heading */}
         <div className="section-heading">
           <h2 className="section-title">ABOUT US</h2>
         </div>
 
-        {/* Top Row: Text left, Stats right */}
         <div className="about-top-row">
           <div className="about-text">
             <p>
@@ -27,26 +32,22 @@ const About = () => {
           </div>
 
           <div className="about-stats">
-            <div className="stat-item">
-              <span className="stat-number">2+</span>
-              <span className="stat-label">Years of Experience</span>
-            </div>
-            <div className="stat-item">
-              <span className="stat-number">75+</span>
-              <span className="stat-label">Happy Clients</span>
-            </div>
-            <div className="stat-item">
-              <span className="stat-number">150+</span>
-              <span className="stat-label">Products Developed</span>
-            </div>
-            <div className="stat-item">
-              <span className="stat-number">5+</span>
-              <span className="stat-label">Countries Reached</span>
-            </div>
+            {stats.map((stat) => (
+              <div className="stat-item" key={stat.label}>
+                <span
+                  className="stat-number"
+                  data-count={stat.value}
+                  data-suffix="+"
+                  aria-label={`${stat.value}+`}
+                >
+                  0+
+                </span>
+                <span className="stat-label">{stat.label}</span>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Full Width Image */}
         <div className="about-image-container">
           <img
             src="/images/about_us_image.png"
