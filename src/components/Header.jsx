@@ -1,5 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useHeaderMotion } from '../hooks/useHeaderMotion';
+import { useHeaderScroll } from '../hooks/useHeaderScroll';
 import './Header.css';
 
 const NAV_LINKS = [
@@ -11,10 +13,22 @@ const NAV_LINKS = [
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [headerScrolled, setHeaderScrolled] = useState(false);
+  const [navHidden, setNavHidden] = useState(false);
   const { pathname } = useLocation();
+
+  const onScrolledChange = useCallback((scrolled) => {
+    setHeaderScrolled(scrolled);
+  }, []);
+
+  const onHiddenChange = useCallback((hidden) => {
+    setNavHidden(hidden);
+  }, []);
 
   useEffect(() => {
     setMenuOpen(false);
+    setNavHidden(false);
+    setHeaderScrolled(false);
   }, [pathname]);
 
   useEffect(() => {
@@ -22,10 +36,21 @@ const Header = () => {
     return () => document.body.classList.remove('nav-open');
   }, [menuOpen]);
 
+  useHeaderScroll({ menuOpen, onScrolledChange, onHiddenChange });
+  const headerRef = useHeaderMotion(navHidden, menuOpen);
+
   const closeMenu = () => setMenuOpen(false);
 
+  const headerClassName = [
+    'header',
+    headerScrolled ? 'header--scrolled' : '',
+    navHidden && !menuOpen ? 'header--hidden' : '',
+  ]
+    .filter(Boolean)
+    .join(' ');
+
   return (
-    <header className="header">
+    <header ref={headerRef} className={headerClassName}>
       <div className="nav-shell header-container">
         <div className="logo">
           <Link to="/" onClick={closeMenu}>

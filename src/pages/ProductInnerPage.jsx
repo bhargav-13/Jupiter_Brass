@@ -1,44 +1,53 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Navigate, useParams } from 'react-router-dom';
+import ProductCard from '../components/ProductCard';
+import { getProductBySlug, homeProductCategories } from '../data/products';
 import '../components/Products.css';
 import './ProductInnerPage.css';
 
 const colorOptions = [
-  { id: 'brass',        label: 'Brass',         swatchClass: 'color-brass' },
-  { id: 'copper',       label: 'Copper',        swatchClass: 'color-copper' },
-  { id: 'silver',       label: 'Silver',        swatchClass: 'color-silver' },
-  { id: 'dark',         label: 'Dark',          swatchClass: 'color-dark' },
-  { id: 'light-silver', label: 'Light Silver',  swatchClass: 'color-light-silver' },
+  { id: 'brass', label: 'Brass', swatchClass: 'color-brass' },
+  { id: 'copper', label: 'Copper', swatchClass: 'color-copper' },
+  { id: 'silver', label: 'Silver', swatchClass: 'color-silver' },
+  { id: 'dark', label: 'Dark', swatchClass: 'color-dark' },
+  { id: 'light-silver', label: 'Light Silver', swatchClass: 'color-light-silver' },
 ];
 
 const features = [
   {
     title: 'Corrosion & Weather Resistance',
-    description: 'Designed to withstand harsh environmental conditions with superior corrosion protection and long-lasting durability.',
+    description:
+      'Designed to withstand harsh environmental conditions with superior corrosion protection and long-lasting durability.',
     icon: '/images/Corrosion & Weather Resistance.svg',
   },
   {
     title: 'High Strength & Durability',
-    description: 'Manufactured using premium-quality brass material to ensure maximum strength and reliable industrial performance.',
+    description:
+      'Manufactured using premium-quality brass material to ensure maximum strength and reliable industrial performance.',
     icon: '/images/High Strength & Durability.svg',
   },
   {
     title: 'Precision Machined Components',
-    description: 'Engineered with advanced CNC machining technology for accurate dimensions and consistent product quality.',
+    description:
+      'Engineered with advanced CNC machining technology for accurate dimensions and consistent product quality.',
     icon: '/images/Precision Machined Components.svg',
   },
   {
     title: 'Leak-Proof Performance',
-    description: 'Built for secure fitting and dependable sealing performance in plumbing, industrial, and engineering applications.',
+    description:
+      'Built for secure fitting and dependable sealing performance in plumbing, industrial, and engineering applications.',
     icon: '/images/Leak-Proof Performance.svg',
   },
   {
     title: 'Smooth Surface Finishing',
-    description: 'Premium surface finishing provides an excellent appearance, smooth texture, and enhanced product performance.',
+    description:
+      'Premium surface finishing provides an excellent appearance, smooth texture, and enhanced product performance.',
     icon: '/images/Smooth Surface Finishing.svg',
   },
   {
     title: 'Long Service Life',
-    description: 'High-quality manufacturing and durable materials ensure reliable operation and extended product lifespan.',
+    description:
+      'High-quality manufacturing and durable materials ensure reliable operation and extended product lifespan.',
     icon: '/images/Long Service Life.svg',
   },
 ];
@@ -64,15 +73,20 @@ const threadColumns = [
   ],
 ];
 
-const moreProducts = [
-  { id: '01', name: 'PRECISION PARTS', image: '/images/Precision Parts.png' },
-  { id: '02', name: 'ELECTRICAL COMPONENTS', image: '/images/Electrical Components.png' },
-  { id: '03', name: 'FASTNER COMPONENTS', image: '/images/brass nut.png' },
-  { id: '04', name: 'FORGING COMPONENTS', image: '/images/Forging Components.png', customClass: 'scale-img-lg' },
-];
-
 const ProductInnerPage = () => {
+  const { slug } = useParams();
+  const product = getProductBySlug(slug);
   const [activeColor, setActiveColor] = useState('brass');
+
+  useEffect(() => {
+    setActiveColor('brass');
+  }, [slug]);
+
+  if (!product) {
+    return <Navigate to="/products" replace />;
+  }
+
+  const relatedProducts = homeProductCategories.filter((p) => p.slug !== product.slug);
 
   return (
     <div className="product-inner-page">
@@ -81,19 +95,20 @@ const ProductInnerPage = () => {
           <div className="product-detail-grid">
             <div className="product-detail-image-col">
               <img
-                src="/images/agricultural parts.png"
-                alt="Agricultural Parts"
+                src={product.detailImage}
+                alt={product.name}
                 className={`product-detail-image product-finish-${activeColor}`}
               />
             </div>
 
             <div className="product-detail-info-col">
-              <h1 className="product-detail-title">AGRICULTURAL PARTS</h1>
+              <h1 className="product-detail-title">{product.name}</h1>
 
               <div className="product-colors" role="radiogroup" aria-label="Select a product color">
                 {colorOptions.map((color) => (
                   <button
                     key={color.id}
+                    type="button"
                     className={`color-swatch ${color.swatchClass} ${activeColor === color.id ? 'active' : ''}`}
                     onClick={() => setActiveColor(color.id)}
                     aria-label={color.label}
@@ -104,15 +119,7 @@ const ProductInnerPage = () => {
                 ))}
               </div>
 
-              <p className="product-detail-description">
-                WE MANUFACTURE HIGH-QUALITY BRASS AGRICULTURE COMPONENTS
-                DESIGNED TO DELIVER RELIABLE PERFORMANCE, DURABILITY, AND
-                PRECISION IN DEMANDING FARMING AND IRRIGATION
-                ENVIRONMENTS. OUR COMPONENTS ARE ENGINEERED USING
-                PREMIUM-GRADE BRASS MATERIAL AND ADVANCED MACHINING
-                TECHNOLOGY TO ENSURE LONG SERVICE LIFE, CORROSION
-                RESISTANCE, AND EFFICIENT OPERATION.
-              </p>
+              <p className="product-detail-description">{product.description}</p>
             </div>
           </div>
 
@@ -137,11 +144,7 @@ const ProductInnerPage = () => {
                     </div>
 
                     <div className="feature-card-icon-wrap">
-                      <img
-                        src={feature.icon}
-                        alt={feature.title}
-                        className="feature-card-icon"
-                      />
+                      <img src={feature.icon} alt={feature.title} className="feature-card-icon" />
                     </div>
                   </div>
                 </div>
@@ -172,18 +175,8 @@ const ProductInnerPage = () => {
           </div>
 
           <div className="products-grid">
-            {moreProducts.map((product) => (
-              <div className="product-card" key={product.id}>
-                <div className="product-number">{product.id}</div>
-                <div className="product-image-wrapper">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className={`product-image ${product.customClass || ''}`}
-                  />
-                </div>
-                <div className="product-name">{product.name}</div>
-              </div>
+            {relatedProducts.map((item) => (
+              <ProductCard key={item.slug} product={item} showNumber />
             ))}
           </div>
         </div>

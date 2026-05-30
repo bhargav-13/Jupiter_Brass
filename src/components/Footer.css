@@ -291,8 +291,6 @@
     letter-spacing: 0.06em;
     line-height: 1.5;
     display: inline-block;
-    word-break: break-word;
-    hyphens: auto;
     padding-block: 2px;
   }
 
@@ -316,15 +314,13 @@
     letter-spacing: 0.04em;
     line-height: 1.6;
     max-width: 20rem;
-    word-break: break-word;
-    hyphens: auto;
   }
 }
 
 @media (max-width: 480px) {
   .footer-links-wrapper {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 40px;
     max-width: 100%;
   }
 

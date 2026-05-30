@@ -1,6 +1,7 @@
 import { useLayoutEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { gsap, ScrollTrigger, prefersReducedMotion } from '../lib/gsap';
+import { configureMotion } from '../lib/motion';
 import { playPageEnterAnimation, setupPageAnimations } from '../animations/pageAnimations';
 
 const GsapAnimations = () => {
@@ -8,6 +9,8 @@ const GsapAnimations = () => {
 
   useLayoutEffect(() => {
     if (prefersReducedMotion()) return undefined;
+
+    configureMotion();
 
     const scope = document.body;
     const ctx = gsap.context(() => {

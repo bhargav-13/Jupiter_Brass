@@ -1,5 +1,11 @@
 import { gsap, ScrollTrigger } from '../lib/gsap';
-import { EASE_PREMIUM, EASE_SMOOTH } from './constants';
+import { revealBlur } from '../lib/motion';
+import {
+  DURATION_PAGE_ENTER,
+  DURATION_REVEAL_FAST,
+  EASE_PREMIUM,
+  EASE_SMOOTH,
+} from './constants';
 import { setupAboutHeroAnimations } from './aboutHeroAnimation';
 import { setupHeroAnimation } from './heroAnimation';
 import { setupScrollAnimations } from './scrollAnimations';
@@ -9,29 +15,17 @@ export function setupHeaderAnimation(scope) {
   if (!header) return;
 
   gsap.from(header, {
-    y: -20,
+    yPercent: -14,
     opacity: 0,
-    duration: 0.85,
+    duration: 0.95,
     ease: EASE_PREMIUM,
-  });
-}
-
-export function setupHeaderScroll(scope) {
-  const header = scope.querySelector('.header');
-  if (!header) return;
-
-  ScrollTrigger.create({
-    start: 48,
-    end: 'max',
-    onUpdate: (self) => {
-      header.classList.toggle('header--scrolled', self.scroll() > 48);
-    },
+    force3D: true,
+    clearProps: 'transform,opacity,filter',
   });
 }
 
 export function setupPageAnimations(scope, pathname) {
   setupHeaderAnimation(scope);
-  setupHeaderScroll(scope);
   setupScrollAnimations(scope);
 
   if (pathname === '/') {
@@ -54,7 +48,22 @@ export function playPageEnterAnimation() {
 
   gsap.fromTo(
     page,
-    { opacity: 0, y: 20 },
-    { opacity: 1, y: 0, duration: 0.7, ease: EASE_SMOOTH, clearProps: 'transform' }
+    {
+      opacity: 0,
+      y: 32,
+      scale: 0.992,
+      filter: revealBlur('blur(6px)'),
+      force3D: true,
+    },
+    {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      filter: revealBlur('blur(0px)'),
+      duration: DURATION_PAGE_ENTER,
+      ease: EASE_SMOOTH,
+      force3D: true,
+      clearProps: 'transform,opacity,filter',
+    }
   );
 }

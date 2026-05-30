@@ -17,40 +17,68 @@ video {
   height: auto;
 }
 
+:root {
+  --header-height: 5rem;
+  --space-hero-top: calc(var(--header-height) + 0.875rem + env(safe-area-inset-top, 0px));
+}
+
+.page-shell {
+  padding-top: var(--space-hero-top);
+}
+
+@media (min-width: 901px) {
+  :root {
+    --header-height: 5.5rem;
+    --space-hero-top: calc(var(--header-height) + 1rem + env(safe-area-inset-top, 0px));
+  }
+}
+
+@media (min-width: 1600px) {
+  :root {
+    --header-height: 6.125rem;
+    --space-hero-top: calc(var(--header-height) + 1rem + env(safe-area-inset-top, 0px));
+  }
+}
+
 @media (max-width: 768px) {
   :root {
+    --header-height: 4.625rem;
     --space-section-y: 3rem;
     --space-heading-bottom: 1.5rem;
-    --size-section-title: 1rem;
-    --size-page-title: 1.125rem;
+    --size-section-title: 1.25rem;
+    --size-page-title: 1.2rem;
     --tracking-section-title: 0.05em;
+    --space-hero-top: calc(var(--header-height) + 0.75rem + env(safe-area-inset-top, 0px));
   }
 
   /* Equal padding between every section */
   .section,
-  .hero,
-  .about-hero,
   .articles-section,
   .marquee-section,
   .section.commitment,
-  .contact-hero-section,
   .contact-form-section,
   .contact-map-section,
-  .product-inner-section,
-  .product-quality-section,
-  .blog-section {
+  .product-inner-section {
     padding-top: var(--space-section-y);
     padding-bottom: var(--space-section-y);
   }
 
-  /* First block on page: room under sticky header */
-  .page-shell > .hero,
-  .page-shell > .about-hero,
-  .page-shell .contact-page > .section:first-child,
-  .page-shell .blog-page > .section:first-child,
-  .page-shell .product-page > .section:first-child,
-  .page-shell .product-inner-page > .section:first-child {
-    padding-top: calc(var(--space-section-y) + 3.5rem);
+  .product-inner-page > .product-inner-section:first-of-type {
+    padding-top: 1.25rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .page-shell:has(.product-inner-page) {
+    padding-top: calc(var(--header-height) + 0.35rem + env(safe-area-inset-top, 0px));
+  }
+
+  .hero,
+  .about-hero,
+  .contact-hero-section,
+  .product-quality-section,
+  .blog-section {
+    padding-top: var(--space-section-y);
+    padding-bottom: var(--space-section-y);
   }
 
   /* Footer always on top of parallax / article layers */
@@ -62,13 +90,14 @@ video {
 
   .articles-section,
   .commitment {
-    z-index: 0;
-    isolation: auto;
+    position: relative;
+    z-index: 2;
   }
 
   .page-shell {
     position: relative;
     z-index: 1;
+    overflow: visible;
   }
 
   .section-heading {
@@ -127,10 +156,20 @@ video {
 
 @media (max-width: 480px) {
   :root {
+    --header-height: 4.625rem;
     --space-section-y: 2.75rem;
     --space-heading-bottom: 1.25rem;
-    --size-section-title: 0.9375rem;
+    --size-section-title: 1.125rem;
     --size-page-title: 1.0625rem;
+    --space-hero-top: calc(var(--header-height) + 0.625rem + env(safe-area-inset-top, 0px));
+  }
+
+  .product-inner-page > .product-inner-section:first-of-type {
+    padding-top: 1rem;
+  }
+
+  .page-shell:has(.product-inner-page) {
+    padding-top: calc(var(--header-height) + 0.25rem + env(safe-area-inset-top, 0px));
   }
 
   .container,

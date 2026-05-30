@@ -90,8 +90,14 @@
     row-gap: 35px;
   }
 
+  .why-choose-us-item {
+    align-items: center;
+    text-align: center;
+  }
+
   .why-choose-us-icon-box {
     margin-bottom: 20px;
+    margin-inline: auto;
   }
 
   .why-choose-us-item-title {

@@ -39,6 +39,20 @@ body {
   line-height: 1.6;
   background-color: var(--color-white);
   overflow-x: hidden;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+
+/* Wrap at spaces only — never split a word mid-character */
+:where(
+  h1, h2, h3, h4, h5, h6,
+  p, a, li, span, label, button,
+  blockquote, figcaption, dt, dd, td, th
+) {
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
 }
 
 .page-shell {

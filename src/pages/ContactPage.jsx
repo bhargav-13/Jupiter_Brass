@@ -8,13 +8,20 @@ const MAP_LOCATION = {
   lng: 70.0583,
 };
 
-const mapEmbedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(MAP_LOCATION.label)}&ll=${MAP_LOCATION.lat},${MAP_LOCATION.lng}&z=17&hl=en&output=embed`;
+const mapDirectionsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(MAP_LOCATION.label)}`;
+
+const gmailComposeUrl = (email) =>
+  `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email.toLowerCase())}`;
+
+const phoneDialUrl = (phone) => `tel:${phone.replace(/\s+/g, '')}`;
 
 const contactDetails = [
   {
     id: 'address',
     badge: 'CONTACT',
     label: 'ADDRESS',
+    href: mapDirectionsUrl,
+    external: true,
     lines: [
       'RAW TYPE 84/1, G.I.D.C.,',
       'SHANKER TEKRI, UDYOGNAGAR,',
@@ -26,15 +33,23 @@ const contactDetails = [
     id: 'email',
     badge: 'DIRECT E-MAIL',
     label: 'SEND US AN EMAIL',
-    lines: ['INFO@JUPITERBRASS.COM', 'SALES@JUPITERBRASS.COM'],
+    lines: [
+      { text: 'INFO@JUPITERBRASS.COM', href: gmailComposeUrl('info@jupiterbrass.com'), external: true },
+      { text: 'SALES@JUPITERBRASS.COM', href: gmailComposeUrl('sales@jupiterbrass.com'), external: true },
+    ],
   },
   {
     id: 'phone',
     badge: 'DIRECT CONTACT',
     label: 'CALL ME ON',
-    lines: ['+91 94292 69395', '+91 81414 18990'],
+    lines: [
+      { text: '+91 94292 69395', href: phoneDialUrl('+91 94292 69395') },
+      { text: '+91 81414 18990', href: phoneDialUrl('+91 81414 18990') },
+    ],
   },
 ];
+
+const mapEmbedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(MAP_LOCATION.label)}&ll=${MAP_LOCATION.lat},${MAP_LOCATION.lng}&z=17&hl=en&output=embed`;
 
 const ContactPage = () => {
   const handleSubmit = (event) => {
@@ -61,9 +76,31 @@ const ContactPage = () => {
                 <span className="contact-info-badge">{item.badge}</span>
                 <h3 className="contact-info-label">{item.label}</h3>
                 <div className="contact-info-content">
-                  {item.lines.map((line) => (
-                    <p key={line}>{line}</p>
-                  ))}
+                  {item.href ? (
+                    <a
+                      href={item.href}
+                      className="contact-info-link contact-info-link-block"
+                      target={item.external ? '_blank' : undefined}
+                      rel={item.external ? 'noopener noreferrer' : undefined}
+                    >
+                      {item.lines.map((line) => (
+                        <p key={line}>{line}</p>
+                      ))}
+                    </a>
+                  ) : (
+                    item.lines.map((line) => (
+                      <p key={line.text}>
+                        <a
+                          href={line.href}
+                          className="contact-info-link"
+                          target={line.external ? '_blank' : undefined}
+                          rel={line.external ? 'noopener noreferrer' : undefined}
+                        >
+                          {line.text}
+                        </a>
+                      </p>
+                    ))
+                  )}
                 </div>
               </div>
             ))}

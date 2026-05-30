@@ -4,7 +4,7 @@
 .about-hero {
   position: relative;
   z-index: 1;
-  padding: clamp(5rem, 8vw, 8rem) 0 clamp(3.1rem, 5.5vw, 5rem);
+  padding: clamp(2.5rem, 5vw, 4rem) 0 clamp(3.1rem, 5.5vw, 5rem);
   background-color: #FFFFFF;
 }
 
@@ -251,31 +251,25 @@
   }
 }
 
+@media (max-width: 768px) {
+  .about-hero {
+    padding-top: clamp(1.5rem, 4vw, 2rem);
+    padding-bottom: 2.5rem;
+  }
+}
+
 @media (max-width: 600px) {
   .about-hero-banner {
-    height: min(42vh, 280px);
+    height: min(46vh, 300px);
     margin-bottom: 32px;
     border-radius: 20px;
     overflow: hidden;
+    align-items: flex-end;
   }
 
   .about-hero-grid,
   .about-hero-grid--base,
   .about-hero-grid--spotlight {
     border-radius: 20px;
-  }
-
-  .about-hero-year-value {
-    font-size: clamp(4.5rem, 22vw, 6.5rem);
-    letter-spacing: 8px;
-  }
-
-  .about-hero-since {
-    font-size: 0.85rem;
-    left: -8px;
-  }
-
-  .about-hero-image-wrapper {
-    height: min(48vh, 320px);
   }
 }

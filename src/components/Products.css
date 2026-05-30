@@ -8,6 +8,12 @@
   gap: 20px;
 }
 
+a.product-card {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
 .product-card {
   border: 1px solid var(--color-primary);
   padding: 15px;

@@ -19,110 +19,168 @@
   body .choose-finish-title,
   body .machinery .section-title,
   body .precision-parts-header .section-title {
-    font-size: 1rem;
+    font-size: 1.25rem;
     letter-spacing: 0.05em;
-    line-height: 1.45;
+    line-height: 1.4;
     font-weight: 400;
-    word-break: break-word;
-    hyphens: auto;
   }
 
   body h1.section-title,
   body .blog-inner-title,
   body .product-detail-title,
   body .about-hero-title {
-    font-size: 1.125rem;
+    font-size: 1.2rem;
     letter-spacing: 0.05em;
-    line-height: 1.45;
+    line-height: 1.4;
     font-weight: 400;
-    word-break: break-word;
-    hyphens: auto;
   }
 
   body .about-hero-title {
     margin-bottom: 1.25rem;
   }
 
-  /* ── Hero ── */
+  body .quality-subtitle,
+  body .contact-intro-text {
+    font-size: 0.58rem;
+    line-height: 1.65;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    max-width: 20rem;
+    margin-inline: auto;
+    padding-inline: 0.25rem;
+  }
+
+  /* ── Page shell — header clearance handled globally in responsive.css ── */
+
+  body .about-hero {
+    padding-bottom: 2.5rem;
+  }
+
+  /* ── Hero (home) ── */
   body .hero {
     min-height: auto;
-    overflow: hidden;
+    overflow: visible;
+    padding-bottom: 2.5rem;
   }
 
   body .hero-top-section {
-    margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.875rem;
+    margin-bottom: 1.5rem;
   }
 
-  body .hero-description {
-    float: none;
-    margin: 0 0 1rem;
-    margin-right: 0;
-    text-align: center;
-    max-width: 100%;
-    font-size: 0.58rem;
-    line-height: 1.7;
-    letter-spacing: 0.1em;
+  body .hero-top-section::after {
+    display: none;
   }
 
   body .hero-title {
+    order: 1;
     text-align: center;
-    font-size: 1.05rem;
-    line-height: 1.45;
-    letter-spacing: 0.05em;
+    font-size: 1.2rem;
+    line-height: 1.35;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+    color: #202020;
+    max-width: 20rem;
+    margin-inline: auto;
+    padding-inline: 0.25rem;
+  }
+
+  body .hero-title::after {
+    content: '';
+    display: block;
+    width: 2.5rem;
+    height: 2px;
+    background: var(--color-primary);
+    margin: 0.875rem auto 0;
+  }
+
+  body .hero-description {
+    order: 2;
+    float: none;
+    margin: 0;
+    text-align: center;
+    max-width: 21rem;
+    font-size: 0.6875rem;
+    line-height: 1.65;
+    letter-spacing: 0.08em;
+    color: #454545;
+    padding-inline: 0.5rem;
   }
 
   body .hero-bottom-section {
     flex-direction: column;
     align-items: center;
-    margin-top: 1.25rem;
-    gap: 1.25rem;
+    margin-top: 0;
+    gap: 0;
+  }
+
+  body .hero-image-area {
+    order: 1;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: 200px;
+    padding: 0.5rem 0 0.25rem;
+  }
+
+  body .hero-bg-logo {
+    top: 50%;
+    left: 50%;
+    right: auto;
+    transform: translate(-50%, -52%);
+    max-width: min(200px, 58vw);
+    opacity: 0.4;
+  }
+
+  body .hero-product {
+    width: min(84vw, 300px);
+    max-height: none;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.12));
   }
 
   body .hero-premium-area {
+    order: 2;
     width: 100%;
     align-items: center;
     margin-bottom: 0;
+    margin-top: 1.5rem;
+    gap: 0.625rem;
   }
 
   body .hero-premium {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
+    gap: 0.35rem 0.65rem;
   }
 
   body .premium-text {
-    font-size: clamp(1.65rem, 8.5vw, 2.1rem);
-    letter-spacing: 0.08em;
+    font-size: clamp(1.125rem, 5.5vw, 1.5rem);
+    letter-spacing: 0.12em;
     text-align: center;
-    line-height: 1.2;
+    line-height: 1.15;
+    color: rgba(243, 27, 27, 0.14);
   }
 
   body .hero-tagline {
     text-align: center;
-    margin-top: 0.75rem;
-    max-width: 100%;
-    font-size: 0.58rem;
-    line-height: 1.7;
+    margin-top: 0;
+    margin-bottom: 0;
+    max-width: 18rem;
+    font-size: 0.625rem;
+    line-height: 1.65;
     letter-spacing: 0.1em;
-  }
-
-  body .hero-image-area {
-    width: 100%;
-    justify-content: center;
-    max-height: none;
-  }
-
-  body .hero-bg-logo {
-    top: -1.5rem;
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%);
-    max-width: 130px;
-  }
-
-  body .hero-product {
-    width: min(70vw, 260px);
-    max-height: 280px;
-    margin: 0 auto;
-    display: block;
+    color: #343434;
+    padding-inline: 0.5rem;
   }
 
   /* ── Product cards ── */
@@ -188,12 +246,189 @@
   }
 
   body .about-stats {
-    max-width: 320px;
+    max-width: 400px;
     margin: 0 auto;
   }
 
   body .about-image {
     height: 240px;
+  }
+
+  /* ── Why Choose Us ── */
+  body .why-choose-us .section-heading {
+    margin-bottom: 0.5rem;
+  }
+
+  body .why-choose-us-banner {
+    margin-top: -1.25rem;
+    margin-bottom: 0.5rem;
+    padding-inline: 0.25rem;
+  }
+
+  body .why-choose-us-img {
+    width: 100%;
+    max-width: min(100%, 300px);
+    margin-inline: auto;
+  }
+
+  body .why-choose-us-grid {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+    max-width: 20rem;
+    margin-inline: auto;
+  }
+
+  body .why-choose-us-item {
+    align-items: center;
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  body .why-choose-us-icon-box {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 1rem;
+    margin-inline: auto;
+  }
+
+  body .why-choose-us-item-title {
+    font-size: 0.8rem;
+    line-height: 1.45;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+    max-width: 16rem;
+  }
+
+  body .why-choose-us-item-desc {
+    font-size: 0.62rem;
+    line-height: 1.65;
+    letter-spacing: 0.08em;
+    max-width: 18rem;
+    margin-inline: auto;
+  }
+
+  /* ── Machinery ── */
+  body .machinery-desc {
+    font-size: 0.62rem;
+    line-height: 1.65;
+    letter-spacing: 0.08em;
+    max-width: 18rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* ── Certification ── */
+  body .certification-content {
+    gap: 0.75rem;
+  }
+
+  body .certification-title {
+    margin-bottom: 1rem;
+  }
+
+  body .certification-description {
+    font-size: 0.62rem;
+    line-height: 1.65;
+    letter-spacing: 0.08em;
+    margin-bottom: 1.25rem;
+    max-width: 20rem;
+    margin-inline: auto;
+  }
+
+  body .certification-scope-title {
+    margin-bottom: 0.875rem;
+  }
+
+  body .certification-tags {
+    gap: 8px;
+    max-width: 20rem;
+    margin-inline: auto;
+  }
+
+  body .certification-tag {
+    font-size: 0.52rem;
+    letter-spacing: 0.1em;
+    line-height: 1.4;
+    padding: 8px 12px;
+    white-space: normal;
+    text-align: center;
+  }
+
+  body .certification-image-box {
+    width: min(92%, 280px);
+    margin-bottom: 1.25rem;
+  }
+
+  /* ── Commitment ── */
+  body .commitment-wrapper {
+    gap: 1.5rem;
+  }
+
+  body .commitment-content {
+    justify-content: flex-start;
+    gap: 1.25rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  body .commitment-title {
+    margin-bottom: 0.25rem;
+  }
+
+  body .commitment-desc {
+    font-size: 0.58rem;
+    line-height: 1.65;
+    letter-spacing: 0.08em;
+    max-width: 20rem;
+    margin-inline: auto;
+    margin-bottom: 0.25rem;
+  }
+
+  body .commitment-bottom-layout {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    width: 100%;
+    max-width: 20rem;
+    margin-inline: auto;
+  }
+
+  body .commitment-items {
+    width: 100%;
+    gap: 12px;
+  }
+
+  body .commitment-item {
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    min-height: 48px;
+  }
+
+  body .commitment-item-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+
+  body .commitment-item-text {
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+  }
+
+  body .commitment-badge-box {
+    flex: none;
+    width: 96px;
+    margin-top: 0;
+  }
+
+  body .commitment-image-box {
+    width: min(92%, 320px);
+    margin-bottom: 0.5rem;
+  }
+
+  body .commitment-profile-img {
+    height: min(48vh, 300px);
   }
 
   /* ── Industry ── */
@@ -304,16 +539,10 @@
     letter-spacing: 0.1em;
   }
 
-  /* ── Parallax ── */
-  body .parallax-section {
-    position: relative;
-    top: auto;
-    height: min(68vh, 480px);
-    min-height: 360px;
-  }
-
+  /* ── Parallax — sticky scroll-over (same as desktop) ── */
   body .parallax-content h2 {
-    line-height: 1.45;
+    font-size: 1.25rem;
+    line-height: 1.4;
     margin-bottom: 1.5rem;
   }
 
@@ -323,21 +552,71 @@
     letter-spacing: 0.08em;
   }
 
+  body .articles-section,
+  body .commitment {
+    position: relative;
+    z-index: 2;
+  }
+
   /* ── About hero (about page) ── */
   body .about-hero-banner {
-    height: min(42vh, 280px);
+    height: min(46vh, 250px);
     margin-bottom: 1.5rem;
     border-radius: 20px;
     overflow: hidden;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  body .about-hero-grid,
+  body .about-hero-grid--base,
+  body .about-hero-grid--spotlight {
+    border-radius: 20px;
+  }
+
+  body .about-hero-year {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    text-align: left;
   }
 
   body .about-hero-year-value {
-    font-size: clamp(4rem, 20vw, 5.5rem);
-    letter-spacing: 6px;
+    font-size: clamp(3.5rem, 18vw, 5rem);
+    letter-spacing: 4px;
+  }
+
+  body .about-hero-since {
+    top: -12px;
+    left: 0;
+    transform: none;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
   }
 
   body .about-hero-image-wrapper {
-    height: min(44vh, 300px);
+    position: relative;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  body .about-hero-image {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: bottom center;
   }
 
   body .about-hero-text {
@@ -349,12 +628,6 @@
   body .footer {
     z-index: 100;
     background: #ffffff;
-  }
-
-  body .articles-section,
-  body .commitment {
-    z-index: 0;
-    isolation: auto;
   }
 
   body .footer-bottom-inner {
@@ -377,7 +650,7 @@
   body .choose-finish-title,
   body .machinery .section-title,
   body .precision-parts-header .section-title {
-    font-size: 0.9375rem;
+    font-size: 1.125rem;
     letter-spacing: 0.04em;
   }
 
@@ -389,20 +662,39 @@
     letter-spacing: 0.04em;
   }
 
+  body .parallax-content h2 {
+    font-size: 1.125rem;
+  }
+
   body .products-grid {
     max-width: 100%;
   }
 
   body .hero-title {
-    font-size: 1rem;
+    font-size: 1.0625rem;
+    max-width: 100%;
+  }
+
+  body .hero-description {
+    font-size: 0.65rem;
+    max-width: 100%;
+  }
+
+  body .quality-subtitle,
+  body .contact-intro-text {
+    font-size: 0.55rem;
+    line-height: 1.6;
   }
 
   body .hero-product {
-    width: min(68vw, 220px);
-    max-height: 240px;
+    width: min(88vw, 280px);
+  }
+
+  body .hero-bg-logo {
+    max-width: min(170px, 52vw);
   }
 
   body .premium-text {
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 5vw, 1.25rem);
   }
 }

@@ -1,5 +1,5 @@
 import { gsap } from '../lib/gsap';
-import { EASE_PREMIUM, EASE_SMOOTH } from './constants';
+import { DURATION_REVEAL_FAST, EASE_PREMIUM, EASE_SMOOTH, STAGGER_LOOSE } from './constants';
 import { onScrollReveal } from './scrollReveal';
 
 export function setupAboutStatsCountUp(scope) {
@@ -17,13 +17,15 @@ export function setupAboutStatsCountUp(scope) {
       if (items.length) {
         gsap.fromTo(
           items,
-          { opacity: 0, y: 40 },
+          { opacity: 0, y: 44, scale: 0.96 },
           {
             opacity: 1,
             y: 0,
-            duration: 0.95,
-            stagger: 0.14,
+            scale: 1,
+            duration: DURATION_REVEAL_FAST,
+            stagger: STAGGER_LOOSE,
             ease: EASE_PREMIUM,
+            force3D: true,
             onComplete: () => gsap.set(items, { clearProps: 'transform,opacity' }),
           }
         );
@@ -37,8 +39,8 @@ export function setupAboutStatsCountUp(scope) {
         const counter = { val: 0 };
         gsap.to(counter, {
           val: target,
-          duration: 2.4,
-          delay: 0.2 + index * 0.14,
+          duration: 2.6,
+          delay: 0.15 + index * 0.12,
           ease: EASE_SMOOTH,
           snap: { val: 1 },
           onUpdate: () => {

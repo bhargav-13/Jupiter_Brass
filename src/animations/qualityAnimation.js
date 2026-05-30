@@ -1,5 +1,6 @@
 import { gsap } from '../lib/gsap';
-import { EASE_PREMIUM } from './constants';
+import { revealBlur } from '../lib/motion';
+import { DURATION_REVEAL_FAST, EASE_PREMIUM, STAGGER_TIGHT } from './constants';
 import { onScrollReveal } from './scrollReveal';
 
 export function setupQualitySectionAnimation(scope) {
@@ -16,31 +17,50 @@ export function setupQualitySectionAnimation(scope) {
     start: 'top 82%',
     play: () => {
       const tl = gsap.timeline({
-        defaults: { ease: EASE_PREMIUM },
-        onComplete: () => gsap.set(targets, { clearProps: 'transform,opacity' }),
+        defaults: { ease: EASE_PREMIUM, force3D: true },
+        onComplete: () => gsap.set(targets, { clearProps: 'transform,opacity,filter' }),
       });
 
       if (highlight) {
         tl.fromTo(
           highlight,
-          { x: -40, opacity: 0, filter: 'blur(4px)' },
-          { x: 0, opacity: 1, filter: 'blur(0px)', duration: 0.95 }
+          { x: -48, opacity: 0, filter: revealBlur('blur(6px)') },
+          {
+            x: 0,
+            opacity: 1,
+            filter: revealBlur('blur(0px)'),
+            duration: DURATION_REVEAL_FAST,
+          }
         );
       }
+
       if (points.length) {
         tl.fromTo(
           points,
-          { y: 36, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.8, stagger: 0.08 },
-          highlight ? '-=0.6' : 0
+          { y: 40, opacity: 0, scale: 0.98 },
+          {
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            duration: DURATION_REVEAL_FAST,
+            stagger: STAGGER_TIGHT,
+          },
+          highlight ? '-=0.55' : 0
         );
       }
+
       if (circle) {
         tl.fromTo(
           circle,
-          { scale: 0, opacity: 0 },
-          { scale: 1, opacity: 1, duration: 0.55, ease: 'back.out(1.6)' },
-          '-=0.4'
+          { scale: 0.6, opacity: 0, rotation: -12 },
+          {
+            scale: 1,
+            opacity: 1,
+            rotation: 0,
+            duration: 0.72,
+            ease: 'back.out(1.5)',
+          },
+          '-=0.42'
         );
       }
     },

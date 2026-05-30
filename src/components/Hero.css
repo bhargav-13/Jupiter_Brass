@@ -2,7 +2,7 @@
   background-color: #FFFFFF;
   overflow: hidden;
   min-height: 85vh;
-  padding: clamp(3rem, 6vw, 5.1rem) 0 clamp(3.1rem, 5.5vw, 5rem);
+  padding: clamp(2rem, 4vw, 3rem) 0 clamp(3.1rem, 5.5vw, 5rem);
 }
 
 .hero-container {
@@ -97,6 +97,14 @@
   margin-bottom: 20px;
 }
 
+@media (max-width: 768px) {
+  .hero-tagline {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 1.65;
+  }
+}
+
 /* ── Right Product Area ── */
 .hero-image-area {
   position: relative;
@@ -139,6 +147,13 @@
 }
 
 /* Mobile: styles/mobile.css (max-width: 768px only) */
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: clamp(1.5rem, 4vw, 2rem);
+    padding-bottom: 2.5rem;
+  }
+}
 
 @media (min-width: 1600px) {
   .hero-title {

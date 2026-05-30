@@ -2,11 +2,20 @@
   background-color: var(--color-white);
 }
 
+/* Less gap under fixed navbar (page-shell padding + section padding stack) */
+.page-shell:has(.product-inner-page) {
+  padding-top: calc(var(--header-height, 5.5rem) + 0.35rem + env(safe-area-inset-top, 0px));
+}
+
 /* =============================================
    SHARED PRODUCT INNER SECTIONS
    ============================================= */
 .product-inner-section {
   background-color: var(--color-white);
+}
+
+.product-inner-page > .product-inner-section:first-of-type {
+  padding-top: clamp(1rem, 2.2vw, 1.75rem);
 }
 
 .product-inner-content {

@@ -1,5 +1,6 @@
 import { gsap } from '../lib/gsap';
-import { EASE_PREMIUM, EASE_SMOOTH } from './constants';
+import { revealBlur } from '../lib/motion';
+import { DURATION_REVEAL, DURATION_REVEAL_FAST, EASE_PREMIUM, EASE_SMOOTH, STAGGER_LOOSE } from './constants';
 import { onScrollReveal } from './scrollReveal';
 
 export function setupAboutHeroAnimations(scope) {
@@ -17,14 +18,15 @@ export function setupAboutHeroAnimations(scope) {
   if (title) {
     gsap.fromTo(
       title,
-      { opacity: 0, y: 48, filter: 'blur(6px)' },
+      { opacity: 0, y: 52, filter: revealBlur('blur(8px)'), force3D: true },
       {
         opacity: 1,
         y: 0,
-        filter: 'blur(0px)',
-        duration: 1.1,
+        filter: revealBlur('blur(0px)'),
+        duration: DURATION_REVEAL,
         ease: EASE_PREMIUM,
-        delay: 0.12,
+        delay: 0.1,
+        force3D: true,
         onComplete: () => gsap.set(title, { clearProps: 'filter' }),
       }
     );
@@ -89,14 +91,15 @@ export function setupAboutHeroAnimations(scope) {
       play: () => {
         gsap.fromTo(
           textBlocks,
-          { opacity: 0, y: 36, filter: 'blur(4px)' },
+          { opacity: 0, y: 40, filter: revealBlur('blur(4px)'), force3D: true },
           {
             opacity: 1,
             y: 0,
-            filter: 'blur(0px)',
-            duration: 0.95,
-            stagger: 0.18,
+            filter: revealBlur('blur(0px)'),
+            duration: DURATION_REVEAL_FAST,
+            stagger: STAGGER_LOOSE,
             ease: EASE_PREMIUM,
+            force3D: true,
             onComplete: () => gsap.set(textBlocks, { clearProps: 'transform,opacity,filter' }),
           }
         );

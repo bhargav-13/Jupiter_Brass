@@ -1,32 +1,42 @@
 import React from 'react';
+import { Navigate, useParams } from 'react-router-dom';
 import Articles from '../components/Articles';
+import {
+  formatArticleAuthor,
+  formatArticleMeta,
+  getArticleBySlug,
+} from '../data/articles';
 import '../components/Articles.css';
 import './BlogInnerPage.css';
 
-const articleTitle =
-  'WHY PRECISION BRASS COMPONENTS ARE ESSENTIAL FOR INDUSTRIAL APPLICATIONS';
-
 const BlogInnerPage = () => {
+  const { slug } = useParams();
+  const article = getArticleBySlug(slug);
+
+  if (!article) {
+    return <Navigate to="/blog" replace />;
+  }
+
   return (
     <div className="blog-inner-page">
       <section className="section blog-inner-section">
         <div className="container">
           <header className="blog-inner-header">
-            <p className="blog-inner-read-meta">MAY 31, 2026 - 4MIN READ</p>
+            <p className="blog-inner-read-meta">{formatArticleMeta(article)}</p>
 
-            <h1 className="blog-inner-title">{articleTitle}</h1>
+            <h1 className="blog-inner-title">{article.title}</h1>
 
             <div className="blog-inner-author-row">
               <span className="blog-inner-author-logo">
                 <img src="/images/jupiter.svg" alt="Jupiter Brass" />
               </span>
-              <span className="blog-inner-author-name">BY JUPITER BRASS INDUSTRIES</span>
+              <span className="blog-inner-author-name">{formatArticleAuthor(article)}</span>
             </div>
 
             <div className="blog-inner-featured article-image-wrapper">
               <img
-                src="/images/Article.png"
-                alt={articleTitle}
+                src={article.image}
+                alt={article.title}
                 className="blog-inner-featured-image article-image"
               />
             </div>
@@ -125,7 +135,7 @@ const BlogInnerPage = () => {
         </div>
       </section>
 
-      <Articles />
+      <Articles excludeSlug={article.slug} />
     </div>
   );
 };
