@@ -1,0 +1,124 @@
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 120;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.scroll-progress__track {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.02) 0%,
+    rgba(0, 0, 0, 0.07) 50%,
+    rgba(0, 0, 0, 0.02) 100%
+  );
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-progress__glow,
+.scroll-progress__fill,
+.scroll-progress__shine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: left center;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.scroll-progress__glow {
+  background: linear-gradient(
+    90deg,
+    rgba(243, 27, 27, 0.08) 0%,
+    rgba(243, 27, 27, 0.55) 100%
+  );
+  filter: blur(5px);
+  opacity: 0.75;
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-progress--active .scroll-progress__glow {
+  opacity: 1;
+}
+
+.scroll-progress__fill {
+  background: linear-gradient(
+    90deg,
+    #a81212 0%,
+    var(--color-primary, #f31b1b) 38%,
+    #ff5252 78%,
+    #ff7a7a 100%
+  );
+  box-shadow:
+    0 0 8px rgba(243, 27, 27, 0.45),
+    0 0 20px rgba(243, 27, 27, 0.2);
+  transition: box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-progress--active .scroll-progress__fill {
+  box-shadow:
+    0 0 12px rgba(243, 27, 27, 0.65),
+    0 0 28px rgba(243, 27, 27, 0.35);
+}
+
+.scroll-progress__shine {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.35) 45%,
+    rgba(255, 255, 255, 0.65) 50%,
+    rgba(255, 255, 255, 0.35) 55%,
+    transparent 100%
+  );
+  mix-blend-mode: soft-light;
+  opacity: 0.7;
+}
+
+.scroll-progress__cap {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  width: 7px;
+  height: 7px;
+  margin-top: -3.5px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1.5px solid var(--color-primary, #f31b1b);
+  box-shadow:
+    0 0 0 2px rgba(255, 255, 255, 0.35),
+    0 0 14px rgba(243, 27, 27, 0.75);
+  transform: translateX(-50%);
+  will-change: left;
+  transition:
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-progress--active .scroll-progress__cap {
+  transform: translateX(-50%) scale(1.12);
+  box-shadow:
+    0 0 0 3px rgba(255, 255, 255, 0.45),
+    0 0 18px rgba(243, 27, 27, 0.9);
+}
+
+@supports (padding: max(0px)) {
+  .scroll-progress {
+    top: env(safe-area-inset-top, 0px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-progress__glow,
+  .scroll-progress__cap {
+    display: none;
+  }
+}

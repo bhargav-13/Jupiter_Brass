@@ -13,10 +13,14 @@ import ContactPage from './pages/ContactPage';
 import GsapAnimations from './components/GsapAnimations';
 import ScrollToTop from './components/ScrollToTop';
 import SmoothScroll from './components/SmoothScroll';
+import CustomCursor from './components/CustomCursor';
+import ScrollProgress from './components/ScrollProgress';
 
 function App() {
   return (
     <Router>
+      <CustomCursor />
+      <ScrollProgress />
       <SmoothScroll />
       <ScrollToTop />
       <GsapAnimations />

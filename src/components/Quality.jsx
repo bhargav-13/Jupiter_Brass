@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { CONTACT_FORM_PATH } from '../lib/scrollToSection';
 import './Quality.css';
 
 const Quality = () => {
@@ -47,7 +49,9 @@ const Quality = () => {
                 dimensional accuracy, and flawless performance for industrial applications
                 worldwide.
               </p>
-              <button className="btn btn-quality-contact mt-20">CONTACT NOW</button>
+              <Link to={CONTACT_FORM_PATH} className="btn btn-quality-contact mt-20">
+                CONTACT NOW
+              </Link>
             </div>
 
             <div className="quality-points">

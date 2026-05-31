@@ -108,7 +108,7 @@ const ContactPage = () => {
         </div>
       </section>
 
-      <section className="section contact-form-section">
+      <section id="contact-form" className="section contact-form-section">
         <div className="container">
           <div className="section-heading">
             <h2 className="section-title">START THE CONVERSATION</h2>

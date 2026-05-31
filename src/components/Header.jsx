@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { to: '/', label: 'HOME' },
   { to: '/about', label: 'ABOUT' },
   { to: '/products', label: 'PRODUCTS' },
+  { to: '/blog', label: 'BLOG' },
   { to: '/contact', label: 'CONTACT' },
 ];
 
@@ -40,6 +41,9 @@ const Header = () => {
   const headerRef = useHeaderMotion(navHidden, menuOpen);
 
   const closeMenu = () => setMenuOpen(false);
+
+  const isNavActive = (to) =>
+    to === '/' ? pathname === '/' : pathname === to || pathname.startsWith(`${to}/`);
 
   const headerClassName = [
     'header',
@@ -82,7 +86,7 @@ const Header = () => {
             <Link
               key={to}
               to={to}
-              className={`nav-link${pathname === to ? ' nav-link--active' : ''}`}
+              className={`nav-link${isNavActive(to) ? ' nav-link--active' : ''}`}
               onClick={closeMenu}
             >
               {label}

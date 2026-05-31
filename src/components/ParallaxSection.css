@@ -33,6 +33,11 @@
   margin-bottom: 50px;
 }
 
+a.parallax-btn {
+  text-decoration: none;
+  display: inline-block;
+}
+
 .parallax-btn {
   background: transparent;
   color: #ffffff;

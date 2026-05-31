@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { CONTACT_FORM_PATH } from '../lib/scrollToSection';
 import './ParallaxSection.css';
 
 const ParallaxSection = () => {
@@ -9,7 +11,9 @@ const ParallaxSection = () => {
           BUILD PRECISION BRASS<br />
           COMPONENTS FOR YOUR INDUSTRY
         </h2>
-        <button className="parallax-btn">START YOUR PROJECT TODAY</button>
+        <Link to={CONTACT_FORM_PATH} className="parallax-btn">
+          START YOUR PROJECT TODAY
+        </Link>
       </div>
     </section>
   );

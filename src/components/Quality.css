@@ -64,6 +64,10 @@
   color: #ffffff;
 }
 
+a.btn-quality-contact {
+  text-decoration: none;
+}
+
 .btn-quality-contact {
   display: inline-block;
   width: fit-content;
