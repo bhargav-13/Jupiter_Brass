@@ -15,10 +15,12 @@ import ScrollToTop from './components/ScrollToTop';
 import SmoothScroll from './components/SmoothScroll';
 import CustomCursor from './components/CustomCursor';
 import ScrollProgress from './components/ScrollProgress';
+import PageLoader from './components/PageLoader';
 
 function App() {
   return (
     <Router>
+      <PageLoader />
       <CustomCursor />
       <ScrollProgress />
       <SmoothScroll />
