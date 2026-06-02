@@ -8,8 +8,11 @@
   --color-text: #333333;
   --color-white: #ffffff;
   
-  --font-heading: 'Bank Gothic Light', 'BankGothic Lt BT', 'Bank Gothic', 'Michroma', 'Orbitron', sans-serif;
-  --font-body: 'Bank Gothic Light', 'BankGothic Lt BT', 'Bank Gothic', 'Michroma', 'Orbitron', sans-serif;
+  /* Bank Gothic removed: it's a locally-installed font on some machines, so PCs that
+     have it rendered a different font than PCs that don't. Use the web-loaded fonts
+     (Michroma/Orbitron from Google Fonts) so every device looks the same. */
+  --font-heading: 'Michroma', 'Orbitron', sans-serif;
+  --font-body: 'Michroma', 'Orbitron', sans-serif;
   
   --transition: all 0.3s ease;
 }
