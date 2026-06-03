@@ -33,9 +33,9 @@
   --color-text: #333333;
   --color-white: #ffffff;
   
-  /* 'Bank Gothic' here resolves to the self-hosted @font-face above (defined with
-     url() only, so the downloaded font is used even on PCs that have a local copy).
-     Michroma/Orbitron remain as fallbacks if the font files fail to load. */
+  /* 'Bank Gothic' resolves to the self-hosted @font-face above (url()-only, so the
+     downloaded file is used on every device). Michroma/Orbitron are fallbacks in
+     case the font files ever fail to load on a given network. */
   --font-heading: 'Bank Gothic', 'Michroma', 'Orbitron', sans-serif;
   --font-body: 'Bank Gothic', 'Michroma', 'Orbitron', sans-serif;
   
