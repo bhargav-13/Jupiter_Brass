@@ -1,5 +1,30 @@
 @import './styles/responsive.css';
 
+/* Self-hosted Bank Gothic. Bundling the font files into the site (served from
+   /public/fonts) means every device downloads and renders the same font,
+   whether or not Bank Gothic is installed locally. */
+@font-face {
+  font-family: 'Bank Gothic';
+  src: url('/fonts/BankGothic-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bank Gothic';
+  src: url('/fonts/BankGothic-Medium.ttf') format('truetype');
+  font-weight: 400 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bank Gothic';
+  src: url('/fonts/BankGothic-Bold.ttf') format('truetype');
+  font-weight: 600 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --color-primary: #F31B1B;
   --color-dark: #202020;
@@ -8,11 +33,11 @@
   --color-text: #333333;
   --color-white: #ffffff;
   
-  /* Bank Gothic removed: it's a locally-installed font on some machines, so PCs that
-     have it rendered a different font than PCs that don't. Use the web-loaded fonts
-     (Michroma/Orbitron from Google Fonts) so every device looks the same. */
-  --font-heading: 'Michroma', 'Orbitron', sans-serif;
-  --font-body: 'Michroma', 'Orbitron', sans-serif;
+  /* 'Bank Gothic' here resolves to the self-hosted @font-face above (defined with
+     url() only, so the downloaded font is used even on PCs that have a local copy).
+     Michroma/Orbitron remain as fallbacks if the font files fail to load. */
+  --font-heading: 'Bank Gothic', 'Michroma', 'Orbitron', sans-serif;
+  --font-body: 'Bank Gothic', 'Michroma', 'Orbitron', sans-serif;
   
   --transition: all 0.3s ease;
 }
