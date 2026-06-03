@@ -56,21 +56,16 @@
 
 .why-choose-us-item-title {
   font-family: var(--font-heading);
-  font-size: clamp(0.72rem, 1vw, 0.8rem);
-  font-weight: 700;
+  font-size: clamp(0.99rem, 1.375vw, 1.1rem);
   text-transform: uppercase;
   color: #F31B1B;
-  letter-spacing: 0.1em;
   margin-bottom: clamp(18px, 2.5vw, 28px);
 }
 
 .why-choose-us-item-desc {
   font-family: var(--font-heading);
-  font-size: clamp(0.58rem, 0.8vw, 0.65rem);
-  line-height: 2;
-  font-weight: 500;
+  font-size: clamp(0.7975rem, 1.1vw, 0.8938rem);
   color: #343434;
-  letter-spacing: 0.15em;
   text-transform: uppercase;
   margin: 0;
 }

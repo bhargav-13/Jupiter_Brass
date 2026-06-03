@@ -11,13 +11,10 @@
 
 .machinery-desc {
   font-family: var(--font-heading);
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-size: 1.2375rem;
   color: #ffffff;
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  line-height: 2;
   max-width: 850px;
   margin: 0 auto clamp(2.5rem, 5vw, 4rem);
 }
@@ -70,11 +67,9 @@
 
 .machinery-card-label {
   font-family: var(--font-heading);
-  font-size: clamp(0.55rem, 0.75vw, 0.65rem);
-  font-weight: 500;
+  font-size: clamp(0.7563rem, 1.0313vw, 0.85rem);
   color: #ffffff;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
 }
 
 /* ---------- Responsive ---------- */

@@ -48,9 +48,7 @@
 
 .capability-text {
   font-family: var(--font-heading);
-  font-size: clamp(0.7rem, 1vw, 0.9rem);
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  font-size: clamp(0.9625rem, 1.375vw, 1.2375rem);
   text-transform: uppercase;
   color: #343434;
 }

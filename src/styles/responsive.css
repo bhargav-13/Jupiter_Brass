@@ -118,9 +118,7 @@ video {
   .blog-inner-title,
   .product-detail-title {
     font-size: var(--size-section-title);
-    letter-spacing: var(--tracking-section-title);
-    line-height: 1.45;
-    font-weight: 400;
+
   }
 
   .articles-heading {
@@ -135,8 +133,7 @@ video {
   h1.section-title,
   .about-hero-title {
     font-size: var(--size-page-title);
-    letter-spacing: var(--tracking-section-title);
-    line-height: 1.5;
+
   }
 
   .about-hero-title {

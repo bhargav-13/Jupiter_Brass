@@ -21,10 +21,8 @@
 
 .marquee-content span {
   font-family: var(--font-heading);
-  font-size: 1.8rem;
-  font-weight: 600;
+  font-size: 2.475rem;
   color: #F31B1B;
-  letter-spacing: 0.2em;
   text-transform: uppercase;
   padding-right: 15px;
   /* Adjust if spacing around dot needs fine-tuning */
@@ -47,7 +45,6 @@
 
 @media (max-width: 768px) {
   .marquee-content span {
-    font-size: clamp(0.9rem, 3.8vw, 1.1rem);
-    letter-spacing: 0.1em;
+    font-size: clamp(1.2375rem, 5.225vw, 1.5125rem);
   }
 }

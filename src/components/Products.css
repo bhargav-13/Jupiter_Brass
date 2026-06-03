@@ -56,10 +56,8 @@ a.product-card {
 
 .product-number {
   font-family: var(--font-heading);
-  font-size: 1.4rem;
-  font-weight: 600;
+  font-size: 1.925rem;
   color: #000000;
-  letter-spacing: 2px;
   position: relative;
   z-index: 2;
 }
@@ -97,10 +95,8 @@ a.product-card {
 
 .product-name {
   font-family: var(--font-heading);
-  font-size: 0.65rem;
-  font-weight: 600;
+  font-size: 0.8938rem;
   color: #000000;
-  letter-spacing: 1px;
   text-transform: uppercase;
   position: relative;
   z-index: 2;

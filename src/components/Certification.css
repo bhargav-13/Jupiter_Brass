@@ -22,35 +22,26 @@
 
 .certification-title {
   font-family: var(--font-heading);
-  font-size: clamp(1.4rem, 2.8vw, 2.2rem);
-  font-weight: 400;
+  font-size: clamp(1.925rem, 3.85vw, 3.025rem);
   color: var(--color-primary);
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  line-height: 1.35;
   margin-bottom: clamp(1.2rem, 2.5vw, 2rem);
 }
 
 .certification-description {
   font-family: var(--font-heading);
-  font-size: 0.95rem;
-  font-weight: 500;
+  font-size: 1.3063rem;
   color: var(--color-dark);
   text-transform: uppercase;
-  letter-spacing: 0.18em;
-  line-height: 2.2;
   margin-bottom: clamp(1.8rem, 3vw, 2.8rem);
 }
 
 /* ---------- Scope Subtitle ---------- */
 .certification-scope-title {
   font-family: var(--font-heading);
-  font-size: clamp(1.4rem, 2.8vw, 2.2rem);
-  font-weight: 500;
+  font-size: clamp(1.925rem, 3.85vw, 3.025rem);
   color: var(--color-primary);
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  line-height: 1.35;
   margin-bottom: clamp(1.2rem, 2vw, 1.8rem);
 }
 
@@ -63,11 +54,9 @@
 
 .certification-tag {
   font-family: var(--font-heading);
-  font-size: clamp(0.45rem, 0.62vw, 0.56rem);
-  font-weight: 500;
+  font-size: clamp(0.6188rem, 0.8525vw, 0.77rem);
   color: #343434;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
   border: 1px solid #F31B1B;
   padding: clamp(8px, 1vw, 12px) clamp(14px, 1.8vw, 24px);
   background: #FFF2F2;
@@ -134,7 +123,7 @@
   }
 
   .certification-tag {
-    font-size: 0.5rem;
+    font-size: 0.6875rem;
     padding: 8px 12px;
   }
 }

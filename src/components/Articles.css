@@ -9,10 +9,8 @@
 .articles-heading {
   text-align: center;
   font-family: var(--font-heading);
-  font-size: 2.2rem;
-  font-weight: 500;
+  font-size: 3.025rem;
   color: #F31B1B;
-  letter-spacing: 0.15em;
   text-transform: uppercase;
   margin-bottom: 60px;
 }
@@ -84,21 +82,16 @@ a.article-card:hover {
 
 .article-date {
   font-family: var(--font-heading);
-  font-size: 0.5rem;
-  font-weight: 500;
+  font-size: 0.6875rem;
   color: #696969;
-  letter-spacing: 0.15em;
   text-transform: uppercase;
   margin-bottom: 25px;
 }
 
 .article-title {
   font-family: var(--font-heading);
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-size: 1.1rem;
   color: #F31B1B;
-  letter-spacing: 0.12em;
-  line-height: 1.6;
   text-transform: uppercase;
   margin-bottom: 40px;
   flex-grow: 1;
@@ -106,10 +99,8 @@ a.article-card:hover {
 
 .article-author {
   font-family: var(--font-heading);
-  font-size: 0.5rem;
-  font-weight: 500;
+  font-size: 0.6875rem;
   color: #696969;
-  letter-spacing: 0.15em;
   text-transform: uppercase;
 }
 
@@ -131,7 +122,7 @@ a.article-card:hover {
   }
 
   .article-title {
-    font-size: clamp(0.75rem, 3.2vw, 0.85rem);
+    font-size: clamp(1.0313rem, 4.4vw, 1.1688rem);
     margin-bottom: 24px;
   }
 }

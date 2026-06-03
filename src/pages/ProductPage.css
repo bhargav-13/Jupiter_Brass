@@ -18,12 +18,9 @@
 .quality-subtitle {
   font-family: var(--font-heading);
   color: #000;
-  font-size: clamp(0.7rem, 1.5vw, 0.9rem);
-  letter-spacing: 3px;
+  font-size: clamp(0.9625rem, 2.0625vw, 1.2375rem);
   text-transform: uppercase;
-  line-height: 1.8;
   max-width: 600px;
-  font-weight: 600;
   margin: 0 auto;
 }
 
@@ -51,7 +48,6 @@
 
   .quality-subtitle {
     padding: 0 4px;
-    line-height: 1.85;
   }
 }
 

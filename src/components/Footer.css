@@ -74,11 +74,9 @@
 
 .footer-tagline {
   font-family: var(--font-heading);
-  font-size: 0.85rem;
-  letter-spacing: 2.5px;
+  font-size: 1.1688rem;
   text-transform: uppercase;
   color: #000;
-  font-weight: 500;
   margin-bottom: 40px;
 }
 
@@ -109,8 +107,7 @@
 /* ---------- Link Columns ---------- */
 .footer-heading {
   font-family: var(--font-heading);
-  font-size: 1rem;
-  letter-spacing: 2.5px;
+  font-size: 1.375rem;
   text-transform: uppercase;
   color: var(--color-primary);
   margin-bottom: 40px;
@@ -128,11 +125,9 @@
 
 .footer-links ul li a {
   font-family: var(--font-heading);
-  font-size: 0.88rem;
-  letter-spacing: 2px;
+  font-size: 1.21rem;
   text-transform: uppercase;
   color: #000;
-  font-weight: 500;
   text-decoration: none;
   white-space: nowrap;
   transition: color 0.3s ease;
@@ -158,33 +153,28 @@
 
 .footer-copyright {
   font-family: var(--font-heading);
-  font-size: 0.8rem;
-  letter-spacing: 2px;
+  font-size: 1.1rem;
   text-transform: uppercase;
   color: #000;
-  font-weight: 500;
   margin: 0;
 }
 
 .footer-credit {
   font-family: var(--font-heading);
-  font-size: 0.88rem;
-  letter-spacing: 1.5px;
+  font-size: 1.21rem;
   text-transform: uppercase;
   color: #000;
-  font-weight: 500;
   margin: 0;
 }
 
 .footer-credit .heart {
   color: var(--color-primary);
-  font-size: 0.9rem;
+  font-size: 1.2375rem;
 }
 
 .codelix-link {
   color: inherit;
   text-decoration: none;
-  font-weight: 600;
   transition: color 0.3s ease;
 }
 
@@ -239,9 +229,7 @@
   }
 
   .footer-tagline {
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    line-height: 1.65;
+    font-size: 1.0313rem;
     margin-bottom: 22px;
     max-width: 22rem;
     padding-inline: 0.25rem;
@@ -273,8 +261,7 @@
 
   .footer-heading {
     margin-bottom: 14px;
-    font-size: 0.875rem;
-    letter-spacing: 0.08em;
+    font-size: 1.2032rem;
   }
 
   .footer-links ul li {
@@ -287,9 +274,7 @@
 
   .footer-links ul li a {
     white-space: normal;
-    font-size: 0.78rem;
-    letter-spacing: 0.06em;
-    line-height: 1.5;
+    font-size: 1.0725rem;
     display: inline-block;
     padding-block: 2px;
   }
@@ -310,9 +295,7 @@
 
   .footer-copyright,
   .footer-credit {
-    font-size: 0.72rem;
-    letter-spacing: 0.04em;
-    line-height: 1.6;
+    font-size: 0.99rem;
     max-width: 20rem;
   }
 }
@@ -325,12 +308,12 @@
   }
 
   .footer-links ul li a {
-    font-size: 0.8rem;
+    font-size: 1.1rem;
   }
 
   .footer-copyright,
   .footer-credit {
-    font-size: 0.7rem;
+    font-size: 0.9625rem;
     max-width: 100%;
     padding-inline: 0.25rem;
   }

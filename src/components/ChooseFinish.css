@@ -4,6 +4,7 @@
 .choose-finish {
   background-color: #ffffff;
   overflow: hidden;
+  padding-bottom: 0;
 }
 
 /* ---------- Header Row ---------- */
@@ -16,11 +17,9 @@
 
 .choose-finish-title {
   font-family: var(--font-heading);
-  font-size: clamp(1.1rem, 2.2vw, 1.75rem);
-  font-weight: 500;
+  font-size: clamp(1.5125rem, 3.025vw, 2.4063rem);
   color: #F31B1B;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
 }
 
 /* ---------- Swatches ---------- */
@@ -84,16 +83,13 @@
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: var(--font-heading);
-  font-size: clamp(4.5rem, 11vw, 12rem);
-  font-weight: 900;
+  font-size: clamp(6.1875rem, 18vw, 17rem);
   color: #e0e0e0;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
   white-space: nowrap;
   user-select: none;
   pointer-events: none;
   z-index: 1;
-  line-height: 1;
 }
 
 /* ---------- Foreground Image ---------- */
@@ -132,7 +128,7 @@
   }
 
   .choose-finish-bg-text {
-    font-size: clamp(4rem, 12vw, 6rem);
+    font-size: clamp(5.5rem, 16.5vw, 8.25rem);
   }
 
   .choose-finish-image {

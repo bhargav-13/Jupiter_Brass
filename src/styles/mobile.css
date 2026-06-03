@@ -19,20 +19,14 @@
   body .choose-finish-title,
   body .machinery .section-title,
   body .precision-parts-header .section-title {
-    font-size: 1.25rem;
-    letter-spacing: 0.05em;
-    line-height: 1.4;
-    font-weight: 400;
+    font-size: 1.7188rem;
   }
 
   body h1.section-title,
   body .blog-inner-title,
   body .product-detail-title,
   body .about-hero-title {
-    font-size: 1.2rem;
-    letter-spacing: 0.05em;
-    line-height: 1.4;
-    font-weight: 400;
+    font-size: 1.65rem;
   }
 
   body .about-hero-title {
@@ -41,10 +35,7 @@
 
   body .quality-subtitle,
   body .contact-intro-text {
-    font-size: 0.58rem;
-    line-height: 1.65;
-    letter-spacing: 0.08em;
-    font-weight: 600;
+    font-size: 0.7975rem;
     max-width: 20rem;
     margin-inline: auto;
     padding-inline: 0.25rem;
@@ -78,10 +69,7 @@
   body .hero-title {
     order: 1;
     text-align: center;
-    font-size: 1.2rem;
-    line-height: 1.35;
-    letter-spacing: 0.06em;
-    font-weight: 600;
+    font-size: 1.65rem;
     color: #202020;
     max-width: 20rem;
     margin-inline: auto;
@@ -103,9 +91,7 @@
     margin: 0;
     text-align: center;
     max-width: 21rem;
-    font-size: 0.6875rem;
-    line-height: 1.65;
-    letter-spacing: 0.08em;
+    font-size: 0.9453rem;
     color: #454545;
     padding-inline: 0.5rem;
   }
@@ -164,10 +150,8 @@
   }
 
   body .premium-text {
-    font-size: clamp(1.125rem, 5.5vw, 1.5rem);
-    letter-spacing: 0.12em;
+    font-size: clamp(1.5469rem, 7.5625vw, 2.0625rem);
     text-align: center;
-    line-height: 1.15;
     color: rgba(243, 27, 27, 0.14);
   }
 
@@ -176,9 +160,7 @@
     margin-top: 0;
     margin-bottom: 0;
     max-width: 18rem;
-    font-size: 0.625rem;
-    line-height: 1.65;
-    letter-spacing: 0.1em;
+    font-size: 0.8594rem;
     color: #343434;
     padding-inline: 0.5rem;
   }
@@ -223,14 +205,11 @@
   }
 
   body .product-number {
-    font-size: 1.1rem;
-    letter-spacing: 1px;
+    font-size: 1.5125rem;
   }
 
   body .product-name {
-    font-size: 0.62rem;
-    letter-spacing: 0.08em;
-    line-height: 1.45;
+    font-size: 0.8525rem;
     text-align: center;
   }
 
@@ -240,9 +219,7 @@
   }
 
   body .about-text p {
-    font-size: 0.58rem;
-    line-height: 1.85;
-    letter-spacing: 0.1em;
+    font-size: 0.7975rem;
   }
 
   body .about-stats {
@@ -292,26 +269,20 @@
   }
 
   body .why-choose-us-item-title {
-    font-size: 0.8rem;
-    line-height: 1.45;
-    letter-spacing: 0.08em;
+    font-size: 1.1rem;
     margin-bottom: 0.75rem;
     max-width: 16rem;
   }
 
   body .why-choose-us-item-desc {
-    font-size: 0.62rem;
-    line-height: 1.65;
-    letter-spacing: 0.08em;
+    font-size: 0.8525rem;
     max-width: 18rem;
     margin-inline: auto;
   }
 
   /* ── Machinery ── */
   body .machinery-desc {
-    font-size: 0.62rem;
-    line-height: 1.65;
-    letter-spacing: 0.08em;
+    font-size: 0.8525rem;
     max-width: 18rem;
     margin-bottom: 1.5rem;
   }
@@ -326,9 +297,7 @@
   }
 
   body .certification-description {
-    font-size: 0.62rem;
-    line-height: 1.65;
-    letter-spacing: 0.08em;
+    font-size: 0.8525rem;
     margin-bottom: 1.25rem;
     max-width: 20rem;
     margin-inline: auto;
@@ -345,9 +314,7 @@
   }
 
   body .certification-tag {
-    font-size: 0.52rem;
-    letter-spacing: 0.1em;
-    line-height: 1.4;
+    font-size: 0.715rem;
     padding: 8px 12px;
     white-space: normal;
     text-align: center;
@@ -375,9 +342,7 @@
   }
 
   body .commitment-desc {
-    font-size: 0.58rem;
-    line-height: 1.65;
-    letter-spacing: 0.08em;
+    font-size: 0.7975rem;
     max-width: 20rem;
     margin-inline: auto;
     margin-bottom: 0.25rem;
@@ -412,8 +377,7 @@
   }
 
   body .commitment-item-text {
-    font-size: 0.58rem;
-    letter-spacing: 0.1em;
+    font-size: 0.7975rem;
   }
 
   body .commitment-badge-box {
@@ -434,9 +398,7 @@
   /* ── Industry ── */
   body .industry-subtitle,
   body .usp-subtitle {
-    font-size: 0.58rem;
-    line-height: 1.75;
-    letter-spacing: 0.1em;
+    font-size: 0.7975rem;
     margin-bottom: 1.5rem;
   }
 
@@ -453,8 +415,7 @@
   }
 
   body .industry-name {
-    font-size: 0.58rem;
-    line-height: 1.4;
+    font-size: 0.7975rem;
     padding: 10px 12px 10px 0;
   }
 
@@ -479,12 +440,11 @@
   }
 
   body .usp-title {
-    font-size: 0.72rem;
+    font-size: 0.99rem;
   }
 
   body .usp-desc {
-    font-size: 0.55rem;
-    line-height: 1.75;
+    font-size: 0.7563rem;
   }
 
   /* ── Process ── */
@@ -499,19 +459,17 @@
   }
 
   body .process-number {
-    font-size: 2rem;
+    font-size: 2.75rem;
   }
 
   /* ── Quality ── */
   body .quality-highlight p,
   body .q-point p {
-    font-size: 0.5rem;
-    letter-spacing: 0.12em;
-    line-height: 1.65;
+    font-size: 0.6875rem;
   }
 
   body .q-point h5 {
-    font-size: 0.55rem;
+    font-size: 0.7563rem;
   }
 
   /* ── Articles ── */
@@ -520,8 +478,7 @@
   }
 
   body .article-title {
-    font-size: 0.72rem;
-    letter-spacing: 0.08em;
+    font-size: 0.99rem;
   }
 
   /* ── Product inner ── */
@@ -534,22 +491,18 @@
   }
 
   body .product-detail-description {
-    font-size: 0.58rem;
-    line-height: 1.8;
-    letter-spacing: 0.1em;
+    font-size: 0.7975rem;
   }
 
   /* ── Parallax — sticky scroll-over (same as desktop) ── */
   body .parallax-content h2 {
-    font-size: 1.25rem;
-    line-height: 1.4;
+    font-size: 1.7188rem;
     margin-bottom: 1.5rem;
   }
 
   body .parallax-btn {
-    font-size: 0.62rem;
+    font-size: 0.8525rem;
     padding: 12px 20px;
-    letter-spacing: 0.08em;
   }
 
   body .articles-section,
@@ -584,16 +537,14 @@
   }
 
   body .about-hero-year-value {
-    font-size: clamp(3.5rem, 18vw, 5rem);
-    letter-spacing: 4px;
+    font-size: clamp(4.8125rem, 24.75vw, 6.875rem);
   }
 
   body .about-hero-since {
     top: -12px;
     left: 0;
     transform: none;
-    font-size: 0.75rem;
-    letter-spacing: 3px;
+    font-size: 1.0313rem;
   }
 
   body .about-hero-image-wrapper {
@@ -620,8 +571,7 @@
   }
 
   body .about-hero-text {
-    font-size: 0.58rem;
-    line-height: 1.85;
+    font-size: 0.7975rem;
   }
 
   /* ── Footer — stay above articles/commitment, readable layout ── */
@@ -650,20 +600,18 @@
   body .choose-finish-title,
   body .machinery .section-title,
   body .precision-parts-header .section-title {
-    font-size: 1.125rem;
-    letter-spacing: 0.04em;
+    font-size: 1.5469rem;
   }
 
   body h1.section-title,
   body .blog-inner-title,
   body .product-detail-title,
   body .about-hero-title {
-    font-size: 1.0625rem;
-    letter-spacing: 0.04em;
+    font-size: 1.4609rem;
   }
 
   body .parallax-content h2 {
-    font-size: 1.125rem;
+    font-size: 1.5469rem;
   }
 
   body .products-grid {
@@ -671,19 +619,18 @@
   }
 
   body .hero-title {
-    font-size: 1.0625rem;
+    font-size: 1.4609rem;
     max-width: 100%;
   }
 
   body .hero-description {
-    font-size: 0.65rem;
+    font-size: 0.8938rem;
     max-width: 100%;
   }
 
   body .quality-subtitle,
   body .contact-intro-text {
-    font-size: 0.55rem;
-    line-height: 1.6;
+    font-size: 0.7563rem;
   }
 
   body .hero-product {
@@ -695,6 +642,6 @@
   }
 
   body .premium-text {
-    font-size: clamp(1rem, 5vw, 1.25rem);
+    font-size: clamp(1.375rem, 6.875vw, 1.7188rem);
   }
 }

@@ -29,8 +29,7 @@
 
 @media (max-width: 768px) {
   .blog-section .quality-subtitle {
-    font-size: clamp(0.65rem, 3vw, 0.8rem);
-    line-height: 1.85;
+    font-size: clamp(0.8938rem, 4.125vw, 1.1rem);
     padding: 0 4px;
   }
 }

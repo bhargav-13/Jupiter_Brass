@@ -71,11 +71,9 @@
 
 .nav-link {
   font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: 0.75rem;
+  font-size: 1.0313rem;
   text-transform: uppercase;
   color: #000000;
-  letter-spacing: 1px;
   position: relative;
   transition: color 0.35s var(--ease-header, cubic-bezier(0.16, 1, 0.3, 1));
   padding: 4px 0;
@@ -198,8 +196,7 @@
   }
 
   .nav-link {
-    font-size: 0.95rem;
-    letter-spacing: 0.14em;
+    font-size: 1.3063rem;
     padding: 18px 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   }

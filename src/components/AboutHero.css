@@ -11,12 +11,10 @@
 .about-hero-title {
   text-align: center;
   font-family: var(--font-heading);
-  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-size: clamp(2.0625rem, 3.4375vw, 2.75rem);
   text-transform: uppercase;
   color: #343434;
   margin: 0 auto 60px;
-  line-height: 2;
-  letter-spacing: 0.1em;
 }
 
 /* ---------- Banner & Grid Background ---------- */
@@ -71,18 +69,14 @@
     linear-gradient(to right, rgba(243, 27, 27, 0.42) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(243, 27, 27, 0.42) 1px, transparent 1px);
   background-position: calc(50% + var(--grid-offset-x)) calc(50% + var(--grid-offset-y));
-  mask-image: radial-gradient(
-    circle var(--spotlight-size) at var(--mouse-x) var(--mouse-y),
-    black 0%,
-    rgba(0, 0, 0, 0.75) 42%,
-    transparent 72%
-  );
-  -webkit-mask-image: radial-gradient(
-    circle var(--spotlight-size) at var(--mouse-x) var(--mouse-y),
-    black 0%,
-    rgba(0, 0, 0, 0.75) 42%,
-    transparent 72%
-  );
+  mask-image: radial-gradient(circle var(--spotlight-size) at var(--mouse-x) var(--mouse-y),
+      black 0%,
+      rgba(0, 0, 0, 0.75) 42%,
+      transparent 72%);
+  -webkit-mask-image: radial-gradient(circle var(--spotlight-size) at var(--mouse-x) var(--mouse-y),
+      black 0%,
+      rgba(0, 0, 0, 0.75) 42%,
+      transparent 72%);
   transition: opacity 0.2s ease;
   will-change: mask-image, -webkit-mask-image, background-position;
 }
@@ -95,9 +89,7 @@
 .about-hero-year {
   position: relative;
   font-family: var(--font-heading);
-  font-weight: 700;
   color: #F31B1B;
-  line-height: 1;
   z-index: 1;
   transform: translateY(-20px);
   display: inline-block;
@@ -105,16 +97,14 @@
 
 .about-hero-year-value {
   display: block;
-  font-size: clamp(8rem, 20vw, 12rem);
-  letter-spacing: 15px;
+  font-size: clamp(11rem, 27.5vw, 16.5rem);
 }
 
 .about-hero-since {
   position: absolute;
-  top: -15px;
+  top: 95px;
   left: -20px;
-  font-size: 1.2rem;
-  letter-spacing: 4px;
+  font-size: 1.65rem;
   color: var(--color-primary);
   text-transform: uppercase;
   white-space: nowrap;
@@ -152,11 +142,8 @@
 
 .about-hero-text {
   font-family: var(--font-heading);
-  font-size: 0.7rem;
-  line-height: 2;
-  font-weight: 500;
+  font-size: 1rem;
   color: #343434;
-  letter-spacing: 0.15em;
   text-transform: uppercase;
 }
 
@@ -175,14 +162,12 @@
   gap: 10px;
   color: var(--color-primary);
   margin-top: 30px;
-  font-weight: 600;
-  letter-spacing: 2px;
+  font-size: 1.4rem;
+  font-weight: 500;
 }
 
 .about-hero-tilde {
-  font-size: 2.5em;
-  font-weight: 400;
-  line-height: 0.5;
+  font-size: 1.5rem;
   transform: translateY(4px);
 }
 
@@ -204,7 +189,7 @@
   }
 
   .about-hero-year-value {
-    font-size: clamp(6rem, 15vw, 10rem);
+    font-size: clamp(8.25rem, 20.625vw, 13.75rem);
     -webkit-text-stroke: 2px var(--color-primary);
   }
 
@@ -229,6 +214,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .about-hero-grid--base,
   .about-hero-grid--spotlight {
     transition: none;
@@ -241,8 +227,7 @@
 
 @media (max-width: 768px) {
   .about-hero-text {
-    font-size: 0.62rem;
-    line-height: 1.9;
+    font-size: 0.8525rem;
   }
 
   .about-hero-signature {

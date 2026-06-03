@@ -5,12 +5,9 @@
 .usp-subtitle {
   text-align: center;
   font-family: var(--font-heading);
-  font-size: 1rem;
-  font-weight: 700;
+  font-size: 1.375rem;
   color: #000000;
-  letter-spacing: 0.1em;
   text-transform: uppercase;
-  line-height: 2;
   margin: 0 auto 50px;
 }
 
@@ -23,11 +20,10 @@
 
 .usp-card {
   background-color: #ffffff;
-  padding: 50px 40px;
+  padding: 45px 30px;
   border: 1px solid #F31B1B;
   border-radius: 45px 45px 0 45px;
   transition: all 0.3s ease;
-  min-height: 370px;
   display: flex;
   flex-direction: column;
 }
@@ -49,7 +45,7 @@
 }
 
 .usp-icon {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .usp-svg-icon {
@@ -60,12 +56,10 @@
 
 .usp-title {
   font-family: var(--font-heading);
-  font-size: 0.85rem;
-  font-weight: 600;
+  font-size: 1.05rem;
   color: #343434;
-  letter-spacing: 0.1em;
   text-transform: uppercase;
-  margin-bottom: 0;
+  margin-bottom: 20px;
   transition: color 0.3s ease;
 }
 
@@ -86,11 +80,8 @@
 
 .usp-desc {
   font-family: var(--font-body);
-  font-size: 0.6rem;
-  font-weight: 500;
+  font-size: 0.825rem;
   color: #343434;
-  line-height: 2;
-  letter-spacing: 0.05em;
   text-transform: uppercase;
   margin: 0;
   transition: color 0.3s ease;
@@ -133,19 +124,15 @@
 
 .usp-stat-value {
   font-family: var(--font-heading);
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: 1.375rem;
   color: #ffffff;
-  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
 .usp-stat-label {
   font-family: var(--font-body);
-  font-size: 0.65rem;
-  font-weight: 500;
+  font-size: 0.8938rem;
   color: #ffffff;
-  letter-spacing: 0.25em;
   text-transform: uppercase;
   opacity: 0.9;
 }
@@ -159,8 +146,7 @@
 
 @media (max-width: 768px) {
   .usp-subtitle {
-    font-size: clamp(0.75rem, 3vw, 0.9rem);
-    line-height: 1.8;
+    font-size: clamp(1.0313rem, 4.125vw, 1.2375rem);
     margin-bottom: 36px;
     padding: 0 4px;
   }
@@ -195,6 +181,6 @@
   }
 
   .usp-stat-value {
-    font-size: 0.95rem;
+    font-size: 1.3063rem;
   }
 }

@@ -89,14 +89,11 @@
 
 .page-loader__tagline {
   font-family: var(--font-heading);
-  font-size: clamp(0.75rem, 2.4vw, 1.05rem);
-  font-weight: 600;
+  font-size: clamp(1.0313rem, 3.3vw, 1.4438rem);
   text-transform: uppercase;
-  letter-spacing: 0.18em;
   color: rgba(32, 32, 32, 0.55);
   text-align: center;
   max-width: min(36rem, 90vw);
-  line-height: 1.6;
   will-change: transform, opacity, letter-spacing;
 }
 

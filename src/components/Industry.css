@@ -5,12 +5,9 @@
 .industry-subtitle {
   text-align: center;
   font-family: var(--font-heading);
-  font-size: 0.9rem;
-  font-weight: 700;
+  font-size: 1.2375rem;
   color: #000000;
-  letter-spacing: 0.1em;
   text-transform: uppercase;
-  line-height: 2;
   max-width: 850px;
   margin: 0 auto 50px;
 }
@@ -59,12 +56,9 @@
 .industry-name {
   width: 40%;
   font-family: var(--font-heading);
-  font-size: 0.7rem;
-  font-weight: 600;
+  font-size: 0.9625rem;
   color: #000000;
-  letter-spacing: 0.12em;
   text-transform: uppercase;
-  line-height: 1.5;
   padding: 10px 15px 10px 0;
 }
 
@@ -77,8 +71,7 @@
 
 @media (max-width: 768px) {
   .industry-subtitle {
-    font-size: clamp(0.75rem, 3vw, 0.85rem);
-    line-height: 1.85;
+    font-size: clamp(1.0313rem, 4.125vw, 1.1688rem);
     margin-bottom: 36px;
     padding: 0 4px;
   }
@@ -90,7 +83,7 @@
   }
 
   .industry-name {
-    font-size: 0.62rem;
+    font-size: 0.8525rem;
     padding: 8px 12px 8px 0;
   }
 }

@@ -13,9 +13,7 @@
 
 .blog-inner-read-meta {
   font-family: var(--font-heading);
-  font-size: clamp(0.55rem, 0.8vw, 0.65rem);
-  font-weight: 500;
-  letter-spacing: 0.15em;
+  font-size: clamp(0.7563rem, 1.1vw, 0.8938rem);
   text-transform: uppercase;
   color: #0F172A;
   margin: 0 0 clamp(14px, 2vw, 20px);
@@ -23,12 +21,9 @@
 
 .blog-inner-title {
   font-family: var(--font-heading);
-  font-size: clamp(1.6rem, 3.2vw, 2.4rem);
-  font-weight: 600;
+  font-size: clamp(2.2rem, 4.4vw, 3.3rem);
   color: var(--color-primary);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  line-height: 1.35;
   margin: 0 0 clamp(18px, 2.5vw, 28px);
 }
 
@@ -56,9 +51,7 @@
 
 .blog-inner-author-name {
   font-family: var(--font-heading);
-  font-size: clamp(0.55rem, 0.8vw, 0.65rem);
-  font-weight: 500;
-  letter-spacing: 0.15em;
+  font-size: clamp(0.7563rem, 1.1vw, 0.8938rem);
   text-transform: uppercase;
   color:#0F172A;
   ;
@@ -84,23 +77,17 @@
 
 .blog-inner-body p {
   font-family: var(--font-heading);
-  font-size: clamp(0.65rem, 0.9vw, 0.75rem);
-  font-weight: 500;
+  font-size: clamp(0.8938rem, 1.2375vw, 1.0313rem);
   color: #6D6E76;
-  line-height: 2;
-  letter-spacing: 0.12em;
   text-transform: uppercase;
   margin: 0;
 }
 
 .blog-inner-subtitle {
   font-family: var(--font-heading);
-  font-size: clamp(0.85rem, 1.4vw, 1rem);
-  font-weight: 600;
+  font-size: clamp(1.1688rem, 1.925vw, 1.375rem);
   color: var(--color-primary);
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  line-height: 1.6;
   margin: 0;
 }
 
@@ -119,11 +106,8 @@
   align-items: flex-start;
   gap: clamp(10px, 1.5vw, 14px);
   font-family: var(--font-heading);
-  font-size: clamp(0.65rem, 0.9vw, 0.75rem);
-  font-weight: 500;
+  font-size: clamp(0.8938rem, 1.2375vw, 1.0313rem);
   color: #343434;
-  line-height: 2;
-  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 

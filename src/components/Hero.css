@@ -22,13 +22,10 @@
 .hero-description {
   float: right;
   font-family: var(--font-body);
-  font-size: 0.65rem;
+  font-size: 0.8938rem;
   color: #343434;
-  letter-spacing: 0.175em;
   text-transform: uppercase;
-  line-height: 2.25;
   max-width: 400px;
-  font-weight: 600;
   margin-right: 80px;
   margin-top: 10px;
   text-align: left;
@@ -37,11 +34,9 @@
 .hero-title {
   display: block;
   font-family: var(--font-heading);
-  font-size: clamp(1.7rem, 3.2vw, 2.25rem);
-  font-weight: 600;
-  line-height: 1.75;
+  font-weight: 300;
+  font-size: clamp(2.3375rem, 4.4vw, 3.25rem);
   color: #343434;
-  letter-spacing: 0.125em;
   text-transform: uppercase;
 }
 
@@ -57,7 +52,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-top: 120px;
+  margin-top: 90px;
   position: relative;
 }
 
@@ -75,23 +70,18 @@
 
 .premium-text {
   font-family: var(--font-heading);
-  font-size: clamp(2.5rem, 5vw, 5.5rem);
-  font-weight: 600;
-  line-height: 1.25;
-  letter-spacing: 0.175em;
+  font-size: clamp(3.4375rem, 6.875vw, 7.5625rem);
   color: #0000002E;
   text-transform: uppercase;
   user-select: none;
+  line-height: 1;
 }
 
 .hero-tagline {
   font-family: var(--font-body);
-  font-size: 0.65rem;
-  font-weight: 600;
+  font-size: 0.8938rem;
   color: #343434;
   max-width: 465px;
-  letter-spacing: 0.175em;
-  line-height: 2.25;
   text-transform: uppercase;
   margin-top: 170px;
   margin-bottom: 20px;
@@ -101,7 +91,6 @@
   .hero-tagline {
     margin-top: 0;
     margin-bottom: 0;
-    line-height: 1.65;
   }
 }
 
@@ -116,7 +105,7 @@
 
 .hero-bg-logo {
   position: absolute;
-  top: -18rem;
+  top: -15rem;
   max-width: 300px;
   height: auto;
   opacity: 1;
@@ -126,6 +115,7 @@
 
 .hero-product {
   position: relative;
+  bottom: 40px;
   z-index: 1;
   max-width: 100%;
   width: 740px;
@@ -157,6 +147,6 @@
 
 @media (min-width: 1600px) {
   .hero-title {
-    font-size: 2.8rem;
+    font-size: 3.85rem;
   }
 }
