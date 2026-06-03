@@ -25,12 +25,10 @@
   height: min(52rem, 95vw);
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(243, 27, 27, 0.14) 0%,
-    rgba(243, 27, 27, 0.04) 42%,
-    transparent 68%
-  );
+  background: radial-gradient(circle,
+      rgba(243, 27, 27, 0.14) 0%,
+      rgba(243, 27, 27, 0.04) 42%,
+      transparent 68%);
   pointer-events: none;
   will-change: transform, opacity;
 }
@@ -59,23 +57,19 @@
   flex: 1;
   height: 2px;
   max-width: clamp(4rem, 18vw, 12rem);
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(243, 27, 27, 0.15) 30%,
-    var(--color-primary, #f31b1b) 100%
-  );
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(243, 27, 27, 0.15) 30%,
+      var(--color-primary, #f31b1b) 100%);
   transform: scaleX(0);
   transform-origin: right center;
 }
 
 .page-loader__line--right {
-  background: linear-gradient(
-    90deg,
-    var(--color-primary, #f31b1b) 0%,
-    rgba(243, 27, 27, 0.15) 70%,
-    transparent 100%
-  );
+  background: linear-gradient(90deg,
+      var(--color-primary, #f31b1b) 0%,
+      rgba(243, 27, 27, 0.15) 70%,
+      transparent 100%);
   transform-origin: left center;
 }
 
@@ -89,11 +83,11 @@
 
 .page-loader__tagline {
   font-family: var(--font-heading);
-  font-size: clamp(1.0313rem, 3.3vw, 1.4438rem);
+  font-size: clamp(0.75rem, 2.5vw, 1.2rem);
   text-transform: uppercase;
   color: rgba(32, 32, 32, 0.55);
   text-align: center;
-  max-width: min(36rem, 90vw);
+  white-space: nowrap;
   will-change: transform, opacity, letter-spacing;
 }
 
@@ -111,12 +105,10 @@
   height: 100%;
   transform: scaleX(0);
   transform-origin: left center;
-  background: linear-gradient(
-    90deg,
-    #b51515 0%,
-    var(--color-primary, #f31b1b) 50%,
-    #ff5757 100%
-  );
+  background: linear-gradient(90deg,
+      #b51515 0%,
+      var(--color-primary, #f31b1b) 50%,
+      #ff5757 100%);
   will-change: transform;
 }
 
@@ -138,12 +130,10 @@ body.is-loading {
 
   .page-loader__line--left {
     transform-origin: center center;
-    background: linear-gradient(
-      90deg,
-      transparent 0%,
-      var(--color-primary, #f31b1b) 50%,
-      transparent 100%
-    );
+    background: linear-gradient(90deg,
+        transparent 0%,
+        var(--color-primary, #f31b1b) 50%,
+        transparent 100%);
   }
 
   .page-loader__line--right {

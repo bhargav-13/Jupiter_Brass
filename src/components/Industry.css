@@ -23,16 +23,17 @@
   align-items: center;
   gap: 0;
   padding: 0;
-  border: 2px solid var(--color-primary);
+  border: 1px solid #F31B1B;
   border-radius: 12px;
   background-color: #ffffff;
   overflow: hidden;
   transition: all 0.3s ease;
   height: 120px;
+  box-shadow: 2px 2.2px 0px 2px #F31B1B;
 }
 
 .industry-card:hover {
-  box-shadow: 0 6px 20px rgba(243, 27, 27, 0.15);
+  box-shadow: 4px 5px 0px 2px #F31B1B;
   transform: translateY(-2px);
 }
 
