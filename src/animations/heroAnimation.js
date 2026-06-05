@@ -8,6 +8,7 @@ import {
   EASE_SMOOTH,
   STAGGER_DEFAULT,
 } from './constants';
+import { headingSlideReveal } from './headingReveal';
 
 export function setupHeroAnimation(scope) {
   const tl = gsap.timeline({
@@ -21,25 +22,40 @@ export function setupHeroAnimation(scope) {
   const bgLogo = scope.querySelector('.hero-bg-logo');
   const product = scope.querySelector('.hero-product');
 
+  // Description fades in first
   if (description) {
     tl.from(description, {
-      y: 44,
+      y: 36,
       opacity: 0,
       filter: revealBlur('blur(6px)'),
       duration: DURATION_REVEAL,
     });
   }
 
+  // Hero title: Duten-style word-by-word clip reveal
   if (title) {
-    tl.from(
-      title,
+    // Split title into word-mask spans
+    const words = title.textContent.trim().split(/\s+/);
+    title.innerHTML = words
+      .map(
+        (w) => `<span class="lg-word-mask"><span class="lg-word-inner">${w}</span></span>`
+      )
+      .join(' ');
+
+    const inners = title.querySelectorAll('.lg-word-inner');
+    gsap.set(inners, { yPercent: 110, force3D: true });
+
+    tl.to(
+      inners,
       {
-        y: 64,
-        opacity: 0,
-        filter: revealBlur('blur(8px)'),
-        duration: 1.2,
+        yPercent: 0,
+        duration: 0.92,
+        ease: EASE_ENTER,
+        stagger: 0.055,
+        force3D: true,
+        onComplete: () => gsap.set(inners, { clearProps: 'transform' }),
       },
-      description ? '-=0.58' : 0
+      description ? '-=0.52' : 0
     );
   }
 

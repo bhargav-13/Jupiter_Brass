@@ -242,3 +242,26 @@ ul {
 .animate-fade-in {
   animation: fadeIn 0.8s ease forwards;
 }
+
+/* ── Duten-style word-mask clip reveal ───────────────────────────────────────
+   Each heading word is wrapped in .lg-word-mask (overflow hidden) and
+   .lg-word-inner (the element that slides up). GSAP drives the transform.   */
+.lg-word-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  line-height: inherit;
+}
+
+.lg-word-inner {
+  display: inline-block;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lg-word-inner {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
