@@ -35,7 +35,7 @@
   display: block;
   font-family: var(--font-heading);
   font-weight: 300;
-  font-size: clamp(2.3375rem, 4.4vw, 3.25rem);
+  font-size: clamp(2.3375rem, 4.4vw, 3.4rem);
   color: #343434;
   text-transform: uppercase;
 }
@@ -105,8 +105,9 @@
 
 .hero-bg-logo {
   position: absolute;
-  top: -15rem;
-  max-width: 300px;
+  top: -6rem;
+  right: -5rem;
+  max-width: 250px;
   height: auto;
   opacity: 1;
   z-index: 0;
@@ -147,6 +148,11 @@
 
 @media (min-width: 1600px) {
   .hero-title {
-    font-size: 3.85rem;
+    font-size: 4.25rem;
+  }
+
+  .hero-bg-logo {
+    top: -14rem;
+    max-width: 300px;
   }
 }

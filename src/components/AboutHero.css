@@ -233,6 +233,11 @@
   .about-hero-signature {
     justify-content: flex-start;
     margin-top: 20px;
+    font-size: 1rem;
+  }
+
+  .about-hero-tilde {
+    font-size: 1.1rem;
   }
 }
 
