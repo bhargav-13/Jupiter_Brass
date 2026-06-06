@@ -4,6 +4,7 @@
    ============================================= */
 
 @media (max-width: 768px) {
+
   /* ── Section titles (red headers) — override component clamp/fixed sizes ── */
   body .section-title,
   body h2.section-title,
@@ -192,7 +193,7 @@
   body .product-card:hover .product-image {
     width: auto;
     max-width: 78%;
-    max-height: 185px;
+    max-height: 350px;
     min-height: unset;
     transform: scale(1.08);
     margin: 0 auto;
@@ -586,6 +587,7 @@
 }
 
 @media (max-width: 480px) {
+
   body .section-title,
   body h2.section-title,
   body .section-heading .section-title,

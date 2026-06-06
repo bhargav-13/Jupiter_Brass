@@ -91,7 +91,7 @@
   }
 
   .stat-item {
-    padding: 20px 14px;
+    padding: 10px;
   }
 
   .stat-number {
@@ -99,10 +99,11 @@
   }
 
   .stat-label {
-    font-size: 0.7563rem;
+    font-size: 0.6rem;
   }
 
   .about-stats {
     gap: 12px;
+    width: 100%;
   }
 }
