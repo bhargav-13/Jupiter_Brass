@@ -288,7 +288,7 @@
 @media (max-width: 900px) {
   .product-detail-grid {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 0px;
   }
 
   .product-detail-info-col {

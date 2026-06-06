@@ -289,6 +289,10 @@
   }
 
   /* ── Certification ── */
+  body .certification {
+    padding-top: 0;
+  }
+
   body .certification-content {
     gap: 0.75rem;
   }
@@ -530,7 +534,7 @@
 
   body .about-hero-year {
     position: absolute;
-    top: 30%;
+    top: 15%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
@@ -542,7 +546,7 @@
   }
 
   body .about-hero-since {
-    top: -12px;
+    top: 22px;
     left: 0;
     transform: none;
     font-size: 1.0313rem;

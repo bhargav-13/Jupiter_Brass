@@ -3,10 +3,10 @@ import { gsap } from '../lib/gsap';
 import './ChooseFinish.css';
 
 const finishes = [
-  { id: 'brass',        label: 'Brass',        swatchClass: 'finish-swatch--brass'  },
-  { id: 'aluminium',    label: 'Aluminium',    swatchClass: 'finish-swatch--chrome' },
-  { id: 'steel',        label: 'Steel',        swatchClass: 'finish-swatch--satin'  },
-  { id: 'matte',        label: 'Matte',        swatchClass: 'finish-swatch--dark'   },
+  { id: 'brass', label: 'Brass', swatchClass: 'finish-swatch--brass' },
+  { id: 'aluminium', label: 'Aluminium', swatchClass: 'finish-swatch--chrome' },
+  { id: 'steel', label: 'Steel', swatchClass: 'finish-swatch--satin' },
+  { id: 'matte', label: 'Matte', swatchClass: 'finish-swatch--dark' },
 ];
 
 /* Splits a string into individual letter <span>s */
@@ -36,14 +36,20 @@ const ChooseFinish = () => {
     const len = label.length;
 
     // Max vw so the whole word fits inside ~88vw container
-    const FIT_VW  = 88 / (len * 0.65);
-    // Figma reference cap (brass at 25.2vw)
-    const CAP_VW  = 25.2;
+    let FIT_VW = 88 / (len * 0.65);
 
-    const vw  = Math.min(CAP_VW, FIT_VW).toFixed(2);
+    // Reduce specifically for Aluminium so it doesn't get cut off on mobile
+    if (label === 'Aluminium') {
+      FIT_VW = 84 / (len * 0.675);
+    }
+
+    // Figma reference cap (brass at 25.2vw)
+    const CAP_VW = 25.2;
+
+    const vw = Math.min(CAP_VW, FIT_VW).toFixed(2);
     // rem equivalent at 1440px reference viewport (vw × 14.4 / 16)
     const rem = Math.min(22.65, (parseFloat(vw) * 14.4 / 16)).toFixed(2);
-    const minRem = Math.max(3, (rem * 0.45)).toFixed(2);
+    const minRem = Math.max(1.5, (rem * 0.2)).toFixed(2);
 
     return `clamp(${minRem}rem, ${vw}vw, ${rem}rem)`;
   }, []);
