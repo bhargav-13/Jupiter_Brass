@@ -5,7 +5,6 @@ import './AboutHero.css';
 
 const AboutHero = () => {
   const bannerRef = useRef(null);
-  const portraitRef = useRef(null);
   const gridPosRef = useRef({ x: 0, y: 0, ox: 0, oy: 0 });
   const [gridActive, setGridActive] = useState(false);
 
@@ -61,18 +60,12 @@ const AboutHero = () => {
     (event) => {
       setGridActive(true);
       updateGridPosition(event.clientX, event.clientY);
-      if (portraitRef.current && !prefersReducedMotion()) {
-        gsap.to(portraitRef.current, { scale: 1.02, duration: 0.8, ease: 'power3.out' });
-      }
     },
     [updateGridPosition]
   );
 
   const handleMouseLeave = useCallback(() => {
     setGridActive(false);
-    if (portraitRef.current) {
-      gsap.to(portraitRef.current, { scale: 1, duration: 0.6, ease: 'power3.out' });
-    }
   }, []);
 
   useEffect(() => {
@@ -110,7 +103,6 @@ const AboutHero = () => {
           </div>
           <div className="about-hero-image-wrapper">
             <img
-              ref={portraitRef}
               src="/images/jay_vasoya.png"
               alt="Mr. Jay Vasoya"
               className="about-hero-image"

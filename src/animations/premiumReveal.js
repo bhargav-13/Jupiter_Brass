@@ -48,7 +48,7 @@ export function steelCurtainReveal(targets, options = {}) {
         180deg,
         rgba(243, 27, 27, 0.18) 0%,
         rgba(243, 27, 27, 0.08) 40%,
-        rgba(255,255,255,0.95) 100%
+        rgba(243, 27, 27, 0.0) 100%
       );
       transform-origin: top center;
     `;

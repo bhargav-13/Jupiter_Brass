@@ -13,7 +13,6 @@ export function setupAboutHeroAnimations(scope) {
   const yearValue = aboutHero.querySelector('.about-hero-year-value');
   const title = aboutHero.querySelector('.about-hero-title');
   const textBlocks = aboutHero.querySelectorAll('.about-hero-text');
-  const portrait = aboutHero.querySelector('.about-hero-image');
 
   if (title) {
     gsap.fromTo(
@@ -70,14 +69,6 @@ export function setupAboutHeroAnimations(scope) {
               ease: EASE_SMOOTH,
               onComplete: () => gsap.set(yearBlock, { clearProps: 'transform,opacity' }),
             }
-          );
-        }
-
-        if (portrait) {
-          gsap.fromTo(
-            portrait,
-            { opacity: 0, y: 30, scale: 0.97 },
-            { opacity: 1, y: 0, scale: 1, duration: 1.4, ease: EASE_PREMIUM, delay: 0.35 }
           );
         }
       },

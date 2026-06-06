@@ -15,6 +15,81 @@ import { forgeFocusReveal, precisionStamp, steelCurtainReveal } from './premiumR
 import { revealChildren, revealElement, revealElements, scrubReveal } from './scrollReveal';
 import { setupQualitySectionAnimation } from './qualityAnimation';
 
+function setupImageParallax(scope) {
+  const SCRUB = 1.2;
+
+  // About image — forward parallax (y moves same direction as scroll, slower)
+  const aboutImg = scope.querySelector('.about-image');
+  const aboutBox = scope.querySelector('.about-image-container');
+  if (aboutImg && aboutBox) {
+    gsap.fromTo(aboutImg, { y: '-7%' }, {
+      y: '7%', ease: 'none',
+      scrollTrigger: { trigger: aboutBox, start: 'top bottom', end: 'bottom top', scrub: SCRUB },
+    });
+  }
+
+  // Process image — backward parallax (moves against scroll direction)
+  const processImg = scope.querySelector('.process-image');
+  const processBox = scope.querySelector('.process-image-container');
+  if (processImg && processBox) {
+    gsap.fromTo(processImg, { y: '7%' }, {
+      y: '-7%', ease: 'none',
+      scrollTrigger: { trigger: processBox, start: 'top bottom', end: 'bottom top', scrub: SCRUB },
+    });
+  }
+
+  // Commitment profile — backward parallax
+  const commitImg = scope.querySelector('.commitment-profile-img');
+  const commitBox = scope.querySelector('.commitment-image-box');
+  if (commitImg && commitBox) {
+    gsap.fromTo(commitImg, { y: '7%' }, {
+      y: '-7%', ease: 'none',
+      scrollTrigger: { trigger: commitBox, start: 'top bottom', end: 'bottom top', scrub: SCRUB },
+    });
+  }
+
+  // Certification image — subtle forward (contain image, pixel-safe)
+  const certImg = scope.querySelector('.certification-image');
+  const certBox = scope.querySelector('.certification-image-box');
+  if (certImg && certBox) {
+    gsap.fromTo(certImg, { y: -20 }, {
+      y: 20, ease: 'none',
+      scrollTrigger: { trigger: certBox, start: 'top bottom', end: 'bottom top', scrub: SCRUB },
+    });
+  }
+
+  // Why-choose-us banner — subtle forward (contain image, pixel-safe)
+  const whyImg = scope.querySelector('.why-choose-us-img');
+  const whyBanner = scope.querySelector('.why-choose-us-banner');
+  if (whyImg && whyBanner) {
+    gsap.fromTo(whyImg, { y: -15 }, {
+      y: 15, ease: 'none',
+      scrollTrigger: { trigger: whyBanner, start: 'top bottom', end: 'bottom top', scrub: SCRUB },
+    });
+  }
+
+  // Machinery cards — alternating forward/backward per card
+  scope.querySelectorAll('.machinery-card').forEach((card, i) => {
+    const img = card.querySelector('.machinery-card-img');
+    if (!img) return;
+    const dir = i % 2 === 0 ? 1 : -1;
+    gsap.fromTo(img, { y: dir * -12 }, {
+      y: dir * 12, ease: 'none',
+      scrollTrigger: { trigger: card, start: 'top bottom', end: 'bottom top', scrub: 1.4 },
+    });
+  });
+
+  // Hero product — slow downward drift (depth parallax as hero scrolls away)
+  const heroProduct = scope.querySelector('.hero-product');
+  const heroSection = scope.querySelector('.hero');
+  if (heroProduct && heroSection) {
+    gsap.fromTo(heroProduct, { y: 0 }, {
+      y: 55, ease: 'none',
+      scrollTrigger: { trigger: heroSection, start: 'top top', end: 'bottom top', scrub: 1.5 },
+    });
+  }
+}
+
 export function setupScrollAnimations(scope) {
 
   /* ─────────────────────────────────────────────────────────────────────────
@@ -128,6 +203,8 @@ export function setupScrollAnimations(scope) {
     const content = certificationWrapper.querySelector('.certification-content');
     if (content) revealElement(content, { y: 44, start: 'top 84%' });
   }
+
+  setupImageParallax(scope);
 
   /* ─────────────────────────────────────────────────────────────────────────
      ④ SCRUB REVEALS — scroll-linked parallax (only non-curtain elements)

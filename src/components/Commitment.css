@@ -102,20 +102,17 @@
   display: flex;
   justify-content: center;
   align-items: stretch;
+  overflow: hidden;
 }
 
 .commitment-profile-img {
   width: 100%;
-  height: 600px;
+  height: 115%;
+  min-height: 600px;
   object-fit: cover;
   border-radius: 4px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.commitment-profile-img:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  will-change: transform;
 }
 
 /* ---------- Responsive ---------- */

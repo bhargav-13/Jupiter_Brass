@@ -14,10 +14,10 @@ export function initLenis() {
   const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
   lenisInstance = new Lenis({
-    duration: isMobile ? 1.15 : 1.35,
+    duration: isMobile ? 1.8 : 3.5,
     easing: (t) => Math.min(1, 1.001 - 2 ** (-10 * t)),
     smoothWheel: true,
-    wheelMultiplier: isMobile ? 1 : 0.85,
+    wheelMultiplier: isMobile ? 0.8 : 0.6,
     touchMultiplier: 1.15,
     syncTouch: true,
   });

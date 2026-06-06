@@ -127,8 +127,6 @@
   width: auto;
   object-fit: cover;
   object-position: bottom;
-  transform-origin: center bottom;
-  will-change: transform;
 }
 
 /* ---------- Bottom Content ---------- */

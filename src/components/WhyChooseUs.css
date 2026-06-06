@@ -15,12 +15,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .why-choose-us-img {
   width: 70%;
   height: auto;
   object-fit: contain;
+  will-change: transform;
 }
 
 .why-choose-us-grid {

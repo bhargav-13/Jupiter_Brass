@@ -83,13 +83,23 @@
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: var(--font-heading);
-  font-size: clamp(6.1875rem, 18vw, 17rem);
-  color: #e0e0e0;
+  /* font-size set dynamically by JS (computeFontSize) to match Figma proportions */
+  color: rgba(52, 52, 52, 0.25);
   text-transform: uppercase;
   white-space: nowrap;
   user-select: none;
   pointer-events: none;
   z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+/* Individual animated letter */
+.cf-letter {
+  display: inline-block;
+  will-change: transform, opacity;
+  /* space characters get a small fixed gap */
 }
 
 /* ---------- Foreground Image ---------- */
@@ -125,10 +135,6 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
-  }
-
-  .choose-finish-bg-text {
-    font-size: clamp(5.5rem, 16.5vw, 8.25rem);
   }
 
   .choose-finish-image {

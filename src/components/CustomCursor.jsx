@@ -47,7 +47,24 @@ const CustomCursor = () => {
 
     gsap.set([dot, ring], { xPercent: -50, yPercent: -50, force3D: true });
 
+    // Once the cursor has been positioned at least once, keep it visible forever
+    // (only hide if the pointer truly leaves the browser window).
+    let hasBeenPositioned = false;
+
+    const show = () => root.classList.add('custom-cursor--visible');
+    const hide = () => {
+      // Only hide if we haven't had a position yet (safety guard)
+      if (!hasBeenPositioned) root.classList.remove('custom-cursor--visible');
+    };
+
     const move = (event) => {
+      if (!hasBeenPositioned) {
+        hasBeenPositioned = true;
+        // Position before making visible to avoid a jump from 0,0
+        gsap.set(dot,  { x: event.clientX, y: event.clientY });
+        gsap.set(ring, { x: event.clientX, y: event.clientY });
+      }
+      show();
       dotX(event.clientX);
       dotY(event.clientY);
       ringX(event.clientX);
@@ -65,32 +82,33 @@ const CustomCursor = () => {
     const onDown = () => root.classList.add('custom-cursor--press');
     const onUp = () => root.classList.remove('custom-cursor--press');
 
-    const onBlur = () => root.classList.remove('custom-cursor--visible');
-    const onFocus = () => root.classList.add('custom-cursor--visible');
-
-    const onFirstMove = (event) => {
-      root.classList.add('custom-cursor--visible');
-      move(event);
-      window.removeEventListener('mousemove', onFirstMove);
-      window.addEventListener('mousemove', move, { passive: true });
+    // Only hide when the pointer genuinely exits the browser window.
+    const onDocLeave = (event) => {
+      if (!event.relatedTarget && !event.toElement) {
+        root.classList.remove('custom-cursor--visible');
+        // Reset so next entry re-positions before showing
+        hasBeenPositioned = false;
+      }
+    };
+    const onDocEnter = () => {
+      // Will become visible again on the next mousemove
     };
 
-    window.addEventListener('mousemove', onFirstMove, { passive: true });
+    window.addEventListener('mousemove', move, { passive: true });
     document.addEventListener('mouseover', onOver);
     window.addEventListener('mousedown', onDown);
     window.addEventListener('mouseup', onUp);
-    window.addEventListener('blur', onBlur);
-    window.addEventListener('focus', onFocus);
+    document.addEventListener('mouseleave', onDocLeave);
+    document.addEventListener('mouseenter', onDocEnter);
 
     return () => {
       document.body.classList.remove('custom-cursor-active');
-      window.removeEventListener('mousemove', onFirstMove);
       window.removeEventListener('mousemove', move);
       document.removeEventListener('mouseover', onOver);
       window.removeEventListener('mousedown', onDown);
       window.removeEventListener('mouseup', onUp);
-      window.removeEventListener('blur', onBlur);
-      window.removeEventListener('focus', onFocus);
+      document.removeEventListener('mouseleave', onDocLeave);
+      document.removeEventListener('mouseenter', onDocEnter);
     };
   }, []);
 
