@@ -6,7 +6,7 @@ const finishes = [
   { id: 'brass',        label: 'Brass',        swatchClass: 'finish-swatch--brass'  },
   { id: 'aluminium',    label: 'Aluminium',    swatchClass: 'finish-swatch--chrome' },
   { id: 'steel',        label: 'Steel',        swatchClass: 'finish-swatch--satin'  },
-  { id: 'antique-dark', label: 'Antique Dark', swatchClass: 'finish-swatch--dark'   },
+  { id: 'matte',        label: 'Matte',        swatchClass: 'finish-swatch--dark'   },
 ];
 
 /* Splits a string into individual letter <span>s */
