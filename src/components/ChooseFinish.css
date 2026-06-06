@@ -117,15 +117,15 @@
   filter: none;
 }
 
-.choose-finish-image.finish-chrome {
+.choose-finish-image.finish-aluminium {
   filter: grayscale(100%) brightness(1.05) contrast(1.25);
 }
 
-.choose-finish-image.finish-satin {
+.choose-finish-image.finish-steel {
   filter: grayscale(100%) brightness(1.3) contrast(0.85);
 }
 
-.choose-finish-image.finish-dark {
+.choose-finish-image.finish-matte {
   filter: grayscale(100%) brightness(0.35) contrast(1.4);
 }
 
