@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
+import SEO from '../components/SEO';
+import { SITE_URL, toSentenceCase, toTitleCase } from '../lib/seo';
+import StructuredData from '../components/StructuredData';
 import { getProductBySlug, homeProductCategories } from '../data/products';
 import '../components/Products.css';
 import './ProductInnerPage.css';
@@ -88,8 +91,28 @@ const ProductInnerPage = () => {
 
   const relatedProducts = homeProductCategories.filter((p) => p.slug !== product.slug);
 
+  const productSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: toTitleCase(product.name),
+    description: toSentenceCase(product.description),
+    image: `${SITE_URL}${product.detailImage}`,
+    brand: {
+      '@type': 'Brand',
+      name: 'Jupiter Meta Mech',
+    },
+  };
+
   return (
     <div className="product-inner-page">
+      <SEO
+        title={`${toTitleCase(product.name)} - Precision Brass Components`}
+        description={toSentenceCase(product.description)}
+        path={`/products/${product.slug}`}
+        image={`${SITE_URL}${product.detailImage}`}
+        type="product"
+      />
+      <StructuredData id="product" data={productSchema} />
       <section className="section product-inner-section">
         <div className="container product-inner-content">
           <div className="product-detail-grid">

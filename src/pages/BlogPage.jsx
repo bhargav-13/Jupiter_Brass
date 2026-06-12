@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '../components/SEO';
 import ArticleCard from '../components/ArticleCard';
 import { articles } from '../data/articles';
 import '../components/Articles.css';
@@ -7,6 +8,11 @@ import './BlogPage.css';
 
 const BlogPage = () => (
   <div className="blog-page">
+    <SEO
+      title="Blog"
+      description="Read the latest articles from Jupiter Meta Mech on brass manufacturing, CNC machining, alloy selection, quality control, and industrial applications."
+      path="/blog"
+    />
     <section className="section blog-section">
       <div className="container">
         <div className="section-heading quality-header">

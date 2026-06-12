@@ -1,4 +1,7 @@
 import React from 'react';
+import SEO from '../components/SEO';
+import { SITE_URL } from '../lib/seo';
+import StructuredData from '../components/StructuredData';
 import './ProductPage.css';
 import './ContactPage.css';
 
@@ -56,8 +59,36 @@ const ContactPage = () => {
     event.preventDefault();
   };
 
+  const localBusinessSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'Jupiter Meta Mech',
+    image: `${SITE_URL}/hero.png`,
+    telephone: '+91-94292-69395',
+    email: 'info@jupiterbrass.com',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'RAW Type 84/1, G.I.D.C., Shanker Tekri, Udyognagar',
+      addressLocality: 'Jamnagar',
+      addressRegion: 'Gujarat',
+      postalCode: '361004',
+      addressCountry: 'IN',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: MAP_LOCATION.lat,
+      longitude: MAP_LOCATION.lng,
+    },
+  };
+
   return (
     <div className="contact-page">
+      <SEO
+        title="Contact Us"
+        description="Get in touch with Jupiter Meta Mech for brass component inquiries, custom manufacturing, bulk orders, and industrial solutions. Reach our team in Jamnagar, Gujarat."
+        path="/contact"
+      />
+      <StructuredData id="local-business" data={localBusinessSchema} />
       <section className="section contact-hero-section">
         <div className="container">
           <div className="section-heading quality-header contact-hero-header">

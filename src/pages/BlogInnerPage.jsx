@@ -1,6 +1,9 @@
 import React from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import Articles from '../components/Articles';
+import SEO from '../components/SEO';
+import { SITE_URL, toSentenceCase } from '../lib/seo';
+import StructuredData from '../components/StructuredData';
 import {
   formatArticleAuthor,
   formatArticleMeta,
@@ -17,8 +20,32 @@ const BlogInnerPage = () => {
     return <Navigate to="/blog" replace />;
   }
 
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: toSentenceCase(article.title),
+    image: `${SITE_URL}${article.image}`,
+    author: {
+      '@type': 'Person',
+      name: article.author,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Jupiter Meta Mech',
+    },
+    datePublished: article.date,
+  };
+
   return (
     <div className="blog-inner-page">
+      <SEO
+        title={toSentenceCase(article.title)}
+        description={toSentenceCase(article.title)}
+        path={`/blog/${article.slug}`}
+        image={`${SITE_URL}${article.image}`}
+        type="article"
+      />
+      <StructuredData id="article" data={articleSchema} />
       <section className="section blog-inner-section">
         <div className="container">
           <header className="blog-inner-header">

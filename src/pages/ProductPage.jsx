@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '../components/SEO';
 import ProductCard from '../components/ProductCard';
 import {
   electricalProducts,
@@ -10,6 +11,11 @@ import '../components/Products.css';
 
 const ProductPage = () => (
   <div className="product-page">
+    <SEO
+      title="Brass Components & Precision Parts"
+      description="Explore Jupiter Meta Mech's range of precision brass parts, electrical components, and foundry parts, engineered to strict quality standards using modern manufacturing technology."
+      path="/products"
+    />
     <section className="section product-quality-section">
       <div className="container">
         <div className="section-heading quality-header">
