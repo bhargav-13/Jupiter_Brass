@@ -13,7 +13,7 @@ const colorOptions = [
   { id: 'light-silver', label: 'Light Silver', swatchClass: 'color-light-silver' },
 ];
 
-const features = [
+const defaultFeatures = [
   {
     title: 'Corrosion & Weather Resistance',
     description:
@@ -131,7 +131,7 @@ const ProductInnerPage = () => {
             <h2 className="product-inner-section-title">FEATURES</h2>
 
             <div className="features-grid">
-              {features.map((feature, index) => (
+              {(product.features?.length ? product.features : defaultFeatures).map((feature, index) => (
                 <div className="feature-card" key={index}>
                   <h3 className="feature-card-title">{feature.title}</h3>
                   <p className="feature-card-desc">{feature.description}</p>

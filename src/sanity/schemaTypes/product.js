@@ -63,6 +63,42 @@ export default defineType({
       type: 'text',
       rows: 5,
     }),
+    defineField({
+      name: 'features',
+      title: 'Features',
+      description: 'Feature cards shown on the product detail page',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          name: 'feature',
+          title: 'Feature',
+          fields: [
+            defineField({
+              name: 'title',
+              title: 'Title',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
+            }),
+            defineField({
+              name: 'description',
+              title: 'Description',
+              type: 'text',
+              rows: 3,
+            }),
+            defineField({
+              name: 'icon',
+              title: 'Icon',
+              type: 'image',
+              description: 'SVG or small image for the feature icon',
+            }),
+          ],
+          preview: {
+            select: { title: 'title', media: 'icon' },
+          },
+        },
+      ],
+    }),
   ],
   preview: {
     select: {

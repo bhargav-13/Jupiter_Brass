@@ -7,7 +7,8 @@ export const PRODUCT_FIELDS = `
   customClass,
   description,
   image,
-  detailImage
+  detailImage,
+  features[]{ title, description, "icon": icon.asset->url }
 `;
 
 export const ALL_PRODUCTS_QUERY = `*[_type == "product"]{ ${PRODUCT_FIELDS} }`;
