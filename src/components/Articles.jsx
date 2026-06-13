@@ -1,12 +1,14 @@
 import React from 'react';
 import ArticleCard from './ArticleCard';
-import { featuredArticles, getRelatedArticles } from '../data/articles';
+import { useArticles } from '../sanity/hooks';
 import './Articles.css';
 
 const Articles = ({ excludeSlug, limit = 3 }) => {
+  const { articles } = useArticles();
+
   const items = excludeSlug
-    ? getRelatedArticles(excludeSlug, limit)
-    : featuredArticles.slice(0, limit);
+    ? articles.filter((a) => a.slug !== excludeSlug).slice(0, limit)
+    : articles.slice(0, limit);
 
   if (!items.length) return null;
 

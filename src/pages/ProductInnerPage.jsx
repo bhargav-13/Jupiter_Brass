@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
-import SEO from '../components/SEO';
-import { SITE_URL, toSentenceCase, toTitleCase } from '../lib/seo';
-import StructuredData from '../components/StructuredData';
-import { getProductBySlug, homeProductCategories } from '../data/products';
+import { useProduct, useProducts } from '../sanity/hooks';
 import '../components/Products.css';
 import './ProductInnerPage.css';
 
@@ -78,41 +75,25 @@ const threadColumns = [
 
 const ProductInnerPage = () => {
   const { slug } = useParams();
-  const product = getProductBySlug(slug);
+  const { product, loading } = useProduct(slug);
+  const { products } = useProducts();
   const [activeColor, setActiveColor] = useState('brass');
 
   useEffect(() => {
     setActiveColor('brass');
   }, [slug]);
 
+  if (loading) return null;
+
   if (!product) {
     return <Navigate to="/products" replace />;
   }
 
-  const relatedProducts = homeProductCategories.filter((p) => p.slug !== product.slug);
-
-  const productSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Product',
-    name: toTitleCase(product.name),
-    description: toSentenceCase(product.description),
-    image: `${SITE_URL}${product.detailImage}`,
-    brand: {
-      '@type': 'Brand',
-      name: 'Jupiter Meta Mech',
-    },
-  };
+  const relatedProducts = products
+    .filter((p) => p.category === 'category' && p.slug !== product.slug);
 
   return (
     <div className="product-inner-page">
-      <SEO
-        title={`${toTitleCase(product.name)} - Precision Brass Components`}
-        description={toSentenceCase(product.description)}
-        path={`/products/${product.slug}`}
-        image={`${SITE_URL}${product.detailImage}`}
-        type="product"
-      />
-      <StructuredData id="product" data={productSchema} />
       <section className="section product-inner-section">
         <div className="container product-inner-content">
           <div className="product-detail-grid">

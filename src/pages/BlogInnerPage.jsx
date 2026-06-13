@@ -1,51 +1,46 @@
 import React from 'react';
 import { Navigate, useParams } from 'react-router-dom';
+import { PortableText } from '@portabletext/react';
 import Articles from '../components/Articles';
-import SEO from '../components/SEO';
-import { SITE_URL, toSentenceCase } from '../lib/seo';
-import StructuredData from '../components/StructuredData';
+import { useArticle } from '../sanity/hooks';
+import { urlFor } from '../sanity/client';
 import {
   formatArticleAuthor,
   formatArticleMeta,
-  getArticleBySlug,
 } from '../data/articles';
 import '../components/Articles.css';
 import './BlogInnerPage.css';
 
+const portableTextComponents = {
+  types: {
+    image: ({ value }) => (
+      <figure className="blog-inner-image">
+        <img src={urlFor(value).width(800).url()} alt={value.alt || ''} />
+      </figure>
+    ),
+  },
+  block: {
+    h2: ({ children }) => <h2 className="blog-inner-subtitle">{children}</h2>,
+    h3: ({ children }) => <h3 className="blog-inner-subtitle">{children}</h3>,
+  },
+  list: {
+    bullet: ({ children }) => <ul className="blog-inner-list">{children}</ul>,
+    number: ({ children }) => <ol className="blog-inner-list">{children}</ol>,
+  },
+};
+
 const BlogInnerPage = () => {
   const { slug } = useParams();
-  const article = getArticleBySlug(slug);
+  const { article, loading } = useArticle(slug);
+
+  if (loading) return null;
 
   if (!article) {
     return <Navigate to="/blog" replace />;
   }
 
-  const articleSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: toSentenceCase(article.title),
-    image: `${SITE_URL}${article.image}`,
-    author: {
-      '@type': 'Person',
-      name: article.author,
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Jupiter Meta Mech',
-    },
-    datePublished: article.date,
-  };
-
   return (
     <div className="blog-inner-page">
-      <SEO
-        title={toSentenceCase(article.title)}
-        description={toSentenceCase(article.title)}
-        path={`/blog/${article.slug}`}
-        image={`${SITE_URL}${article.image}`}
-        type="article"
-      />
-      <StructuredData id="article" data={articleSchema} />
       <section className="section blog-inner-section">
         <div className="container">
           <header className="blog-inner-header">
@@ -70,94 +65,11 @@ const BlogInnerPage = () => {
           </header>
 
           <div className="blog-inner-body">
-            <p>
-              LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT, SED DO EIUSMOD TEMPOR
-              INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA. UT ENIM AD MINIM VENIAM, QUIS
-              NOSTRUD EXERCITATION ULLAMCO LABORIS NISI UT ALIQUIP EX EA COMMODO CONSEQUAT.
-              DUIS AUTE IRURE DOLOR IN REPREHENDERIT IN VOLUPTATE VELIT ESSE CILLUM DOLORE EU
-              FUGIAT NULLA PARIATUR. EXCEPTEUR SINT OCCAECAT CUPIDATAT NON PROIDENT, SUNT IN
-              CULPA QUI OFFICIA DESERUNT MOLLIT ANIM ID EST LABORUM.
-            </p>
-
-            <h2 className="blog-inner-subtitle">
-              LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT, SED DO EIUSMOD TEMPOR
-            </h2>
-
-            <p>
-              LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT, SED DO EIUSMOD TEMPOR
-              INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA. UT ENIM AD MINIM VENIAM, QUIS
-              NOSTRUD EXERCITATION ULLAMCO LABORIS NISI UT ALIQUIP EX EA COMMODO CONSEQUAT.
-              DUIS AUTE IRURE DOLOR IN REPREHENDERIT IN VOLUPTATE VELIT ESSE CILLUM DOLORE EU
-              FUGIAT NULLA PARIATUR.
-            </p>
-
-            <ul className="blog-inner-list">
-              <li>
-                LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT, SED DO EIUSMOD TEMPOR
-                INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA.
-              </li>
-              <li>
-                LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT, SED DO EIUSMOD TEMPOR
-                INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA.
-              </li>
-              <li>
-                LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT, SED DO EIUSMOD TEMPOR
-                INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA.
-              </li>
-              <li>
-                LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT, SED DO EIUSMOD TEMPOR
-                INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA.
-              </li>
-            </ul>
-
-            <p>
-              LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT, SED DO EIUSMOD TEMPOR
-              INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA. UT ENIM AD MINIM VENIAM, QUIS
-              NOSTRUD EXERCITATION ULLAMCO LABORIS NISI UT ALIQUIP EX EA COMMODO CONSEQUAT.
-              DUIS AUTE IRURE DOLOR IN REPREHENDERIT IN VOLUPTATE VELIT ESSE CILLUM DOLORE EU
-              FUGIAT NULLA PARIATUR. EXCEPTEUR SINT OCCAECAT CUPIDATAT NON PROIDENT, SUNT IN
-              CULPA QUI OFFICIA DESERUNT MOLLIT ANIM ID EST LABORUM.
-            </p>
-
-            <h2 className="blog-inner-subtitle">
-              LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT, SED DO EIUSMOD TEMPOR
-            </h2>
-
-            <p>
-              LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT, SED DO EIUSMOD TEMPOR
-              INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA. UT ENIM AD MINIM VENIAM, QUIS
-              NOSTRUD EXERCITATION ULLAMCO LABORIS NISI UT ALIQUIP EX EA COMMODO CONSEQUAT.
-              DUIS AUTE IRURE DOLOR IN REPREHENDERIT IN VOLUPTATE VELIT ESSE CILLUM DOLORE EU
-              FUGIAT NULLA PARIATUR.
-            </p>
-
-            <ul className="blog-inner-list">
-              <li>
-                LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT, SED DO EIUSMOD TEMPOR
-                INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA.
-              </li>
-              <li>
-                LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT, SED DO EIUSMOD TEMPOR
-                INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA.
-              </li>
-              <li>
-                LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT, SED DO EIUSMOD TEMPOR
-                INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA.
-              </li>
-              <li>
-                LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT, SED DO EIUSMOD TEMPOR
-                INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA.
-              </li>
-            </ul>
-
-            <p>
-              LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT, SED DO EIUSMOD TEMPOR
-              INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA. UT ENIM AD MINIM VENIAM, QUIS
-              NOSTRUD EXERCITATION ULLAMCO LABORIS NISI UT ALIQUIP EX EA COMMODO CONSEQUAT.
-              DUIS AUTE IRURE DOLOR IN REPREHENDERIT IN VOLUPTATE VELIT ESSE CILLUM DOLORE EU
-              FUGIAT NULLA PARIATUR. EXCEPTEUR SINT OCCAECAT CUPIDATAT NON PROIDENT, SUNT IN
-              CULPA QUI OFFICIA DESERUNT MOLLIT ANIM ID EST LABORUM.
-            </p>
+            {article.body ? (
+              <PortableText value={article.body} components={portableTextComponents} />
+            ) : (
+              <p>Content coming soon.</p>
+            )}
           </div>
         </div>
       </section>

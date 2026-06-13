@@ -16,10 +16,11 @@ import SmoothScroll from './components/SmoothScroll';
 import CustomCursor from './components/CustomCursor';
 import ScrollProgress from './components/ScrollProgress';
 import PageLoader from './components/PageLoader';
+import StudioPage from './pages/StudioPage';
 
-function App() {
+function SiteLayout() {
   return (
-    <Router>
+    <>
       <PageLoader />
       <CustomCursor />
       <ScrollProgress />
@@ -41,6 +42,17 @@ function App() {
         </Routes>
       </main>
       <Footer />
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/studio/*" element={<StudioPage />} />
+        <Route path="/*" element={<SiteLayout />} />
+      </Routes>
     </Router>
   );
 }
