@@ -4,18 +4,24 @@ import { useCategories, useProducts } from '../sanity/hooks';
 import './ProductPage.css';
 import '../components/Products.css';
 
-const FALLBACK_CATEGORIES = [
-  { _id: 'precision', title: 'Precision Parts', slug: 'precision' },
-  { _id: 'electrical', title: 'Electrical Components', slug: 'electrical' },
-  { _id: 'foundry', title: 'Foundry Parts', slug: 'foundry' },
-  { _id: 'other-metal-parts', title: 'Other Metal Parts', slug: 'other-metal-parts' },
+// Base categories always shown; Sanity-managed ones are merged on top (by slug) and sorted by order.
+const BASE_CATEGORIES = [
+  { _id: 'precision', title: 'Precision Parts', slug: 'precision', order: 1 },
+  { _id: 'electrical', title: 'Electrical Components', slug: 'electrical', order: 2 },
+  { _id: 'foundry', title: 'Foundry Parts', slug: 'foundry', order: 3 },
 ];
+
+function mergeCategories(base, fromSanity) {
+  const map = new Map(base.map((c) => [c.slug, { ...c }]));
+  fromSanity.forEach((c) => map.set(c.slug, c));
+  return [...map.values()].sort((a, b) => (a.order ?? 99) - (b.order ?? 99));
+}
 
 const ProductPage = () => {
   const { products } = useProducts();
   const { categories, loading: categoriesLoading } = useCategories();
 
-  const displayCategories = categories.length > 0 ? categories : FALLBACK_CATEGORIES;
+  const displayCategories = mergeCategories(BASE_CATEGORIES, categories);
 
   return (
     <div className="product-page">
