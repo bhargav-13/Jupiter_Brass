@@ -5,7 +5,9 @@ import './Products.css';
 
 const Products = () => {
   const { products } = useProducts();
-  const homeProductCategories = products.filter((p) => p.category === 'category');
+  const homeProductCategories = products
+    .filter((p) => p.category === 'category')
+    .sort((a, b) => (a.displayId || '').localeCompare(b.displayId || '', undefined, { numeric: true }));
 
   return (
     <section id="products" className="section products">
