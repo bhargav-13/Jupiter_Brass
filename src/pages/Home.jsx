@@ -19,7 +19,7 @@ const organizationSchema = {
   name: SITE_NAME,
   alternateName: 'Jupiter Brass Industries',
   url: SITE_URL,
-  logo: `${SITE_URL}/images/jupiter_brass_logo.svg`,
+  logo: `${SITE_URL}/logo.svg`,
   description:
     'Manufacturer of precision-engineered brass components for electrical, plumbing, automotive, engineering, telecommunications, hardware, and renewable energy industries.',
   address: {

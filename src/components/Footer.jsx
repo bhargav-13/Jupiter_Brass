@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Left: Logo + Tagline + Social */}
           <div className="footer-brand">
             <div className="footer-logo">
-              <img src="/images/jupiter_brass_logo.svg" alt="Jupiter Brass Logo" className="footer-logo-img" />
+              <img src="/logo.svg" alt="Jupiter Brass Logo" className="footer-logo-img" />
             </div>
             <p className="footer-tagline">Precision Brass Components Manufacturer</p>
             <div className="footer-socials">

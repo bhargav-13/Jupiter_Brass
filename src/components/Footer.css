@@ -68,7 +68,7 @@
 }
 
 .footer-logo-img {
-  height: 90px;
+  height: 120px;
   width: auto;
 }
 
@@ -223,7 +223,7 @@
   }
 
   .footer-logo-img {
-    height: 56px;
+    height: 72px;
     width: auto;
     max-width: min(220px, 70vw);
   }

@@ -3,7 +3,7 @@ import { EASE_PREMIUM, EASE_SMOOTH } from '../animations/constants';
 import { gsap, prefersReducedMotion } from '../lib/gsap';
 import './PageLoader.css';
 
-const LOGO_SRC = '/images/jupiter_brass_logo.svg';
+const LOGO_SRC = '/logo.svg';
 const TAGLINE = 'Precision Brass Components';
 const MIN_VISIBLE_MS = 1300;
 const MAX_WAIT_MS = 5000;

@@ -50,7 +50,7 @@ const BlogInnerPage = () => {
 
             <div className="blog-inner-author-row">
               <span className="blog-inner-author-logo">
-                <img src="/images/jupiter.svg" alt="Jupiter Brass" />
+                <img src="/logo.svg" alt="Jupiter Brass" />
               </span>
               <span className="blog-inner-author-name">{formatArticleAuthor(article)}</span>
             </div>

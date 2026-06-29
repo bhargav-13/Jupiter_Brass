@@ -49,7 +49,7 @@
 }
 
 .logo-img {
-  height: 50px;
+  height: 70px;
   width: auto;
   display: block;
   transition:
@@ -59,7 +59,7 @@
 }
 
 .header--scrolled .logo-img {
-  height: 44px;
+  height: 58px;
   transform: scale(0.96);
 }
 
@@ -142,11 +142,11 @@
 
 @media (min-width: 1600px) {
   .logo-img {
-    height: 65px;
+    height: 82px;
   }
 
   .header--scrolled .logo-img {
-    height: 52px;
+    height: 66px;
   }
 }
 
@@ -224,6 +224,6 @@
   }
 
   .logo-img {
-    height: 44px;
+    height: 56px;
   }
 }

@@ -58,7 +58,7 @@ const Header = () => {
       <div className="nav-shell header-container">
         <div className="logo">
           <Link to="/" onClick={closeMenu}>
-            <img src="/images/jupiter_brass_logo.svg" alt="Jupiter Brass Logo" className="logo-img" />
+            <img src="/logo.svg" alt="Jupiter Brass Logo" className="logo-img" />
           </Link>
         </div>
 
