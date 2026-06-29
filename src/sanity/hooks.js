@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { client, urlFor } from './client';
 import {
+  ALL_CATEGORIES_QUERY,
   ALL_POSTS_QUERY,
   ALL_PRODUCTS_QUERY,
   POST_BY_SLUG_QUERY,
@@ -31,6 +32,29 @@ function normalizeArticle(doc) {
           .toUpperCase()
       : '',
   };
+}
+
+/** All categories ordered by display order. */
+export function useCategories() {
+  const [categories, setCategories] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    let active = true;
+    client
+      .fetch(ALL_CATEGORIES_QUERY)
+      .then((docs) => {
+        if (active) setCategories(docs);
+      })
+      .finally(() => {
+        if (active) setLoading(false);
+      });
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  return { categories: categories ?? [], loading };
 }
 
 /** All products, optionally fetched once and cached for the session. */

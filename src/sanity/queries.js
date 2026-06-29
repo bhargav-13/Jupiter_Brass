@@ -1,3 +1,5 @@
+export const ALL_CATEGORIES_QUERY = `*[_type == "category"] | order(order asc){ _id, title, "slug": slug.current, order }`;
+
 export const PRODUCT_FIELDS = `
   _id,
   name,

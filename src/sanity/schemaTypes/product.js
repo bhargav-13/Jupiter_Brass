@@ -22,14 +22,7 @@ export default defineType({
       name: 'category',
       title: 'Category',
       type: 'string',
-      options: {
-        list: [
-          { title: 'Category (Home grid)', value: 'category' },
-          { title: 'Precision Parts', value: 'precision' },
-          { title: 'Electrical Components', value: 'electrical' },
-          { title: 'Foundry Parts', value: 'foundry' },
-        ],
-      },
+      description: 'Enter the category slug (e.g. "precision", "electrical", "foundry", "other-metal-parts"). Must match a Category document slug.',
     }),
     defineField({
       name: 'displayId',
