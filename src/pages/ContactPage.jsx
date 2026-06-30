@@ -46,7 +46,7 @@ const contactDetails = [
     badge: 'DIRECT CONTACT',
     label: 'CALL ME ON',
     lines: [
-      { text: '+91 94292 69395', href: phoneDialUrl('+91 94292 69395') },
+      { text: '+91 91048 27095', href: phoneDialUrl('+91 94292 69395') },
       { text: '+91 81414 18990', href: phoneDialUrl('+91 81414 18990') },
     ],
   },
