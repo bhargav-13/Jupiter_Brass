@@ -37,8 +37,8 @@ const contactDetails = [
     badge: 'DIRECT E-MAIL',
     label: 'SEND US AN EMAIL',
     lines: [
-      { text: 'INFO@JUPITERBRASS.COM', href: gmailComposeUrl('info@jupiterbrass.com'), external: true },
-      { text: 'SALES@JUPITERBRASS.COM', href: gmailComposeUrl('sales@jupiterbrass.com'), external: true },
+      { text: 'INFO@JUPITERMETAMECH.COM', href: gmailComposeUrl('info@jupitermetamech.com'), external: true },
+      { text: 'SALES@JUPITERMETAMECH.COM', href: gmailComposeUrl('sales@jupitermetamech.com'), external: true },
     ],
   },
   {
