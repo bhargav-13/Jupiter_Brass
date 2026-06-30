@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
+import { useCategories, useProducts } from '../sanity/hooks';
+import { BASE_CATEGORIES, mergeCategories } from '../data/categories';
 import './Footer.css';
 
 const Footer = () => {
+  const { products } = useProducts();
+  const { categories } = useCategories();
+
+  const footerCategories = useMemo(() => {
+    const displayCategories = mergeCategories(BASE_CATEGORIES, categories);
+    return displayCategories.filter((cat) => products.some((p) => p.category === cat.slug));
+  }, [categories, products]);
+
   return (
     <footer className="footer">
       <div className="container">
@@ -48,10 +58,11 @@ const Footer = () => {
             <div className="footer-links">
               <h4 className="footer-heading">Products</h4>
               <ul>
-                <li><a href="#">Precision Parts</a></li>
-                <li><a href="#">Electrical Component</a></li>
-                <li><a href="#">Brass Nut</a></li>
-                <li><a href="#">Forging Components</a></li>
+                {footerCategories.map((cat) => (
+                  <li key={cat._id}>
+                    <Link to={`/products#${cat.slug}`}>{cat.title}</Link>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

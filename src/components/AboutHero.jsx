@@ -99,11 +99,11 @@ const AboutHero = () => {
           <div className="about-hero-grid about-hero-grid--spotlight" aria-hidden="true" />
           <div className="about-hero-year">
             <span className="about-hero-since">Since</span>
-            <span className="about-hero-year-value">2020</span>
+            <span className="about-hero-year-value">1994</span>
           </div>
           <div className="about-hero-image-wrapper">
             <img
-              src="/images/jay_vasoya.png"
+              src="/images/jay.png"
               alt="Mr. Jay Vasoya"
               className="about-hero-image"
             />
