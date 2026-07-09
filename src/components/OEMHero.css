@@ -1,0 +1,93 @@
+/* =============================================
+   OEM HERO SECTION
+   ============================================= */
+.oem-hero {
+  position: relative;
+  z-index: 1;
+  padding: clamp(2.5rem, 5vw, 4rem) 0 clamp(3.1rem, 5.5vw, 5rem);
+  background-color: #ffffff;
+}
+
+.oem-hero-content {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.oem-hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3vw, 2.75rem);
+  line-height: 1.25;
+  color: var(--color-primary);
+  text-transform: capitalize;
+  margin: 0;
+}
+
+.oem-hero-desc {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  color: #343434;
+  text-transform: uppercase;
+  line-height: 1.8;
+  max-width: 450px;
+  margin: 0;
+  margin-left: auto;
+  margin-top: 6px;
+}
+
+/* ---------- Stat Cards ---------- */
+.oem-hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1rem, 1.6vw, 1.5rem);
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+
+.oem-hero-stat-card {
+  display: flex;
+  flex-direction: column;
+  /* gap: 10px; */
+  padding: clamp(3px, 0.85vw, 5px) clamp(18px, 2vw, 24px);
+  border: 1px solid #F31B1B;
+  border-radius: 4px;
+  background-color: #ffffff;
+}
+
+.oem-hero-stat-label {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  color: #343434;
+  text-transform: capitalize;
+}
+
+.oem-hero-stat-value {
+  font-family: var(--font-heading);
+  font-size: clamp(1.35rem, 2vw, 1.7rem);
+  color: var(--color-primary);
+}
+
+.oem-hero-stat-caption {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  color: #343434;
+  text-transform: capitalize;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .oem-hero-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .oem-hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .oem-hero-stats {
+    grid-template-columns: 1fr;
+  }
+}

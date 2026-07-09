@@ -1,0 +1,69 @@
+/* =============================================
+   OEM CUSTOM PRECISION COMPONENTS
+   ============================================= */
+.oem-custom-components {
+  background-color: #ffffff;
+}
+
+.oem-custom-components-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: start;
+  column-gap: clamp(0.75rem, 1.2vw, 1.1rem);
+  row-gap: clamp(1.6rem, 2.5vw, 2.2rem);
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+.oem-custom-components-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.oem-custom-components-image-box {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  border: 1px solid #000000;
+  background-color: #ffffff;
+}
+
+.oem-custom-components-image {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.oem-custom-components-name {
+  font-family: var(--font-heading);
+  font-size: clamp(0.75rem, 1vw, 0.95rem);
+  color: #1a1a1a;
+  text-transform: capitalize;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.4em;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .oem-custom-components-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .oem-custom-components-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -50,6 +50,8 @@ const Footer = () => {
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/products">Product</Link></li>
                 <li><Link to="/about">About</Link></li>
+                <li><Link to="/quality">Quality</Link></li>
+                <li><Link to="/oem-manufacturing">OEM Manufacturing</Link></li>
                 <li><Link to="/blog">Blog</Link></li>
                 <li><Link to="/contact">Contact</Link></li>
               </ul>

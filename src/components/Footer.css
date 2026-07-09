@@ -9,7 +9,7 @@
   padding-bottom: 0;
   background: linear-gradient(180deg, #ffffff 60%, #fff5f5 100%);
   color: var(--color-text);
-  overflow-x: hidden;
+  overflow-x: clip;
   overflow-y: visible;
   width: 100%;
 }

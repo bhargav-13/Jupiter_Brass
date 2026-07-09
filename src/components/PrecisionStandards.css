@@ -1,0 +1,113 @@
+/* =============================================
+   PRECISION MANUFACTURING STANDARDS
+   ============================================= */
+.precision-standards {
+  background-color: #343434;
+}
+
+.precision-standards .section-title {
+  color: var(--color-primary);
+}
+
+.precision-standards-desc {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  color: #ffffff;
+  text-align: center;
+  text-transform: uppercase;
+  max-width: 700px;
+  margin: 0 auto;
+  margin-top: clamp(0.75rem, 2vw, 1.25rem);
+  opacity: 0.85;
+}
+
+/* ---------- Stat Cards Grid ---------- */
+.precision-standards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1rem, 2vw, 1.5rem);
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+
+.precision-stat-card {
+  padding: 1px;
+  border-radius: 12px;
+  background: linear-gradient(to bottom, #212121, #878787);
+}
+
+.precision-stat-card-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  height: 100%;
+  padding: clamp(40px, 4.4vw, 56px) clamp(18px, 2vw, 24px) clamp(20px, 2.2vw, 28px);
+  border-radius: 11px;
+  background:
+    linear-gradient(#FFFFFF26, #FFFFFF26),
+    #343434;
+}
+
+.precision-stat-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.precision-stat-value {
+  font-family: var(--font-heading);
+  font-size: clamp(1.3rem, 2vw, 1.6rem);
+  color: #ffffff;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.precision-stat-unit {
+  font-size: 1rem;
+  color: var(--color-primary);
+  text-transform: uppercase;
+}
+
+.precision-stat-label {
+  font-family: var(--font-heading);
+  font-size: clamp(0.7rem, 0.85vw, 0.8rem);
+  color: #ffffff;
+  opacity: 0.75;
+  text-transform: uppercase;
+}
+
+/* ---------- Bottom Note Bar ---------- */
+.precision-standards-note {
+  margin-top: clamp(1.2rem, 2vw, 1.8rem);
+  padding: 1px;
+  border-radius: 8px;
+  background: linear-gradient(to bottom, #FFFFFF, #999999);
+}
+
+.precision-standards-note-inner {
+  padding: clamp(8px, 0.9vw, 11px) clamp(20px, 2.5vw, 28px);
+  border-radius: 7px;
+  background:
+    linear-gradient(#FFFFFF1A, #FFFFFF1A),
+    #343434;
+  font-family: var(--font-heading);
+  font-size: clamp(0.75rem, 0.9vw, 0.85rem);
+  color: #ffffff;
+  text-align: center;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .precision-standards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .precision-standards-grid {
+    grid-template-columns: 1fr;
+  }
+}

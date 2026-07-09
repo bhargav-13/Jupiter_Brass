@@ -10,6 +10,8 @@ import ProductInnerPage from './pages/ProductInnerPage';
 import BlogPage from './pages/BlogPage';
 import BlogInnerPage from './pages/BlogInnerPage';
 import ContactPage from './pages/ContactPage';
+import QualityPage from './pages/QualityPage';
+import OEMPage from './pages/OEMPage';
 import GsapAnimations from './components/GsapAnimations';
 import ScrollToTop from './components/ScrollToTop';
 import SmoothScroll from './components/SmoothScroll';
@@ -39,6 +41,8 @@ function SiteLayout() {
           <Route path="/blog/:slug" element={<BlogInnerPage />} />
           <Route path="/blog-inner" element={<Navigate to="/blog/article-1" replace />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/quality" element={<QualityPage />} />
+          <Route path="/oem-manufacturing" element={<OEMPage />} />
         </Routes>
       </main>
       <Footer />

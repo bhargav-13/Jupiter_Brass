@@ -1,0 +1,31 @@
+/* =============================================
+   QUALITY CERTIFICATION SECTION
+   ============================================= */
+.quality-certification {
+  background-color: #ffffff;
+}
+
+.quality-certification-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.quality-certification-image-box {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.quality-certification-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .quality-certification-grid {
+    grid-template-columns: 1fr;
+  }
+}
