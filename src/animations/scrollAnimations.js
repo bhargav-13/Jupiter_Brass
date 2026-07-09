@@ -183,6 +183,54 @@ export function setupScrollAnimations(scope) {
     revealChildren(machineryGrid, '.machinery-card', { stagger: STAGGER_DEFAULT, start: 'top 84%' });
   }
 
+  /* ─────────────────────────────────────────────────────────────────────────
+     QUALITY & OEM PAGE SECTIONS
+     ───────────────────────────────────────────────────────────────────────── */
+  const precisionGrid = scope.querySelector('.precision-standards-grid');
+  if (precisionGrid) {
+    revealChildren(precisionGrid, '.precision-stat-card', { stagger: STAGGER_TIGHT });
+  }
+  precisionStamp(scope.querySelectorAll('.precision-stat-icon'), { start: 'top 86%', stagger: 0.09 });
+
+  const inspectionGrid = scope.querySelector('.inspection-process-grid');
+  if (inspectionGrid) {
+    revealChildren(inspectionGrid, '.inspection-process-card', { stagger: STAGGER_DEFAULT });
+  }
+
+  const qualityMachineryGrid = scope.querySelector('.quality-machinery-grid');
+  if (qualityMachineryGrid) {
+    revealChildren(qualityMachineryGrid, '.quality-machinery-card', { stagger: STAGGER_TIGHT });
+  }
+  steelCurtainReveal(scope.querySelectorAll('.quality-machinery-image-box'), { start: 'top 90%', duration: 0.8 });
+
+  const oemHeroStats = scope.querySelector('.oem-hero-stats');
+  if (oemHeroStats) {
+    revealChildren(oemHeroStats, '.oem-hero-stat-card', { stagger: STAGGER_TIGHT });
+  }
+
+  const oemBuildGrid = scope.querySelector('.oem-build-to-print-grid');
+  if (oemBuildGrid) {
+    revealChildren(oemBuildGrid, '.oem-build-to-print-card', { stagger: STAGGER_TIGHT });
+  }
+  precisionStamp(scope.querySelectorAll('.oem-build-to-print-icon'), { start: 'top 88%', stagger: 0.08 });
+
+  const oemComponentsGrid = scope.querySelector('.oem-custom-components-grid');
+  if (oemComponentsGrid) {
+    revealChildren(oemComponentsGrid, '.oem-custom-components-card', { stagger: STAGGER_TIGHT });
+  }
+  steelCurtainReveal(scope.querySelectorAll('.oem-custom-components-image-box'), { start: 'top 90%', duration: 0.8 });
+
+  const oemPrototypeGrid = scope.querySelector('.oem-prototype-grid');
+  if (oemPrototypeGrid) {
+    revealChildren(oemPrototypeGrid, '.oem-prototype-card', { stagger: STAGGER_DEFAULT });
+  }
+
+  const oemEngineeringGrid = scope.querySelector('.oem-engineering-support-grid');
+  if (oemEngineeringGrid) {
+    revealChildren(oemEngineeringGrid, '.oem-engineering-support-card', { stagger: STAGGER_TIGHT });
+  }
+  precisionStamp(scope.querySelectorAll('.oem-engineering-support-icon'), { start: 'top 86%', stagger: 0.07 });
+
   // Why-choose-us items: only title+desc text, icon-box handled by precisionStamp
   const whyGrid = scope.querySelector('.why-choose-us-grid');
   if (whyGrid) {

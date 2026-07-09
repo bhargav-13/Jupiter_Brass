@@ -21,7 +21,6 @@
 /* ---------- Banner Image ---------- */
 .quality-hero-banner {
   width: 100%;
-  border-radius: 12px;
   overflow: hidden;
   margin-bottom: clamp(40px, 8vw, 60px);
 }
