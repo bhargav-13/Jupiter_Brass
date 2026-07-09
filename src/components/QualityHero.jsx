@@ -6,7 +6,7 @@ const QualityHero = () => {
     <section className="quality-hero">
       <div className="container">
         <h1 className="quality-hero-title">
-          Quality You Can Trust. Precision You<br />Can Measure.
+          Quality You Can Trust. Precision You Can Measure.
         </h1>
 
         <div className="quality-hero-banner">

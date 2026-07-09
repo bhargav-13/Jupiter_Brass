@@ -8,6 +8,8 @@ const NAV_LINKS = [
   { to: '/', label: 'HOME' },
   { to: '/about', label: 'ABOUT' },
   { to: '/products', label: 'PRODUCTS' },
+  { to: '/quality', label: 'QUALITY' },
+  { to: '/oem-manufacturing', label: 'OEM MANUFACTURING' },
   { to: '/blog', label: 'BLOG' },
   { to: '/contact', label: 'CONTACT' },
 ];
