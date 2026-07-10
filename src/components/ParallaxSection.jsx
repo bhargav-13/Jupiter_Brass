@@ -1,19 +1,26 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { CONTACT_FORM_PATH } from '../lib/scrollToSection';
 import './ParallaxSection.css';
+
+const WHATSAPP_NUMBER = '918141418990';
+const WHATSAPP_MESSAGE = "Hi Jupiter Brass Industries, I'd like to start a new project. Could you help me with a quote?";
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
 const ParallaxSection = () => {
   return (
     <section className="parallax-section">
       <div className="parallax-content">
         <h2>
-          BUILD PRECISION BRASS<br />
-          COMPONENTS FOR YOUR INDUSTRY
+          BUILD SOMETHING TOGETHER<br />
+          LET'S START YOUR NEXT PROJECT
         </h2>
-        <Link to={CONTACT_FORM_PATH} className="parallax-btn">
+        <a
+          href={WHATSAPP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="parallax-btn"
+        >
           START YOUR PROJECT TODAY
-        </Link>
+        </a>
       </div>
     </section>
   );

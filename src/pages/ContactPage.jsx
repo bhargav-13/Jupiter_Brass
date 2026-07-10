@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SEO from '../components/SEO';
 import { SITE_URL } from '../lib/seo';
 import StructuredData from '../components/StructuredData';
@@ -55,6 +55,8 @@ const contactDetails = [
 const mapEmbedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(MAP_LOCATION.label)}&ll=${MAP_LOCATION.lat},${MAP_LOCATION.lng}&z=17&hl=en&output=embed`;
 
 const ContactPage = () => {
+  const [fileName, setFileName] = useState('');
+
   const handleSubmit = (event) => {
     event.preventDefault();
   };
@@ -94,10 +96,8 @@ const ContactPage = () => {
           <div className="section-heading quality-header contact-hero-header">
             <h1 className="section-title">GET IN TOUCH WITH OUR TEAM</h1>
             <p className="quality-subtitle contact-intro-text">
-              WE ARE ALWAYS READY TO ASSIST YOU WITH PRODUCT INQUIRIES, CUSTOM BRASS
-              COMPONENT MANUFACTURING, BULK ORDERS, AND INDUSTRIAL SOLUTIONS. WHETHER
-              YOU NEED PRECISION BRASS PARTS OR CUSTOMIZED MANUFACTURING SUPPORT, OUR
-              TEAM IS HERE TO HELP YOU WITH RELIABLE AND PROFESSIONAL SERVICE.
+              Our experienced team is available to discuss your project requirements, review technical
+              drawings, and provide the most suitable manufacturing solution for your application.
             </p>
           </div>
 
@@ -148,12 +148,12 @@ const ContactPage = () => {
           <form className="contact-form" onSubmit={handleSubmit}>
             <div className="contact-form-row contact-form-row-2">
               <div className="contact-field">
-                <label htmlFor="firstName">FIRST NAME</label>
-                <input type="text" id="firstName" name="firstName" />
+                <label htmlFor="name">NAME*</label>
+                <input type="text" id="name" name="name" required />
               </div>
               <div className="contact-field">
-                <label htmlFor="lastName">LAST NAME</label>
-                <input type="text" id="lastName" name="lastName" />
+                <label htmlFor="companyName">COMPANY NAME*</label>
+                <input type="text" id="companyName" name="companyName" required />
               </div>
             </div>
 
@@ -170,8 +170,43 @@ const ContactPage = () => {
 
             <div className="contact-form-row">
               <div className="contact-field">
-                <label htmlFor="subject">SUBJECT</label>
-                <input type="text" id="subject" name="subject" />
+                <label htmlFor="attachment">ATTACHMENT SPACE</label>
+                <input
+                  type="file"
+                  id="attachment"
+                  name="attachment"
+                  accept=".pdf,.jpg,.jpeg"
+                  className="contact-file-input"
+                  onChange={(event) => setFileName(event.target.files?.[0]?.name ?? '')}
+                />
+                <label htmlFor="attachment" className="contact-file-field">
+                  <span className="contact-file-field-text">
+                    {fileName || 'UPLOAD PDF / JPG'}
+                  </span>
+                  <svg
+                    className="contact-file-field-icon"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 16V4M12 4L7 9M12 4l5 5"
+                      stroke="currentColor"
+                      strokeWidth="1.6"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M4 16v3a1 1 0 001 1h14a1 1 0 001-1v-3"
+                      stroke="currentColor"
+                      strokeWidth="1.6"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </label>
               </div>
             </div>
 

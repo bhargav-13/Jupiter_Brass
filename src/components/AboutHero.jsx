@@ -85,7 +85,7 @@ const AboutHero = () => {
     <section className="about-hero">
       <div className="container">
         <h1 className="about-hero-title">
-          Premium Quality Brass Components Built<br />For Industrial Strength And Performance
+          Building Trust Through Precision<br />Manufacturing Since 1994
         </h1>
 
         <div

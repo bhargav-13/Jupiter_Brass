@@ -35,17 +35,21 @@ export function headingSlideReveal(targets, options = {}) {
   elements.forEach((el) => {
     if (!el) return;
 
-    // Split text into word spans, preserving spaces
-    const originalHTML = el.innerHTML;
-    const words = el.textContent.trim().split(/\s+/);
+    // Split into lines on <br>, preserving explicit manual line breaks,
+    // then split each line into word spans.
+    const lines = el.innerHTML.split(/<br\s*\/?>/i);
 
-    // Rebuild inner HTML: wrap each word in a mask+inner pair
-    el.innerHTML = words
-      .map(
-        (word) =>
-          `<span class="lg-word-mask"><span class="lg-word-inner">${word}</span></span>`
-      )
-      .join(' ');
+    el.innerHTML = lines
+      .map((line) => {
+        const words = line.replace(/<[^>]+>/g, ' ').trim().split(/\s+/).filter(Boolean);
+        return words
+          .map(
+            (word) =>
+              `<span class="lg-word-mask"><span class="lg-word-inner">${word}</span></span>`
+          )
+          .join(' ');
+      })
+      .join('<br />');
 
     const inners = el.querySelectorAll('.lg-word-inner');
 

@@ -9,8 +9,12 @@ const Industry = () => {
     { name: 'CUNSTRUCTION INDUSTRY', image: '/images/cunstruction industry.png' },
     { name: 'ENGINEERING INDUSTRY', image: '/images/engineering industry.png' },
     { name: 'HARDWARE INDUSTRY', image: '/images/hardware industry.png' },
-    { name: 'TELECOMMUNICATIONS', image: '/images/telecommunications.png' },
+    { name: 'Electronics', image: '/images/telecommunications.png' },
     { name: 'RENEWABLE ENERGY INDUSTRY', image: '/images/renewable energy industry.png' },
+    { name: 'OIL & GAS', image: '/images/Oil & Gas.png' },
+    { name: 'HVAC', image: '/images/HVAC.png' },
+    { name: 'MEDICAL EQUIPMENT', image: '/images/Medical Equipment.png' },
+    { name: 'INDUSTRIAL MACHINERY', image: '/images/INDUSTRIALMACHINERY.png' },
   ];
 
   return (

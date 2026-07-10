@@ -162,6 +162,56 @@
   border-color: var(--color-primary);
 }
 
+.contact-file-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.contact-file-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 48px;
+  font-family: var(--font-heading);
+  font-size: clamp(0.8938rem, 1.2375vw, 1.0313rem);
+  color: #343434;
+  background-color: #ffffff;
+  border: 1px solid #696969;
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.contact-file-field:hover {
+  border-color: var(--color-primary);
+}
+
+.contact-file-input:focus-visible + .contact-file-field {
+  border-color: var(--color-primary);
+}
+
+.contact-field .contact-file-field-text {
+  color: #000000;
+  text-transform: uppercase;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.contact-file-field-icon {
+  flex-shrink: 0;
+  color: var(--color-primary);
+  margin-left: 12px;
+}
+
 .contact-form-submit {
   display: flex;
   justify-content: center;

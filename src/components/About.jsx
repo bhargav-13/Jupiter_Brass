@@ -20,14 +20,7 @@ const About = () => {
         <div className="about-top-row">
           <div className="about-text">
             <p>
-              We are a leading manufacturer of precision brass components, delivering
-              high-quality industrial solutions with advanced engineering and reliable
-              craftsmanship. Our products are designed to meet global standards across
-              electrical, plumbing, automotive, and engineering industries.
-            </p>
-            <p>
-              With years of manufacturing expertise, we focus on precision, durability, and
-              innovation to provide trusted brass products for industries worldwide.
+              Jupiter Brass Industries is a trusted Indian manufacturer of precision brass turned parts, CNC machined components, cable glands, fittings, fasteners, inserts, and custom-engineered metal components. Since 1994, we have been delivering high-quality, precision-engineered solutions to OEMs and industrial customers worldwide through advanced manufacturing, strict quality standards, competitive pricing, and reliable on-time delivery. From standard products to fully customized components, we provide end-to-end manufacturing support from prototyping to large-scale production.
             </p>
           </div>
 
