@@ -112,7 +112,7 @@ const AboutHero = () => {
 
         <div className="about-hero-content">
           <div className="about-hero-text">
-            At Jupiter Meta Mech, we specialize in manufacturing high-quality brass components engineered for precision, durability, and superior performance. With years of industry expertise and advanced manufacturing capabilities, we provide reliable brass solutions for a wide range of industries including electrical, plumbing, automotive, engineering, telecommunications, hardware, and renewable energy sectors.
+            Established in 1994, Jupiter Meta Mech began its journey as a manufacturer of premium brass components with a commitment to precision, quality, and reliability. Over the years, we have continuously expanded our capabilities, embracing modern manufacturing technologies to meet the evolving needs of global industries.
           </div>
           <div className="about-hero-divider"></div>
           <div className="about-hero-text">
