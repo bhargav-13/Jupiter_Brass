@@ -79,6 +79,10 @@
   padding: 4px 0;
 }
 
+.nav-link--mobile-only {
+  display: none;
+}
+
 .nav-link::after {
   content: '';
   position: absolute;
@@ -211,12 +215,19 @@
     transition-delay: 0s; /* instant reset on close */
   }
 
+  .nav-link--mobile-only {
+    display: block;
+  }
+
   /* Stagger — each link rises up one after the other, bottom-to-top feel */
   .nav--open .nav-link:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.25s; }
   .nav--open .nav-link:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.40s; }
   .nav--open .nav-link:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.55s; }
   .nav--open .nav-link:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.70s; }
   .nav--open .nav-link:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 0.85s; }
+  .nav--open .nav-link:nth-child(6) { opacity: 1; transform: translateY(0); transition-delay: 1.00s; }
+  .nav--open .nav-link:nth-child(7) { opacity: 1; transform: translateY(0); transition-delay: 1.15s; }
+  .nav--open .nav-link:nth-child(8) { opacity: 1; transform: translateY(0); transition-delay: 1.30s; }
 
   .nav-link::after {
     bottom: 14px;

@@ -84,11 +84,11 @@ const Header = () => {
         />
 
         <nav id="site-navigation" className={`nav${menuOpen ? ' nav--open' : ''}`}>
-          {NAV_LINKS.map(({ to, label }) => (
+          {NAV_LINKS.map(({ to, label, mobileOnly }) => (
             <Link
               key={to}
               to={to}
-              className={`nav-link${isNavActive(to) ? ' nav-link--active' : ''}`}
+              className={`nav-link${isNavActive(to) ? ' nav-link--active' : ''}${mobileOnly ? ' nav-link--mobile-only' : ''}`}
               onClick={closeMenu}
             >
               {label}
