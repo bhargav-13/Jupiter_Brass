@@ -1,0 +1,102 @@
+/* =============================================
+   CAPABILITIES HERO SECTION
+   ============================================= */
+.capabilities-hero {
+  position: relative;
+  z-index: 1;
+  padding: clamp(2.5rem, 5vw, 4rem) 0 clamp(3.1rem, 5.5vw, 5rem);
+  background-color: #ffffff;
+}
+
+.cap-hero-content {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: clamp(2rem, 4.5vw, 4.4rem);
+  align-items: start;
+}
+
+.cap-hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.5vw, 3.5rem);
+  line-height: 1.15;
+  color: #343434;
+  text-transform: capitalize;
+  margin: 0;
+  max-width: 822px;
+}
+
+.cap-hero-title-accent {
+  color: var(--color-primary);
+}
+
+.cap-hero-desc {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  color: #343434;
+  text-transform: uppercase;
+  line-height: 1.5;
+  max-width: 527px;
+  margin: 0;
+  margin-top: 6px;
+}
+
+/* ---------- Stat Cards ---------- */
+.cap-hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(0.75rem, 1vw, 0.75rem);
+  margin-top: clamp(2.5rem, 4.5vw, 2.6rem);
+}
+
+.cap-hero-stat-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  padding: 22px 24px 9px;
+  min-height: 108px;
+  border: 1px solid var(--color-primary);
+  border-radius: 4px;
+  background-color: #ffffff;
+}
+
+.cap-hero-stat-value {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  line-height: 1.05;
+  color: var(--color-primary);
+}
+
+.cap-hero-stat-label {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  line-height: 1;
+  color: #7b7b7b;
+  text-transform: capitalize;
+}
+
+.cap-hero-stat-caption {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  line-height: 1;
+  color: #343434;
+  text-transform: capitalize;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .cap-hero-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .cap-hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .cap-hero-stats {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,103 @@
+/* =============================================
+   CAPABILITIES — MAJOR MANUFACTURING EQUIPMENT
+   ============================================= */
+.cap-equipment {
+  position: relative;
+  z-index: 1;
+  padding: clamp(2.5rem, 5vw, 4rem) 0 clamp(3rem, 6vw, 5rem);
+  background-color: #ffffff;
+}
+
+.cap-equipment-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: start;
+}
+
+.cap-equipment-text {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 5vw, 4.4rem);
+}
+
+.cap-equipment-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 5vw, 4.5rem);
+  line-height: 1.06;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  margin: 0;
+  max-width: 700px;
+}
+
+.cap-equipment-desc {
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  line-height: 1.33;
+  color: #323232;
+  text-transform: uppercase;
+  margin: 0;
+  max-width: 700px;
+}
+
+/* ---------- Equipment Cards ---------- */
+.cap-equipment-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(0.9rem, 1.4vw, 1.35rem);
+}
+
+.cap-equipment-card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 30px;
+  min-height: 130px;
+  border: 1px solid #343434;
+  background-color: #ffffff;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    border-color 0.3s ease;
+}
+
+.cap-equipment-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-primary);
+  box-shadow: 0 8px 24px rgba(243, 27, 27, 0.08);
+}
+
+.cap-equipment-count {
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 3.4vw, 3.5rem);
+  line-height: 1.03;
+  color: #343434;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.cap-equipment-name {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  line-height: 1.2;
+  color: #343434;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .cap-equipment-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cap-equipment-grid {
+    grid-template-columns: 1fr;
+  }
+}

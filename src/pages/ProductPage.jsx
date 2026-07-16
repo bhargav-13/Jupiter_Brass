@@ -11,15 +11,22 @@ const ProductPage = () => {
   const { categories, loading: categoriesLoading } = useCategories();
   const location = useLocation();
 
-  const displayCategories = useMemo(
-    () => mergeCategories(BASE_CATEGORIES, categories),
-    [categories]
-  );
+  const visibleCategories = useMemo(() => {
+    const defined = new Map(
+      mergeCategories(BASE_CATEGORIES, categories).map((c) => [c.slug, c])
+    );
 
-  const visibleCategories = useMemo(
-    () => displayCategories.filter((cat) => products.some((p) => p.category === cat.slug)),
-    [displayCategories, products]
-  );
+    // Every category a product actually belongs to, minus the homepage-showcase
+    // marker ("category"). Values that don't match a Category document — e.g. a
+    // product tagged "Brass Cable Glands" — become a tab using the raw value.
+    const usedSlugs = new Set(
+      products.map((p) => p.category).filter((slug) => slug && slug !== 'category')
+    );
+
+    return [...usedSlugs]
+      .map((slug) => defined.get(slug) ?? { _id: slug, slug, title: slug, order: 99 })
+      .sort((a, b) => (a.order ?? 99) - (b.order ?? 99));
+  }, [categories, products]);
 
   const [activeSlug, setActiveSlug] = useState(null);
 

@@ -97,7 +97,7 @@ export function setupScrollAnimations(scope) {
      ───────────────────────────────────────────────────────────────────────── */
   headingSlideReveal(
     scope.querySelectorAll(
-      '.section-title, .product-inner-section-title, .commitment-title, .certification-title, .choose-finish-title, .blog-inner-title, .about-hero-title, .industry-title'
+      '.section-title, .product-inner-section-title, .commitment-title, .certification-title, .choose-finish-title, .blog-inner-title, .about-hero-title, .industry-title, .cap-equipment-title'
     ),
     { stagger: 0.06, duration: 0.88, start: 'top 90%' }
   );
@@ -113,7 +113,7 @@ export function setupScrollAnimations(scope) {
      ───────────────────────────────────────────────────────────────────────── */
   revealElements(
     scope.querySelectorAll(
-      '.industry-subtitle, .usp-subtitle, .about-text, .quality-subtitle, .commitment-desc, .machinery-desc, .certification-description, .contact-intro-text, .blog-inner-read-meta'
+      '.industry-subtitle, .usp-subtitle, .about-text, .quality-subtitle, .commitment-desc, .machinery-desc, .certification-description, .contact-intro-text, .blog-inner-read-meta, .cap-hero-title, .cap-hero-desc, .cap-equipment-desc, .cap-detail-desc, .cap-subhead'
     ),
     { y: REVEAL_Y_SUBTLE, duration: DURATION_REVEAL_FAST }
   );
@@ -207,6 +207,36 @@ export function setupScrollAnimations(scope) {
   if (oemHeroStats) {
     revealChildren(oemHeroStats, '.oem-hero-stat-card', { stagger: STAGGER_TIGHT });
   }
+
+  const capHeroStats = scope.querySelector('.cap-hero-stats');
+  if (capHeroStats) {
+    revealChildren(capHeroStats, '.cap-hero-stat-card', { stagger: STAGGER_TIGHT });
+  }
+
+  const capEquipmentGrid = scope.querySelector('.cap-equipment-grid');
+  if (capEquipmentGrid) {
+    revealChildren(capEquipmentGrid, '.cap-equipment-card', { stagger: STAGGER_DEFAULT, start: 'top 84%' });
+  }
+
+  scope.querySelectorAll('.cap-feature-grid').forEach((grid) => {
+    revealChildren(grid, '.cap-feature-card', { stagger: STAGGER_DEFAULT, start: 'top 86%' });
+  });
+
+  scope.querySelectorAll('.cap-steps').forEach((grid) => {
+    revealChildren(grid, '.cap-step', { stagger: STAGGER_TIGHT, start: 'top 88%' });
+  });
+
+  scope.querySelectorAll('.cap-spectable').forEach((grid) => {
+    revealChildren(grid, '.cap-specrow', { stagger: STAGGER_TIGHT, start: 'top 88%' });
+  });
+
+  scope.querySelectorAll('.cap-chips').forEach((grid) => {
+    revealChildren(grid, '.cap-chip', { stagger: STAGGER_TIGHT, start: 'top 90%' });
+  });
+
+  scope.querySelectorAll('.cap-checks').forEach((grid) => {
+    revealChildren(grid, '.cap-check', { stagger: STAGGER_TIGHT, start: 'top 88%' });
+  });
 
   const oemBuildGrid = scope.querySelector('.oem-build-to-print-grid');
   if (oemBuildGrid) {

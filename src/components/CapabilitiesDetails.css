@@ -1,0 +1,300 @@
+/* =============================================
+   CAPABILITIES — DETAIL SECTIONS
+   Standard section header + varied body layouts:
+   feature cards · numbered lists · spec tables ·
+   chip clouds · checklists.
+   ============================================= */
+.cap-block {
+  background-color: #ffffff;
+}
+
+.cap-block--soft {
+  background-color: #fff8f8;
+}
+
+/* Centered section description under the standard .section-title */
+.cap-detail-desc {
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 1.7vw, 1.375rem);
+  line-height: 1.6;
+  color: #343434;
+  text-transform: uppercase;
+  max-width: 900px;
+  margin: clamp(16px, 2.2vw, 24px) auto 0;
+}
+
+/* Sub-group heading (surface finishing, export) */
+.cap-subhead {
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: clamp(1.05rem, 1.6vw, 1.375rem);
+  letter-spacing: 0.04em;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  margin: clamp(2rem, 3.5vw, 2.8rem) 0 clamp(1rem, 2vw, 1.4rem);
+}
+
+/* =============================================
+   1. FEATURE CARDS (facility, value-added)
+   ============================================= */
+.cap-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.2rem, 2vw, 1.6rem);
+  margin-top: clamp(1.6rem, 3vw, 2.5rem);
+}
+
+.cap-feature-grid--4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.cap-feature-card {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(28px, 3vw, 40px) clamp(24px, 2.4vw, 34px);
+  background-color: #fff8f8;
+  border: 1px solid var(--color-primary);
+  border-radius: 24px 24px 0 24px;
+  transition: all 0.3s ease;
+}
+
+.cap-block--soft .cap-feature-card {
+  background-color: #ffffff;
+}
+
+.cap-feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(243, 27, 27, 0.1);
+  border-radius: 0 16px 16px 16px;
+  background-color: #ff9e9e;
+}
+
+.cap-feature-card:hover .cap-feature-icon,
+.cap-feature-card:hover .cap-feature-title,
+.cap-feature-card:hover .cap-feature-desc {
+  color: #ffffff;
+}
+
+.cap-feature-icon {
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  color: var(--color-primary);
+  margin-bottom: 18px;
+  transition: color 0.3s ease;
+}
+
+.cap-feature-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.cap-feature-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.15rem, 1.6vw, 1.35rem);
+  line-height: 1.25;
+  color: #343434;
+  text-transform: uppercase;
+  margin: 0 0 14px;
+  transition: color 0.3s ease;
+}
+
+.cap-feature-desc {
+  font-family: var(--font-heading);
+  font-size: clamp(0.88rem, 1vw, 0.95rem);
+  line-height: 1.6;
+  color: #343434;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+/* =============================================
+   2. NUMBERED LIST (processes, engineering)
+   ============================================= */
+.cap-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: clamp(2rem, 4vw, 4rem);
+  margin-top: clamp(1.6rem, 3vw, 2.5rem);
+}
+
+.cap-step {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  padding: clamp(16px, 1.8vw, 22px) 2px;
+  border-bottom: 1px solid rgba(243, 27, 27, 0.22);
+  transition: padding-left 0.3s ease;
+}
+
+.cap-step:hover {
+  padding-left: 8px;
+}
+
+.cap-step-index {
+  flex-shrink: 0;
+  min-width: 34px;
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  color: var(--color-primary);
+}
+
+.cap-step-label {
+  font-family: var(--font-heading);
+  font-size: clamp(0.95rem, 1.2vw, 1.15rem);
+  line-height: 1.3;
+  color: #343434;
+  text-transform: uppercase;
+}
+
+/* =============================================
+   3. SPEC TABLE (component size, production capacity)
+   ============================================= */
+.cap-spectable {
+  max-width: 760px;
+  margin: clamp(1.6rem, 3vw, 2.5rem) auto 0;
+}
+
+.cap-specrow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: clamp(18px, 2vw, 24px) 4px;
+  border-bottom: 1px solid #ead9d9;
+}
+
+.cap-specrow:first-child {
+  border-top: 1px solid #ead9d9;
+}
+
+.cap-specrow-label {
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  color: #343434;
+  text-transform: uppercase;
+}
+
+.cap-specrow-value {
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  color: var(--color-primary);
+  text-transform: uppercase;
+  text-align: right;
+}
+
+/* =============================================
+   4. CHIP CLOUD (materials, threads, surface, workforce, export)
+   ============================================= */
+.cap-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(12px, 1.4vw, 16px);
+  margin-top: clamp(1.6rem, 3vw, 2.5rem);
+}
+
+.cap-chip {
+  font-family: var(--font-heading);
+  font-size: clamp(0.9rem, 1.1vw, 1.05rem);
+  color: #343434;
+  text-transform: uppercase;
+  padding: 12px 26px;
+  border: 1.5px solid var(--color-primary);
+  border-radius: 999px;
+  background-color: #ffffff;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.cap-chip:hover {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Badge variant — squared standards tags (threads, trade terms) */
+.cap-chips--badge .cap-chip {
+  border-radius: 4px;
+  letter-spacing: 0.06em;
+  background-color: #fff2f2;
+}
+
+/* =============================================
+   5. CHECKLIST (why choose us, active supply)
+   ============================================= */
+.cap-checks {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px clamp(2rem, 4vw, 3.5rem);
+  max-width: 1000px;
+  margin: clamp(1.6rem, 3vw, 2.5rem) auto 0;
+}
+
+.cap-check {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: clamp(13px, 1.5vw, 17px) 2px;
+  border-bottom: 1px solid rgba(243, 27, 27, 0.16);
+}
+
+.cap-check-mark {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.cap-check-mark svg {
+  width: 14px;
+  height: 14px;
+}
+
+.cap-check-label {
+  font-family: var(--font-heading);
+  font-size: clamp(0.95rem, 1.1vw, 1.1rem);
+  line-height: 1.3;
+  color: #343434;
+  text-transform: uppercase;
+}
+
+/* =============================================
+   Responsive
+   ============================================= */
+@media (max-width: 1100px) {
+  .cap-feature-grid--4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .cap-feature-grid,
+  .cap-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .cap-feature-grid,
+  .cap-feature-grid--4,
+  .cap-steps,
+  .cap-checks {
+    grid-template-columns: 1fr;
+  }
+
+  .cap-specrow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .cap-specrow-value {
+    text-align: left;
+  }
+}
