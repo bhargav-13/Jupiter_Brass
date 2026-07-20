@@ -14,7 +14,7 @@ const AboutPage = () => {
     <>
       <SEO
         title="About Us"
-        description="Learn about Jupiter Meta Mech's manufacturing capabilities, machinery, finishes, certifications, and commitment to delivering durable, precision-machined brass components."
+        description="Learn about Jupiter Brass Industries' manufacturing capabilities, machinery, finishes, certifications, and commitment to delivering durable, precision-machined brass components."
         path="/about"
       />
       <AboutHero />

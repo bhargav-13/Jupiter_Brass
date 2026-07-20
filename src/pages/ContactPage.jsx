@@ -64,7 +64,7 @@ const ContactPage = () => {
   const localBusinessSchema = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    name: 'Jupiter Meta Mech',
+    name: 'Jupiter Brass Industries',
     image: `${SITE_URL}/hero.png`,
     telephone: '+91-94292-69395',
     email: 'info@jupiterbrass.com',
@@ -87,7 +87,7 @@ const ContactPage = () => {
     <div className="contact-page">
       <SEO
         title="Contact Us"
-        description="Get in touch with Jupiter Meta Mech for brass component inquiries, custom manufacturing, bulk orders, and industrial solutions. Reach our team in Jamnagar, Gujarat."
+        description="Get in touch with Jupiter Brass Industries for brass component inquiries, custom manufacturing, bulk orders, and industrial solutions. Reach our team in Jamnagar, Gujarat."
         path="/contact"
       />
       <StructuredData id="local-business" data={localBusinessSchema} />

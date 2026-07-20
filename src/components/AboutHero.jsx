@@ -112,7 +112,7 @@ const AboutHero = () => {
 
         <div className="about-hero-content">
           <div className="about-hero-text">
-            Established in 1994, Jupiter Meta Mech began its journey as a manufacturer of premium brass components with a commitment to precision, quality, and reliability. Over the years, we have continuously expanded our capabilities, embracing modern manufacturing technologies to meet the evolving needs of global industries.
+            Established in 1994, Jupiter Brass Industries began its journey as a manufacturer of premium brass components with a commitment to precision, quality, and reliability. Over the years, we have continuously expanded our capabilities, embracing modern manufacturing technologies to meet the evolving needs of global industries.
           </div>
           <div className="about-hero-divider"></div>
           <div className="about-hero-text">

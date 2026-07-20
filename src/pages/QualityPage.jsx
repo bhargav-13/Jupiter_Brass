@@ -12,7 +12,7 @@ const QualityPage = () => {
     <>
       <SEO
         title="Quality"
-        description="Discover Jupiter Meta Mech's commitment to quality — precision-engineered brass components manufactured under strict quality control since 1994."
+        description="Discover Jupiter Brass Industries' commitment to quality — precision-engineered brass components manufactured under strict quality control since 1994."
         path="/quality"
       />
       <QualityHero />

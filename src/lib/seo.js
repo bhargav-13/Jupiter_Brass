@@ -1,4 +1,4 @@
-export const SITE_NAME = 'Jupiter Meta Mech';
+export const SITE_NAME = 'Jupiter Brass Industries';
 export const SITE_URL = 'https://www.jupitermetamech.com';
 export const DEFAULT_IMAGE = `${SITE_URL}/hero.png`;
 

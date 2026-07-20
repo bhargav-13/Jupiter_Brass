@@ -15,8 +15,6 @@ import OEMPage from './pages/OEMPage';
 import CapabilitiesPage from './pages/CapabilitiesPage';
 import GsapAnimations from './components/GsapAnimations';
 import ScrollToTop from './components/ScrollToTop';
-import SmoothScroll from './components/SmoothScroll';
-import CustomCursor from './components/CustomCursor';
 import ScrollProgress from './components/ScrollProgress';
 import PageLoader from './components/PageLoader';
 import StudioPage from './pages/StudioPage';
@@ -25,9 +23,7 @@ function SiteLayout() {
   return (
     <>
       <PageLoader />
-      <CustomCursor />
       <ScrollProgress />
-      <SmoothScroll />
       <ScrollToTop />
       <GsapAnimations />
       <Header />

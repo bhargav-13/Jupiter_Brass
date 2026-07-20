@@ -74,7 +74,7 @@ const Footer = () => {
       {/* Bottom Bar — outside container for full-width strip on mobile */}
       <div className="footer-bottom">
         <div className="container footer-bottom-inner">
-          <p className="footer-copyright">&copy; {new Date().getFullYear()} Jupiter Meta Mech — All Rights Reserved</p>
+          <p className="footer-copyright">&copy; {new Date().getFullYear()} Jupiter Brass Industries — All Rights Reserved</p>
           <p className="footer-credit">
             Made with <span className="heart" aria-hidden="true">❤️</span> by{' '}
             <a href="https://codelixitsolutions.com/" target="_blank" rel="noopener noreferrer" className="codelix-link">

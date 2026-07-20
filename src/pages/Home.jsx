@@ -43,7 +43,7 @@ const Home = () => {
     <>
       <SEO
         title="Precision Engineered Brass Components Manufacturer"
-        description="Jupiter Meta Mech manufactures high-precision brass components for electrical, plumbing, automotive, engineering, telecommunications, hardware, and renewable energy industries from Jamnagar, India."
+        description="Jupiter Brass Industries manufactures high-precision brass components for electrical, plumbing, automotive, engineering, telecommunications, hardware, and renewable energy industries from Jamnagar, India."
         path="/"
       />
       <StructuredData id="organization" data={organizationSchema} />
