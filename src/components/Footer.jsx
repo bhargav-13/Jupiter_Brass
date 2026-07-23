@@ -49,6 +49,7 @@ const Footer = () => {
               <ul>
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/products">Product</Link></li>
+                <li><Link to="/capabilities">Capabilities</Link></li>
                 <li><Link to="/about">About</Link></li>
                 <li><Link to="/quality">Quality</Link></li>
                 <li><Link to="/oem-manufacturing">OEM Manufacturing</Link></li>
@@ -76,7 +77,7 @@ const Footer = () => {
         <div className="container footer-bottom-inner">
           <p className="footer-copyright">&copy; {new Date().getFullYear()} Jupiter Brass Industries — All Rights Reserved</p>
           <p className="footer-credit">
-            Made with <span className="heart" aria-hidden="true">❤️</span> by{' '}
+            Design & Development by{' '}
             <a href="https://codelixitsolutions.com/" target="_blank" rel="noopener noreferrer" className="codelix-link">
               Codelix
             </a>

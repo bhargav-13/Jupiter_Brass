@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import SEO from '../components/SEO';
 import { SITE_URL } from '../lib/seo';
 import StructuredData from '../components/StructuredData';
@@ -47,7 +48,7 @@ const contactDetails = [
     label: 'CALL ME ON',
     lines: [
       { text: '+91 81414 18990', href: phoneDialUrl('+91 81414 18990') },
-      { text: '+91 81414 18982', href: phoneDialUrl('+91 81414 18982') }
+      { text: '+91 81414 18981', href: phoneDialUrl('+91 81414 18981') }
     ],
   },
 ];
@@ -56,10 +57,19 @@ const mapEmbedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(MAP_LOC
 
 const ContactPage = () => {
   const [fileName, setFileName] = useState('');
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = useCallback(async (event) => {
     event.preventDefault();
-  };
+    if (!executeRecaptcha) return;
+
+    const token = await executeRecaptcha('contact_form');
+    if (!token) {
+      alert('reCAPTCHA verification failed. Please try again.');
+      return;
+    }
+    // token is ready — include it in your form submission to the backend
+  }, [executeRecaptcha]);
 
   const localBusinessSchema = {
     '@context': 'https://schema.org',

@@ -10,24 +10,24 @@ const Quality = () => {
       desc: 'We use high-grade raw materials to ensure strength, corrosion resistance, and long service life in every component.',
     },
     {
-      title: 'PREMIUM BRASS MATERIAL',
-      desc: 'We use high-grade raw materials to ensure strength, corrosion resistance, and long service life in every component.',
+      title: 'ADVANCED QUALITY',
+      desc: 'Every component undergoes precise inspection to guarantee dimensional accuracy, flawless finish, and dependable every time.',
     },
     {
-      title: 'PREMIUM BRASS MATERIAL',
-      desc: 'We use high-grade raw materials to ensure strength, corrosion resistance, and long service life in every component.',
+      title: 'PRECISION MANUFACTURING',
+      desc: 'Advanced CNC technology delivers exceptional precision, consistent quality, faster production, and reliable excellence.',
     },
     {
-      title: 'PREMIUM BRASS MATERIAL',
-      desc: 'We use high-grade raw materials to ensure strength, corrosion resistance, and long service life in every component.',
+      title: 'INTERNATIONAL STANDARDS',
+      desc: 'Manufacturing follows internationally quality standards manufactured to ISO standards with complete quality.',
     },
     {
-      title: 'PREMIUM BRASS MATERIAL',
-      desc: 'We use high-grade raw materials to ensure strength, corrosion resistance, and long service life in every component.',
+      title: 'CONTINUOUS IMPROVEMENT',
+      desc: 'We continuously improvement optimize processes for higher efficiency and better quality and customer satisfaction.',
     },
     {
-      title: 'PREMIUM BRASS MATERIAL',
-      desc: 'We use high-grade raw materials to ensure strength, corrosion resistance, and long service life in every component.',
+      title: 'CUSTOMER EXCELLENCE',
+      desc: 'Delivering precision products with trusted quality, timely delivery, and outstanding customer support always.',
     },
   ];
 

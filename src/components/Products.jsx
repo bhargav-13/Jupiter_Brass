@@ -18,7 +18,7 @@ const Products = () => {
 
         <div className="products-grid">
           {homeProductCategories.map((product) => (
-            <ProductCard key={product.slug} product={product} showNumber />
+            <ProductCard key={product.slug} product={product} showNumber={false} />
           ))}
         </div>
       </div>

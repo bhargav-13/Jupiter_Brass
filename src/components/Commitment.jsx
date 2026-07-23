@@ -54,7 +54,7 @@ const Commitment = () => {
           {/* Right Side Image */}
           <div className="commitment-image-box">
             <img
-              src="/images/profile.png"
+              src="/images/father.png"
               alt="Our Team/Commitment Profile"
               className="commitment-profile-img"
             />

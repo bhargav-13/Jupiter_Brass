@@ -20,7 +20,7 @@ const AboutPage = () => {
       <AboutHero />
       <AboutCapabilities />
       <WhyChooseUs />
-      <Machinery />
+      {/* <Machinery /> */}
       <ChooseFinish />
       <Certification />
       <ParallaxSection />

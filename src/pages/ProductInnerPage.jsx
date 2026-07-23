@@ -7,10 +7,10 @@ import './ProductInnerPage.css';
 
 const colorOptions = [
   { id: 'brass', label: 'Brass', swatchClass: 'color-brass' },
-  { id: 'copper', label: 'Copper', swatchClass: 'color-copper' },
-  { id: 'silver', label: 'Silver', swatchClass: 'color-silver' },
-  { id: 'dark', label: 'Dark', swatchClass: 'color-dark' },
-  { id: 'light-silver', label: 'Light Silver', swatchClass: 'color-light-silver' },
+  // { id: 'copper', label: 'Copper', swatchClass: 'color-copper' },
+  // { id: 'silver', label: 'Silver', swatchClass: 'color-silver' },
+  // { id: 'dark', label: 'Dark', swatchClass: 'color-dark' },
+  // { id: 'light-silver', label: 'Light Silver', swatchClass: 'color-light-silver' },
 ];
 
 const defaultFeatures = [
