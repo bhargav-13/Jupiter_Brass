@@ -2,10 +2,10 @@ import React from 'react';
 import './About.css';
 
 const stats = [
-  { value: 32, label: 'Years of Experience' },
-  { value: 98, label: 'Happy Clients' },
-  { value: 150, label: 'Products Developed' },
-  { value: 5, label: 'Countries Reached' },
+  { value: 32, label: 'Years of Experience', sign: '+' },
+  { value: 98, label: 'Happy Clients', sign: '%' },
+  { value: 150, label: 'Products Developed', sign: '+' },
+  { value: 5, label: 'Countries Reached', sign: '+' },
 ];
 
 const About = () => {
@@ -30,8 +30,8 @@ const About = () => {
                 <span
                   className="stat-number"
                   data-count={stat.value}
-                  data-suffix="%"
-                  aria-label={`${stat.value}+`}
+                  data-suffix={stat.sign}
+                  aria-label={`${stat.value}${stat.sign}`}
                 >
                   0+
                 </span>
