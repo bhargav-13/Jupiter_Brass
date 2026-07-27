@@ -1,5 +1,5 @@
-import React, { useState, useCallback } from 'react';
-import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import React, { useState, useCallback, useRef } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
 import SEO from '../components/SEO';
 import { SITE_URL } from '../lib/seo';
 import StructuredData from '../components/StructuredData';
@@ -55,21 +55,26 @@ const contactDetails = [
 
 const mapEmbedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(MAP_LOCATION.label)}&ll=${MAP_LOCATION.lat},${MAP_LOCATION.lng}&z=17&hl=en&output=embed`;
 
+const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY || '';
+
 const ContactPage = () => {
   const [fileName, setFileName] = useState('');
-  const { executeRecaptcha } = useGoogleReCaptcha();
+  const [captchaToken, setCaptchaToken] = useState(null);
+  const recaptchaRef = useRef(null);
 
-  const handleSubmit = useCallback(async (event) => {
+  const handleSubmit = useCallback((event) => {
     event.preventDefault();
-    if (!executeRecaptcha) return;
 
-    const token = await executeRecaptcha('contact_form');
-    if (!token) {
-      alert('reCAPTCHA verification failed. Please try again.');
+    if (RECAPTCHA_SITE_KEY && !captchaToken) {
+      alert('Please confirm you are not a robot.');
       return;
     }
-    // token is ready — include it in your form submission to the backend
-  }, [executeRecaptcha]);
+
+    // captchaToken is ready — include it in your form submission to the backend.
+    // Reset the widget so a fresh token is required for the next submission.
+    recaptchaRef.current?.reset();
+    setCaptchaToken(null);
+  }, [captchaToken]);
 
   const localBusinessSchema = {
     '@context': 'https://schema.org',
@@ -226,6 +231,17 @@ const ContactPage = () => {
                 <textarea id="message" name="message" rows="6" />
               </div>
             </div>
+
+            {RECAPTCHA_SITE_KEY && (
+              <div className="contact-captcha-row">
+                <ReCAPTCHA
+                  ref={recaptchaRef}
+                  sitekey={RECAPTCHA_SITE_KEY}
+                  onChange={(token) => setCaptchaToken(token)}
+                  onExpired={() => setCaptchaToken(null)}
+                />
+              </div>
+            )}
 
             <div className="contact-form-submit">
               <button type="submit" className="contact-submit-btn">

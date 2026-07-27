@@ -1,5 +1,4 @@
 import React from 'react';
-import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import { BrowserRouter as Router, Navigate, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -49,24 +48,14 @@ function SiteLayout() {
   );
 }
 
-const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY || '';
-
 function App() {
-  const app = (
+  return (
     <Router>
       <Routes>
         <Route path="/studio/*" element={<StudioPage />} />
         <Route path="/*" element={<SiteLayout />} />
       </Routes>
     </Router>
-  );
-
-  if (!RECAPTCHA_SITE_KEY) return app;
-
-  return (
-    <GoogleReCaptchaProvider reCaptchaKey={RECAPTCHA_SITE_KEY}>
-      {app}
-    </GoogleReCaptchaProvider>
   );
 }
 
