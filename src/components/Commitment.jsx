@@ -15,7 +15,7 @@ const Commitment = () => {
         <div className="commitment-wrapper">
           {/* Left Content */}
           <div className="commitment-content">
-            <h2 className="commitment-title">Our Commitment</h2>
+            {/* <h2 className="commitment-title">Our Commitment</h2> */}
             
             <p className="commitment-desc">
               We believe in delivering products that combine quality, reliability, and precision.

@@ -17,14 +17,14 @@ const AboutPage = () => {
         description="Learn about Jupiter Brass Industries' manufacturing capabilities, machinery, finishes, certifications, and commitment to delivering durable, precision-machined brass components."
         path="/about"
       />
-      <AboutHero />
+      <Commitment />
       <AboutCapabilities />
       <WhyChooseUs />
       {/* <Machinery /> */}
+      <AboutHero />
       <ChooseFinish />
       <Certification />
       <ParallaxSection />
-      <Commitment />
     </>
   );
 };

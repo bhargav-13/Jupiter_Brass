@@ -19,15 +19,16 @@ const Certification = () => {
           {/* Left Content */}
           <div className="certification-content">
             <h2 className="certification-title">
-              ISO 9001:2015 Certified<br />
+              ZED Bronze Certified<br />
               Manufacturing Company
             </h2>
 
             <p className="certification-description">
-              We are proud to be an ISO 9001:2015 certified company, recognized
-              for maintaining international quality management standards in the
-              manufacturing and supply of premium brass components and industrial
-              solutions.
+              We are proud to be certified under the MSME Sustainable (ZED)
+              Certification Scheme by the Ministry of Micro, Small &amp; Medium
+              Enterprises, Government of India — recognising our commitment to
+              Zero Defect, Zero Effect manufacturing across our premium brass
+              components and industrial solutions.
             </p>
 
             <h3 className="certification-scope-title">
@@ -47,8 +48,8 @@ const Certification = () => {
           {/* Right Certificate Image */}
           <div className="certification-image-box">
             <img
-              src="/images/certificate.jpg"
-              alt="ISO 9001:2015 Certificate of Registration — Jupiter Brass Industries"
+              src="/images/certificate2.png"
+              alt="ZED Bronze Certificate under MSME Sustainable (ZED) Certification Scheme — Jupiter Brass Industries"
               className="certification-image"
               loading="lazy"
             />

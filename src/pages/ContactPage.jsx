@@ -1,5 +1,5 @@
-import React, { useState, useCallback } from 'react';
-import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import React, { useState, useCallback, useRef } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
 import SEO from '../components/SEO';
 import { SITE_URL } from '../lib/seo';
 import StructuredData from '../components/StructuredData';
@@ -19,57 +19,82 @@ const gmailComposeUrl = (email) =>
 
 const phoneDialUrl = (phone) => `tel:${phone.replace(/\s+/g, '')}`;
 
-const contactDetails = [
+const cardIcons = {
+  pin: (
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M12 21s-6.5-5.4-6.5-10.2A6.5 6.5 0 0 1 12 4.3a6.5 6.5 0 0 1 6.5 6.5C18.5 15.6 12 21 12 21z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
+      <circle cx="12" cy="10.6" r="2.4" stroke="currentColor" strokeWidth="1.7" />
+    </svg>
+  ),
+  phone: (
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M6.6 3.8h3l1.5 3.8-2.1 1.4a11 11 0 0 0 4.9 4.9l1.4-2.1 3.8 1.5v3a1.6 1.6 0 0 1-1.7 1.6A14.6 14.6 0 0 1 5 5.5 1.6 1.6 0 0 1 6.6 3.8z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
+    </svg>
+  ),
+  badge: (
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M12 3.5l6.5 2.4v5.3c0 4-2.7 6.9-6.5 8.3-3.8-1.4-6.5-4.3-6.5-8.3V5.9L12 3.5z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
+      <path d="M9.2 12l2 2 3.6-3.9" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  ),
+};
+
+const contactCards = [
   {
     id: 'address',
-    badge: 'CONTACT',
-    label: 'ADDRESS',
+    icon: 'pin',
+    title: 'Address',
     href: mapDirectionsUrl,
     external: true,
     lines: [
-      'RAW TYPE 84/1, G.I.D.C.,',
-      'SHANKER TEKRI, UDYOGNAGAR,',
-      'JAMNAGAR – 361004, GUJARAT,',
-      'INDIA',
+      'RAW Type 84/1, G.I.D.C., Shanker Tekri,',
+      'Udyognagar, Jamnagar – 361004,',
+      'Gujarat, INDIA',
     ],
   },
   {
-    id: 'email',
-    badge: 'DIRECT E-MAIL',
-    label: 'SEND US AN EMAIL',
-    lines: [
-      { text: 'INFO@JUPITERMETAMECH.COM', href: gmailComposeUrl('info@jupitermetamech.com'), external: true },
-      { text: 'SALES@JUPITERMETAMECH.COM', href: gmailComposeUrl('sales@jupitermetamech.com'), external: true },
-    ],
-  },
-  {
-    id: 'phone',
-    badge: 'DIRECT CONTACT',
-    label: 'CALL ME ON',
-    lines: [
+    id: 'sales',
+    icon: 'phone',
+    title: 'Sales',
+    links: [
+      { text: 'sales@jupiterbrass.com', href: gmailComposeUrl('sales@jupiterbrass.com'), external: true },
+      { text: 'export@jupiterbrass.com', href: gmailComposeUrl('export@jupiterbrass.com'), external: true },
       { text: '+91 81414 18990', href: phoneDialUrl('+91 81414 18990') },
-      { text: '+91 81414 18981', href: phoneDialUrl('+91 81414 18981') }
+    ],
+  },
+  {
+    id: 'quality',
+    icon: 'badge',
+    title: 'Quality',
+    links: [
+      { text: 'info@jupiterbrass.com', href: gmailComposeUrl('info@jupiterbrass.com'), external: true },
+      { text: '+91 81414 18981', href: phoneDialUrl('+91 81414 18981') },
     ],
   },
 ];
 
 const mapEmbedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(MAP_LOCATION.label)}&ll=${MAP_LOCATION.lat},${MAP_LOCATION.lng}&z=17&hl=en&output=embed`;
 
+const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY || '';
+
 const ContactPage = () => {
   const [fileName, setFileName] = useState('');
-  const { executeRecaptcha } = useGoogleReCaptcha();
+  const [captchaToken, setCaptchaToken] = useState(null);
+  const recaptchaRef = useRef(null);
 
-  const handleSubmit = useCallback(async (event) => {
+  const handleSubmit = useCallback((event) => {
     event.preventDefault();
-    if (!executeRecaptcha) return;
 
-    const token = await executeRecaptcha('contact_form');
-    if (!token) {
-      alert('reCAPTCHA verification failed. Please try again.');
+    if (RECAPTCHA_SITE_KEY && !captchaToken) {
+      alert('Please confirm you are not a robot.');
       return;
     }
-    // token is ready — include it in your form submission to the backend
-  }, [executeRecaptcha]);
+
+    // captchaToken is ready — include it in your form submission to the backend.
+    // Reset the widget so a fresh token is required for the next submission.
+    recaptchaRef.current?.reset();
+    setCaptchaToken(null);
+  }, [captchaToken]);
 
   const localBusinessSchema = {
     '@context': 'https://schema.org',
@@ -111,29 +136,29 @@ const ContactPage = () => {
             </p>
           </div>
 
-          <div className="contact-info-box">
-            {contactDetails.map((item) => (
-              <div className="contact-info-col" key={item.id}>
-                <span className="contact-info-badge">{item.badge}</span>
-                <h3 className="contact-info-label">{item.label}</h3>
-                <div className="contact-info-content">
-                  {item.href ? (
+          <div className="contact-cards">
+            {contactCards.map((card) => (
+              <div className="contact-card" key={card.id}>
+                <span className="contact-card-icon">{cardIcons[card.icon]}</span>
+                <h3 className="contact-card-title">{card.title}</h3>
+                <div className="contact-card-body">
+                  {card.href ? (
                     <a
-                      href={item.href}
-                      className="contact-info-link contact-info-link-block"
-                      target={item.external ? '_blank' : undefined}
-                      rel={item.external ? 'noopener noreferrer' : undefined}
+                      href={card.href}
+                      className="contact-card-link contact-card-link-block"
+                      target={card.external ? '_blank' : undefined}
+                      rel={card.external ? 'noopener noreferrer' : undefined}
                     >
-                      {item.lines.map((line) => (
+                      {card.lines.map((line) => (
                         <p key={line}>{line}</p>
                       ))}
                     </a>
                   ) : (
-                    item.lines.map((line) => (
+                    card.links.map((line) => (
                       <p key={line.text}>
                         <a
                           href={line.href}
-                          className="contact-info-link"
+                          className="contact-card-link"
                           target={line.external ? '_blank' : undefined}
                           rel={line.external ? 'noopener noreferrer' : undefined}
                         >
@@ -226,6 +251,17 @@ const ContactPage = () => {
                 <textarea id="message" name="message" rows="6" />
               </div>
             </div>
+
+            {RECAPTCHA_SITE_KEY && (
+              <div className="contact-captcha-row">
+                <ReCAPTCHA
+                  ref={recaptchaRef}
+                  sitekey={RECAPTCHA_SITE_KEY}
+                  onChange={(token) => setCaptchaToken(token)}
+                  onExpired={() => setCaptchaToken(null)}
+                />
+              </div>
+            )}
 
             <div className="contact-form-submit">
               <button type="submit" className="contact-submit-btn">
