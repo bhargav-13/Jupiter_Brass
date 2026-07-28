@@ -56,5 +56,5 @@ export function scrollToTop(options = {}) {
     return;
   }
 
-  window.scrollTo(0, 0);
+  window.scrollTo({ top: 0, left: 0, behavior: immediate ? 'auto' : 'smooth' });
 }

@@ -3,13 +3,13 @@ import './OEMCustomComponents.css';
 
 const components = [
   { name: 'Precision Brass Turned Parts', image: '/images/Precision Brass Turned Parts.png' },
-  { name: 'CNC Machined Components', image: '/images/Precision Brass Turned Parts.png' },
+  { name: 'CNC Machined Components', image: '/images/cnc_comp.png' },
   { name: 'Brass Fitting', image: '/images/Brass fitting.png' },
   { name: 'Brass Insert', image: '/images/brass insert.png' },
   { name: 'Brass Fastners', image: '/images/brass fastners.png' },
-  { name: 'Brass Adapters', image: '/images/brass adapters.png' },
+  { name: 'Brass Adapters', image: '/images/brass reducers.png' },
   { name: 'Brass Connectors', image: '/images/brass connectors.png' },
-  { name: 'Brass Reducers', image: '/images/brass reducers.png' },
+  { name: 'Brass Reducers', image: '/images/reducer.png' },
   { name: 'Brass Nipples', image: '/images/brass nipples.png' },
   { name: 'Brass Cable Glands', image: '/images/brass cable glands.png' },
   { name: 'Complex Components', image: '/images/complex components.png' },

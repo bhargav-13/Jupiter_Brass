@@ -6,10 +6,10 @@ import './Header.css';
 
 const NAV_LINKS = [
   { to: '/about', label: 'ABOUT' },
-  { to: '/products', label: 'PRODUCTS' },
-  { to: '/capabilities', label: 'CAPABILITIES' },
   { to: '/quality', label: 'QUALITY' },
+  { to: '/capabilities', label: 'CAPABILITIES' },
   { to: '/oem-manufacturing', label: 'OEM MANUFACTURING' },
+  { to: '/products', label: 'PRODUCTS' },
   { to: '/blog', label: 'BLOG' },
   { to: '/contact', label: 'CONTACT' },
 ];

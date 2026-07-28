@@ -1,11 +1,11 @@
-import React from 'react';
-import './Commitment.css';
+import React from "react";
+import "./Commitment.css";
 
 const commitmentItems = [
-  { label: 'Precision' },
-  { label: 'Quality' },
-  { label: 'Reliability' },
-  { label: 'Innovation' },
+  { label: "Precision" },
+  { label: "Quality" },
+  { label: "Reliability" },
+  { label: "Innovation" },
 ];
 
 const Commitment = () => {
@@ -16,28 +16,31 @@ const Commitment = () => {
           {/* Left Content */}
           <div className="commitment-content">
             {/* <h2 className="commitment-title">Our Commitment</h2> */}
-            
+
             <p className="commitment-desc">
-              We believe in delivering products that combine quality, reliability, and precision.
-              Through continuous innovation and customer-focused manufacturing, we strive
-              to provide brass components that exceed expectations and support industrial growth
-              worldwide.
+              Established in 1994 in Jamnagar, Gujarat, India, we are a trusted
+              manufacturer of precision-engineered brass and metal components
+              with over three decades of manufacturing excellence. From Brass
+              Cable Glands to precision turned parts, CNC machined components,
+              inserts, fasteners, fittings, and custom-engineered solutions, we
+              serve diverse industrial applications worldwide. Equipped with
+              advanced CNC technology and a modern 8,500 sq. ft. manufacturing
+              facility, we deliver products in Brass, Copper, Stainless Steel,
+              Mild Steel, Aluminium, and other specialized materials. Our
+              products are exported across the USA, Europe, the Middle East, and
+              other global markets, meeting the highest international quality
+              standards. As an ISO 9001:2015 Certified and MSME Registered
+              manufacturer, we ensure certified raw materials, complete
+              traceability, stringent quality inspections, and reliable on-time
+              delivery. Driven by precision engineering, uncompromising quality,
+              competitive pricing, and long-term customer relationships, we
+              continue to be a trusted OEM manufacturing partner worldwide.
             </p>
 
             <div className="commitment-bottom-layout">
               {/* Cards / Items list */}
               <div className="commitment-items">
-                {commitmentItems.map((item, index) => (
-                  <div className="commitment-item" key={index}>
-                    <img
-                      src="/images/Our Capabilities_icon.png"
-                      alt=""
-                      className="commitment-item-icon"
-                      aria-hidden="true"
-                    />
-                    <span className="commitment-item-text">{item.label}</span>
-                  </div>
-                ))}
+                ~Mr. JayShukh Vasoya (Founder)
               </div>
 
               {/* Round Logo */}

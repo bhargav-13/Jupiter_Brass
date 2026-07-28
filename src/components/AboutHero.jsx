@@ -117,7 +117,7 @@ const AboutHero = () => {
           <div className="about-hero-divider"></div>
           <div className="about-hero-text">
             Our commitment to quality, innovation, and customer satisfaction has helped us build strong relationships with clients across domestic and international markets. From standard brass parts to fully customized components, we deliver products that meet the highest industry standards and exact client requirements.
-            <span className="about-hero-signature"><span className="about-hero-tilde">~</span> MR. JAY VASOYA</span>
+            <span className="about-hero-signature"><span className="about-hero-tilde">~</span> Mr. Jay Vasoya (Visionary Leader)</span>
           </div>
         </div>
       </div>

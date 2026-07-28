@@ -17,6 +17,7 @@ import GsapAnimations from './components/GsapAnimations';
 import ScrollToTop from './components/ScrollToTop';
 import ScrollProgress from './components/ScrollProgress';
 import PageLoader from './components/PageLoader';
+import BackToTop from './components/BackToTop';
 import StudioPage from './pages/StudioPage';
 
 function SiteLayout() {
@@ -44,6 +45,7 @@ function SiteLayout() {
         </Routes>
       </main>
       <Footer />
+      <BackToTop />
     </>
   );
 }

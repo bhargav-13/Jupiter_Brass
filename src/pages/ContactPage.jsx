@@ -57,8 +57,7 @@ const contactCards = [
     icon: 'phone',
     title: 'Sales',
     links: [
-      { text: 'sales@jupiterbrass.com', href: gmailComposeUrl('sales@jupiterbrass.com'), external: true },
-      { text: 'export@jupiterbrass.com', href: gmailComposeUrl('export@jupiterbrass.com'), external: true },
+      { text: 'sales@jupitermetamech.com', href: gmailComposeUrl('sales@jupitermetamech.com'), external: true },
       { text: '+91 81414 18990', href: phoneDialUrl('+91 81414 18990') },
     ],
   },
@@ -67,7 +66,7 @@ const contactCards = [
     icon: 'badge',
     title: 'Quality',
     links: [
-      { text: 'info@jupiterbrass.com', href: gmailComposeUrl('info@jupiterbrass.com'), external: true },
+      { text: 'info@jupitermetamech.com', href: gmailComposeUrl('info@jupitermetamech.com'), external: true },
       { text: '+91 81414 18981', href: phoneDialUrl('+91 81414 18981') },
     ],
   },
@@ -102,7 +101,7 @@ const ContactPage = () => {
     name: 'Jupiter Brass Industries',
     image: `${SITE_URL}/hero.png`,
     telephone: '+91-94292-69395',
-    email: 'info@jupiterbrass.com',
+    email: 'info@jupitermetamech.com',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'RAW Type 84/1, G.I.D.C., Shanker Tekri, Udyognagar',
