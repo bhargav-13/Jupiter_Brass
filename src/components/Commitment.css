@@ -30,6 +30,12 @@
   margin-bottom: 0;
 }
 
+.commitment-desc-group {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.85rem, 1.4vw, 1.25rem);
+}
+
 .commitment-desc {
   font-family: var(--font-heading);
   font-size: 0.8938rem;

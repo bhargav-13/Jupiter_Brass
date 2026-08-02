@@ -17,25 +17,31 @@ const Commitment = () => {
           <div className="commitment-content">
             {/* <h2 className="commitment-title">Our Commitment</h2> */}
 
-            <p className="commitment-desc">
-              Established in 1994 in Jamnagar, Gujarat, India, we are a trusted
-              manufacturer of precision-engineered brass and metal components
-              with over three decades of manufacturing excellence. From Brass
-              Cable Glands to precision turned parts, CNC machined components,
-              inserts, fasteners, fittings, and custom-engineered solutions, we
-              serve diverse industrial applications worldwide. Equipped with
-              advanced CNC technology and a modern 8,500 sq. ft. manufacturing
-              facility, we deliver products in Brass, Copper, Stainless Steel,
-              Mild Steel, Aluminium, and other specialized materials. Our
-              products are exported across the USA, Europe, the Middle East, and
-              other global markets, meeting the highest international quality
-              standards. As an ISO 9001:2015 Certified and MSME Registered
-              manufacturer, we ensure certified raw materials, complete
-              traceability, stringent quality inspections, and reliable on-time
-              delivery. Driven by precision engineering, uncompromising quality,
-              competitive pricing, and long-term customer relationships, we
-              continue to be a trusted OEM manufacturing partner worldwide.
-            </p>
+            <div className="commitment-desc-group">
+              <p className="commitment-desc">
+                Established in 1994 in Jamnagar, Gujarat, India, we are a trusted
+                manufacturer of precision-engineered brass and metal components
+                with over three decades of manufacturing excellence. From Brass
+                Cable Glands to precision turned parts, CNC machined components,
+                inserts, fasteners, fittings, and custom-engineered solutions, we
+                serve diverse industrial applications worldwide. Equipped with
+                advanced CNC technology and a modern 8,500 sq. ft. manufacturing
+                facility, we deliver products in Brass, Copper, Stainless Steel,
+                Mild Steel, Aluminium, and other specialized materials.
+              </p>
+
+              <p className="commitment-desc">
+                Our products are exported across the USA, Europe, the Middle
+                East, and other global markets, meeting the highest international
+                quality standards. As an ISO 9001:2015 Certified and MSME
+                Registered manufacturer, we ensure certified raw materials,
+                complete traceability, stringent quality inspections, and
+                reliable on-time delivery. Driven by precision engineering,
+                uncompromising quality, competitive pricing, and long-term
+                customer relationships, we continue to be a trusted OEM
+                manufacturing partner worldwide.
+              </p>
+            </div>
 
             <div className="commitment-bottom-layout">
               {/* Cards / Items list */}
@@ -57,7 +63,7 @@ const Commitment = () => {
           {/* Right Side Image */}
           <div className="commitment-image-box">
             <img
-              src="/images/father.png"
+              src="/images/jaysukh.png"
               alt="Our Team/Commitment Profile"
               className="commitment-profile-img"
             />

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import { useProduct, useProducts } from '../sanity/hooks';
+import { scrollToTop } from '../lib/lenisScroll';
 import '../components/Products.css';
 import './ProductInnerPage.css';
 
@@ -52,25 +53,10 @@ const defaultFeatures = [
   },
 ];
 
+// Static list of threads served on every product.
 const threadColumns = [
-  [
-    'METRIC ISO THREAD [M]',
-    'UNIFIED COARSE THREAD [UNC]',
-    'BRITISH STANDARD',
-    'BRITISH STANDARD FINE THREAD [BSF]',
-    'AMERICAN NATIONAL STRAIGHT PIPE THREAD (NPSM)',
-    'AMERICAN NATIONAL PIPE THREAD (NPT)',
-    'BRITISH STANDARD',
-  ],
-  [
-    'METRIC ISO FINE THREAD [MF]',
-    'UNIFIED FINE THREAD [UNF]',
-    'WHITWORTH THREAD [BSW]',
-    'STEEL CONDUIT THREAD (DIN 40430 – PG)',
-    'BRITISH ASSOCIATION (BA) THREAD',
-    'CUSTOM THREAD SPECIFICATIONS (AS PER DRAWING)',
-    'WHITWORTH THREAD [BSW]',
-  ],
+  ['BSP', 'BSPT', 'NPT', 'Metric'],
+  ['UNC', 'UNF', 'Customer - Special Profiles'],
 ];
 
 const ProductInnerPage = () => {
@@ -83,7 +69,24 @@ const ProductInnerPage = () => {
     setActiveColor('brass');
   }, [slug]);
 
-  if (loading) return null;
+  // The product data is fetched asynchronously, so the page starts short
+  // (loader) and grows once it renders. Reset the scroll position on mount and
+  // again once loading finishes, otherwise the previous page's scroll offset
+  // (e.g. clicking a product from midway down the list) carries over.
+  useEffect(() => {
+    scrollToTop({ immediate: true });
+  }, [slug, loading]);
+
+  if (loading) {
+    return (
+      <div className="product-inner-page">
+        <div className="product-inner-loader" role="status" aria-live="polite">
+          <span className="product-inner-loader__spinner" aria-hidden="true" />
+          <span className="product-inner-loader__text">Loading product…</span>
+        </div>
+      </div>
+    );
+  }
 
   if (!product) {
     return <Navigate to="/products" replace />;
