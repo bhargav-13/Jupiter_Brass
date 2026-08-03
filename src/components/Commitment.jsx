@@ -45,10 +45,7 @@ const Commitment = () => {
 
             <div className="commitment-bottom-layout">
               {/* Cards / Items list */}
-              <div className="commitment-items">
-                ~Mr. JayShukh Vasoya (Founder)
-              </div>
-
+                          <span className="about-hero-signature">~   Mr. Jaysukh Vasoya (Visionary Leader)</span>
               {/* Round Logo */}
               <div className="commitment-badge-box">
                 <img
